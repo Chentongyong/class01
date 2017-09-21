@@ -1,0 +1,5 @@
+git clone 网址（仓库网址）//克隆文件
+git status//查看当前状态
+git add .//添加所有文件到缓存区
+git commit -m '说明'
+git push origin master//压缩到主分区
