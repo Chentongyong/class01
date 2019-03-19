@@ -1,0 +1,29 @@
+    <div class="">
+      pwd:
+      git init:初始化一个仓库
+      touch index.html:创建一个名为index.html的文件
+      git status:查看当前状态
+      git add index.html:添加一个名为index.html的文件到缓存区
+      git commit -m '第一次上传'：声明
+      git remote add https://Chentongyong/jds.git
+      （说明上传路径：包括用户名、库名）
+      git remote add origin https://github.com/Chentongyong/jds.git
+      (说明上传的分支（这里上传的是主分支）)
+      git push origin master (在push与origin之间可添加-u（可写可不写）添加到主分支)
+      git pull --rebase origin master:将github上jds库里的README.md同步到本地的jds文件夹中
+    </div>
+        
+        <div>
+          //git清屏 clear
+          <h2>创建一个新的vue项目</h2>
+          npm install vue-cli -g//安装vue-cli
+          vue init webpack my_vue//下载vue-cli的webpack模板
+          cd my_vue
+          npm install
+          npm run dev
+        </div>
+        <div>vue前端打包用npm run build</div>
+        
+        
+        
+        
