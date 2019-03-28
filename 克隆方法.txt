@@ -8,7 +8,30 @@ git branch test//创建分支
 git checkout test //切换分支
 
 {//合并分支
-https://www.cnblogs.com/NotEnough/p/9435966.html
+https://www.cnblogs.com/NotEnough/p/9435966.html；
+
+    第一步： git branch brh（分支名称） //创建分支
+
+    3、切换分支
+    第二步： git checkout brh //切换到分支brh
+    
+    第三步： git add .//添加所有文件
+
+    第四步： git commit -m “xxx” //描述
+
+    第五步： git push -u origin brh 《=====》 git push origin brh //将文件压入分支
+    
+    第六步： git checkout master //切换到主分区
+    
+    第七步： git merge brh //分支合并
+
+    第八步： git push -u origin master ////将文件压入主分区
+
+
+    第九步： git branch -d brh //删除子分支
+
+
+    第十步：  git push origin --delete brh //删除远程子分支
 }
 
 
