@@ -4,6 +4,24 @@ git add .//添加所有文件到缓存区
 git commit -m '说明'
 git push origin master//压缩到主分区
 
+git branch test//创建分支
+git checkout test //切换分支
+
+{//合并分支
+https://www.cnblogs.com/NotEnough/p/9435966.html
+}
+
+
+git回退命令reset
+
+git log ：查看日志（历史更新）
+
+git reset --hard commit_id     //退到/进到 指定commit的sha码 commit_id:239afed0857cc2e77c17c01014077808619af64d
+
+$ git reset --hard commit_id(commit字符)
+
+$ git push origin HEAD --force
+
 
 git status : 比较本地与git仓库项目区别；
 
