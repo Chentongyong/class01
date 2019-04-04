@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<title>厨房管道疏通</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/currency.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/public.js"></script>
+
+	</head>
+
+	<body>
+		<!--头部-->
+		<div>
+			<div id="head"></div>
+		</div>
+		<!--头部end-->
+
+		<!--中部-->
+		<div class="mar_but text_style14">
+			<div class="servqx text_style14 back_color2">
+				<img src="imgs/yyj.jpg" alt="" />
+				<p>
+					针对大型油烟维保、中央厨房设备清洗、中央厨房地面清洗处理、商用/家用油烟、清洗机、组合式集成灶、酒店天花机清洗、酒店风机盘管、滚筒/波轮洗衣机、清洗消毒、冰箱/冰柜清洗、微波炉/烤炉清洗消毒、太阳能/燃气/电热热器清洗除垢、空气能热水器/壁挂炉清洗除垢等清洗服务。
+				</p>
+			</div>
+
+			<!--产品介绍-->
+			<div>
+				<div class="abouts font_color3">
+					<h4 class="text_style16">项目服务</h4>
+				</div>
+				<div class="server text_style14 back_color2">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="servCp">
+									<a href="">
+										<img src="imgs/cpjs1.png" alt="管道疏通设备1" />
+										<div class="servZi ziStyle">管道疏通设备1</div>
+									</a>
+									<a href="">
+										<img src="imgs/cpjs2.png" alt="管道疏通设备2" />
+										<div class="servZi ziStyle">管道疏通设备2</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="servCp">
+									<a href="">
+										<img src="imgs/cpjs3.png" alt="管道疏通设备3" />
+										<div class="servZi ziStyle">管道疏通设备3</div>
+									</a>
+									<a href="">
+										<img src="imgs/cpjs4.png" alt="管道疏通设备4" />
+										<div class="servZi ziStyle">管道疏通设备4</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--服务场景-->
+		<div style="margin-bottom: 0.5rem;">
+			<div class="abouts font_color3">
+				<h4 class="text_style16">服务场景</h4>
+			</div>
+			<div class="server text_style14 back_color2">
+				<div class="servCp">
+					<a href="">
+						<img src="imgs/fw1.png" alt="" />
+					</a>
+					<a href="">
+						<img src="imgs/fw2.png" alt="" />
+					</a>
+				</div>
+				<div class="servCp">
+					<a href="">
+						<img src="imgs/fw3.png" alt="" />
+					</a>
+					<a href="">
+						<img src="imgs/fw4.png" alt="" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div class=" back_color text_style12" style="text-align: right;padding:0.1rem 0.2rem">
+				<a href="" class=" font_colorf">Top&nbsp;▲</a>
+			</div>
+			<div class="back_color2 font_colorf font_color0 text_style12" style="text-align: center;padding: 0.3rem 0 0.2rem 0;">
+				<p style="margin-bottom: 0.1rem;">Copyright&nbsp;&nbsp;@&nbsp;&nbsp; 2003-2018</p>
+				<p>江苏力臣科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;苏ICP备18071324号</p>
+			</div>
+		</div>
+		</div>
+		<!--中部end-->
+
+		<!--底部-->
+		<div id="tabbars" style="width: 100%;position: fixed;bottom: 0;left: 0;"></div>
+		<!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+	$("#head").load("head.html");
+	$("#tabbars").load("tabbar.html");
+	
+		$(document).ready(function() {
+		var mySwiper = new Swiper('.swiper-container', {
+			pagination: '.pagination',
+			centeredSlides: true,
+			loop: true,
+			grabCursor: true,
+			paginationClickable: true,
+			pagination: {
+				el: '.swiper-pagination',
+			},
+		})
+	});
+</script>

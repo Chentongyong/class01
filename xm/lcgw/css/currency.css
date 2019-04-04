@@ -1,0 +1,138 @@
+/*关于我们*/
+.abouts{
+	padding: 0.3rem 0;
+}
+.abouts h4{
+	text-indent: 0.3rem;
+	border-left: 3px solid #007AFF;
+}
+.abouts h4.h_style{
+	text-indent: 0.3rem;
+	font-size: 0.36rem;
+	border: 0;
+}
+.aboutZi{
+	padding: 0.3rem;
+	margin-bottom: 0.3rem;
+}
+.aboutZi img{
+	width: 100%;
+	height: 3.49rem;
+}
+.aboutZi p{
+	text-indent: 0.6rem;
+}
+
+/*十大产业*/
+.industry{
+	padding: 0 0.3rem;
+}
+.induZi a{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.3rem;
+	background: #fff;
+}
+.induZi a:last-child{
+	margin-bottom: 0;
+}
+.induZi a .left{
+	width: 45%;
+	height: 4rem;
+	overflow: hidden;
+	text-align: center;
+}
+.induZi a .left.left-sty{
+	height: 5.3rem;
+}
+.induZi a .left img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0.31rem 0 0.2rem 0;
+}
+.induZi a .left .ziBox{
+	padding: 0 0.2rem;
+	text-align: left;
+}
+.induZi a .left .ziBox h4{
+	border-top: 1px solid #eee;
+	padding-top: 0.2rem;
+}
+.induZi a .left .ziBox img{
+	width: 1rem;
+	height: 0.18rem;
+	margin: 0;
+}
+.induZi a .right{
+	width: 55%;
+	height: 4rem;
+	overflow: hidden;
+}
+.induZi a .right.right_sty{
+	height: 5.3rem;
+}
+
+.induYm{
+	padding: 1rem 0;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.induYm .center{
+	line-height: 0.65rem;
+	color: #666;
+}
+.induYm .left,.induYm .right{
+	width: 1.7rem;
+	line-height: 0.65rem;
+	border: 1px solid #007AFF;
+	box-sizing: border-box;
+	color: #007AFF;
+}
+
+/*项目服务*/
+.server{
+	padding: 0.3rem;
+	display: flex;
+	justify-content: space-between;
+    flex-flow: row wrap;
+}
+.server a{
+	display: block;
+	width: 48%;
+	margin-bottom: 0.2rem;
+	position: relative;
+}
+.server img{
+	width: 100%;
+}
+.server .servZi{
+	width: 100%;
+	padding: 0.2rem 0;
+	background: #1D61A4;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+.server .servZi.ziStyle{
+	background: #eee;
+	color: #333;
+	border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/*烟油机清洗*/
+.servqx img{
+	width: 100%;
+	height: 2rem;
+}
+.servqx p{
+	padding: 0.3rem;
+	text-indent: 0.58rem;
+	line-height: 0.5rem;
+	color: #595757;
+}
+.servCp{
+	display: flex;
+	justify-content: space-between;
+}

@@ -1,0 +1,81 @@
+body {
+	background: #EEEEEE;
+}
+
+
+/*市场前景*/
+
+.mainCentent .market_box {
+	width: 100%;
+}
+
+.mainCentent .market{
+	display: flex;
+	align-items: center;
+	padding: 0.3rem 0;
+	background: #eee;
+}
+h4{
+	text-indent: 0.3rem;
+	border-left: 3px solid #1D61A4;
+}
+
+/*列表*/
+
+.lists_box .lists_item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #595757;
+	background: #FFFFFF;
+	font-size: 0.28rem;
+	height: 1rem;
+	padding: 0 0.3rem;
+	color: #1B60A3;
+	margin-bottom: 0.3rem;
+}
+
+.lists_box .lists_item div:first-child {
+	width: 75%;
+	display: flex;
+	align-items: center;
+}
+
+.lists_box .lists_item div:first-child span:nth-child(2) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-indent: 0.3rem;
+	color: #666;
+}
+
+.lists_box .lists_item div:nth-child(2) {
+	width: 23%;
+	color: #999;
+}
+
+.page_choose {
+	font-size: 0.28rem;
+	display: flex;
+	justify-content: space-between;
+	color: #1B60A3;
+	padding: 1rem 0.3rem 1.5rem 0.3rem;
+}
+
+.page_choose .pre {
+	width: 1.5rem;
+	line-height: 0.65rem;
+	border: 1px solid #1B60A3;
+	text-align: center;
+}
+
+.page_choose .next {
+	width: 1.5rem;
+	line-height: 0.65rem;
+	border: 1px solid #1B60A3;
+	text-align: center;
+}
+.page_choose .num span{
+	line-height: 0.65rem;
+	color: #666;
+}

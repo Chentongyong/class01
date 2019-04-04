@@ -1,0 +1,142 @@
+/*公共样式*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+body {
+	background-color: #eee;
+}
+
+.back_color {
+	background-color: #1f873e;
+}
+
+.back_color2 {
+	background-color: #fff;
+}
+
+.text_style12 {
+	font-size: 0.28rem;
+}
+
+.text_style14 {
+	font-size: 0.32rem;
+}
+
+.text_style16 {
+	font-size: 0.36rem;
+}
+
+.text_style18 {
+	font-size: 0.40rem;
+}
+
+.text_style20 {
+	font-size: 0.44rem;
+}
+
+.font_colorb {
+	color: #1f873e;
+}
+
+.font_colorf {
+	color: #fff;
+}
+
+.font_color0 {
+	color: #000;
+}
+
+.font_color3 {
+	color: #333;
+}
+
+.font_color6 {
+	color: #666;
+}
+
+.font_color9 {
+	color: #999;
+}
+
+
+/*.font_colore{
+	color: #eee;
+}*/
+
+.mar_top {
+	margin-top: 0.15rem;
+}
+
+.padd-lr {
+	padding: 0 0.2rem;
+}
+
+.padd-tb {
+	padding: 0.2rem 0;
+}
+
+.padd-t {
+	padding-top: 0.2rem;
+}
+
+.dis_flex {
+	display: flex;
+	justify-content: space-around;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 0.1rem;
+}
+
+.navigation span {
+	padding: 0.24rem 0.1rem;
+}
+
+.navigation span.s_style {
+	background-color: #1f873e;
+	color: #fff;
+}
+
+.navigation span.s_style2 {
+	border-bottom: 2px solid #1f873e;
+}
+
+
+/*底部导航*/
+
+.tabbar {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	color: #fff;
+	height: 0.89rem;
+	padding: 0.24rem 0;
+}
+
+.tabbar .bar_zi {
+	width: 25%;
+	height: 0.89rem;
+	text-align: center;
+}
+
+.tabbar img {
+	width: 0.42rem;
+	height: 0.5rem;
+}
+
+.tabbar span {
+	display: block;
+}

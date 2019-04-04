@@ -1,0 +1,65 @@
+.headBox {
+	padding: 0.15rem;
+	height: 1rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.headBox .imgLeft {
+	width: 20%;
+}
+
+.headBox .imgLeft img {
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.headBox .imgRight {
+	width: 70%;
+}
+
+.headBox img {
+	width: 100%;
+	height: 1rem;
+}
+
+.headRj {
+	position: absolute;
+	top: 1.3rem;
+	width:3rem;
+	left: -3rem;
+	height:100%;
+	background:rgba(000,000,000,0.6);
+	z-index: 100;
+}
+.show{
+	/*display: block;*/
+}
+
+.headRj a {
+	padding: 0.3rem;
+	line-height: 0.42rem;
+	color: #fff;
+	font-size: 0.32rem;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*.headRj a:nth-child(1) {
+	border-top: 1px solid #ccc;
+}*/
+
+.headRj a.aColor {
+	color: #007AFF;
+}
+
+.headRj a img {
+	width: 0.42rem;
+	height: 0.42rem;
+}
+
+.headRj a b {
+	display: block;
+	line-height: 0.42rem;
+}

@@ -1,0 +1,13 @@
+.headBox{
+	padding: 0.24rem;
+	display: flex;
+	justify-content:space-around ;
+}
+.headBox img{
+	width: 48%;
+	height: 0.56rem;
+}
+.headBox img:nth-child(1){
+	margin-right: 4%;
+}
+

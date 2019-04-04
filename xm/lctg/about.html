@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<title>关于我们</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script src="js/public.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<!--头部-->
+			<div id="head"></div>
+			<!--头部end-->
+			
+			<!--中部-->
+			<div class="about back_color2 mar_but">
+				<h4>关于我们</h4>
+				<div class="aboutBox text_style14">
+					<div class="imgBox">
+						<img src="images/tg1_03.png" align="left" />
+						<img src="images/tg1_03.png" align="left" />
+						<p>
+							江苏力臣科技有限公司（以下称“力臣科技”）是一家专业从事中央厨房维保工程施工服务、创业孵化于一体化的综合性科技环保工程公司。 力臣环保施工维保服务项目涵盖：大型油烟机清洗，虫控消杀，厨房设备清洗保养，酒店管道疏通等酒店紧密联系的各项维保工程！ 力臣环保施工工程团队现拥有120余人，拥有高级工程师职称项目经理12人，工程施工技术员均有丰富的工程施工经验。公司配备专业管道机器人，全能清洗设备358台（套），实现维保施工设备化，机械化。力臣环保拥有国家认可的双A级行业资质，可出具国家认可的清洗维保验收单！ 公司长期稳定承接的维保工程有：苏宁商城，万达广场，沃尔玛等大型商场，肯德基，麦当劳等全国连锁的西餐厅，九毛九，同湘会，王品牛排，西提厚牛排，威斯丁酒店，希尔顿酒店，香格里拉大酒店，省人民政府，市人民政府等近千家中央厨房的维保服务工程。 力臣环保拥有国内一流的技术工程团队，采用专业的清洗设备及工具、标准化的服务流程、标准化的服务形象，为广大餐饮业主提供清洁、高效的工程服务，更极致的服务体验！
+						</p>
+
+					</div>
+				</div>
+				<div class="text_style14 back_color2">
+					<div class=" back_color" style="text-align: right;padding:0.1rem 0.2rem">
+						<a href="" class=" font_colorf">Top&nbsp;▲</a>
+					</div>
+					<div class="back_color2 font_colorf font_color0" style="text-align: center;padding: 0.3rem 0 0.5rem 0">
+						<p style="margin-bottom: 0.1rem;">Copyright&nbsp;&nbsp;@&nbsp;&nbsp; 2003-2018</p>
+						<p>江苏力臣科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;苏ICP备18071324号</p>
+					</div>
+				</div>
+			</div>
+			<!--中部end-->
+			
+			<!--底部-->
+			<div id="tabbars"></div>
+			<!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$("#head").load("head.html");
+	$("#tabbars").load("tabbar.html");
+	$.cookie('ejdh', 0)
+
+	//点击改变背景颜色
+	$('.topBox span').click(function() {
+		$(this).addClass('s_style').siblings('span').removeClass('s_style');
+	})
+</script>

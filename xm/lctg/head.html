@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/head.css" />
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+
+	<body>
+		<div class="back_color2 headBox">
+			<div class="imgLeft">
+				<img src="images/cy1_24.png" alt="" />
+			</div>
+			<div class="imgRight">
+				<img src="images/logo.png" />
+			</div>
+		</div>
+		<div id="headRj" class="headRj">
+			<a href="index.html" class="aColor">
+				<div>
+					<img src="images/dhtb_03.png" />
+					<b>工程服务</b>
+				</div>
+			</a>
+			<a href="about.html">
+				<div>
+					<img src="images/dhtb_07.png" />
+					<b>关于我们</b>
+				</div>
+			</a>
+			<a href="news.html">
+				<div>
+					<img src="images/dhtb_10.png" />
+					<b>新闻资讯</b>
+				</div>
+			</a>
+			<a href="case.html">
+				<div>
+					<img src="images/dhtb_12.png" />
+					<b>工程案例</b>
+				</div>
+			</a>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	var sn = 0;
+	if($.cookie('ejdh') == undefined) {
+		$('#headRj a').eq(sn).addClass('aColor').siblings('a').removeClass('aColor');
+	} else {
+		sn = $.cookie('ejdh');
+		$('#headRj a').eq(sn).addClass('aColor').siblings('a').removeClass('aColor');
+		$.cookie('ejdh',0)
+	}
+	
+	$('.imgLeft').click(function() {//点击显示二级菜单
+		var s = 4
+		if($('#headRj').hasClass('headRj show') == true) {//隐藏二级菜单
+			$('#headRj').removeClass('show');
+			$('#headRj').animate({
+				left: -4 + 'rem'
+			}, 400);
+		} else {//显示二级菜单
+			$('#headRj').addClass('show');
+			$('#headRj').animate({
+				left: 0+ 'rem'
+			}, 400);
+		}
+	})
+	
+	$('#headRj a').click(function(){
+		var sum = $(this).index();
+		$.cookie('ejdh', sum);
+	})
+</script>

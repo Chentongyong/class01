@@ -1,0 +1,28 @@
+body{
+	background: #FFFFFF;
+	/*width:7.20rem;*/
+}
+.mainCentent{
+	/*width:7.20rem;*/
+	margin: 0 auto
+}
+/*市场前景*/
+.mainCentent .market_box{
+	width:100%;
+}
+.mainCentent .market{
+	padding: 0.3rem 0;
+}
+h4{
+	border-left: 3px solid #1D61A4;
+	text-indent: 0.3rem;
+}
+
+.mainCentent .textDes{
+	height: 100%;
+	padding:0.5rem  0.3rem 5rem 0.3rem;
+	background: #FFFFFF;
+	font-size: 0.28rem;
+	line-height: 0.5rem;
+	color: #595757;
+}

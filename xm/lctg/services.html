@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<title>工程服务</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/public.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<!--头部-->
+			<div id="head"></div>
+			<!--头部end-->
+
+			<!--中部-->
+			<div class="mar_but">
+				<div class="servBox">
+					<img src="images/gct.png" alt="" />
+					<div class="padd topBox text_style14">
+						<span class="s_style">大型油烟机清洗</span>
+						<span>中央空调清洗</span>
+						<span>虫控消杀</span>
+						<span>厨房设备清洗</span>
+						<span>管道疏通服务</span>
+					</div>
+				</div>
+				<!--工程案例-->
+				<div class="servXm">
+					<div class="xmZi back_color2 text_style16 font_color3">
+						<img src="images/gctb.png"/>
+						<b>清洗项目</b>
+					</div>
+					<div class="xmBox padd font_colorf text_style14 mar_top">
+						<a href="" class="">
+							<img src="images/fw1.png" />
+							<span>唐山钢铁厂管道清洗</span>
+						</a>
+						<a href="" class="">
+							<img src="images/fw1.png" />
+							<span>唐山钢铁厂管道清洗</span>
+						</a>
+						<a href="" class="">
+							<img src="images/fw1.png" />
+							<span>唐山钢铁厂管道清洗</span>
+						</a>
+						<a href="" class="">
+							<img src="images/fw1.png" />
+							<span>唐山钢铁厂管道清洗</span>
+						</a>
+					</div>
+				</div>
+				
+				<!--施工现场-->
+				<div class="servXm">
+					<div class="xmZi back_color2 text_style16 font_color3">
+						<img src="images/gctb.png"/>
+						<b>施工现场</b>
+					</div>
+					<div class="xmBox padd font_colorf text_style14">
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+						</a>
+					</div>
+				</div>
+				
+				<!--清洗效果-->
+				<div class="servXm">
+					<div class="xmZi back_color2 text_style16 font_color3">
+						<img src="images/gctb.png"/>
+						<b>清洗效果</b>
+					</div>
+					<div class="xgBox padd font_colorf text_style14">
+						<a href="">
+							<img src="images/fw1.png" />
+							<img src="images/fw2.png"/>
+							<div class="xgZi font_colorf">
+								炉头清洗前后对比
+							</div>
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+							<img src="images/fw2.png"/>
+							<div class="xgZi font_colorf">
+								炉头清洗前后对比
+							</div>
+						</a>
+						<a href="">
+							<img src="images/fw1.png" />
+							<img src="images/fw2.png"/>
+							<div class="xgZi font_colorf">
+								炉头清洗前后对比
+							</div>
+						</a>
+					</div>
+				</div>
+				
+				<div class="text_style14 back_color2">
+					<div class=" back_color" style="text-align: right;padding:0.1rem 0.2rem">
+						<a href="" class=" font_colorf">Top&nbsp;▲</a>
+					</div>
+					<div class="back_color2 font_colorf font_color0"  style="text-align: center;padding: 0.3rem 0 0.5rem 0">
+						<p style="margin-bottom: 0.1rem;">Copyright&nbsp;&nbsp;@&nbsp;&nbsp; 2003-2018</p>
+						<p>江苏力臣科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;苏ICP备18071324号</p>
+					</div>
+				</div>
+			</div>
+			<!--中部end-->
+
+			<!--底部-->
+			<div id="tabbars"></div>
+			<!--底部end-->
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$("#head").load("head.html");
+	$("#tabbars").load("tabbar.html");
+	$.cookie('ejdh', 0)
+
+	//点击改变背景颜色
+	$('.topBox span').click(function() {
+		$(this).addClass('s_style').siblings('span').removeClass('s_style');
+	})
+</script>

@@ -1,0 +1,49 @@
+/*新闻资讯*/
+
+.newBox {
+	display: flex;
+	justify-content: space-around;
+	padding: 0.3rem 0;
+}
+
+.newBox .new-zi {
+	padding: 0.1rem 0.3rem;
+	border: 1px solid #1F873E;
+}
+
+
+/*分享*/
+
+.head_box {
+	padding: 0.2rem;
+	display: flex;
+	justify-content: space-between;
+	background: #1F873E;
+	font-size: 0.34rem;
+}
+
+.head_box div {
+	width: 0.6rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	border-radius: 50%;
+	background: #eee;
+	text-align: center;
+}
+
+.head_box div b {
+	font-weight: 900;
+}
+
+.head_box div img {
+	width: 0.3rem;
+	height: 0.3rem;
+}
+
+.head_cens {
+	padding: 0.3rem 0.2rem 0 0.2rem;
+}
+
+.head_cens h4,.head_cens span,.head_cens p {
+	text-indent: 0.45rem;
+}

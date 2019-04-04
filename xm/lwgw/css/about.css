@@ -1,0 +1,75 @@
+/*关于我们*/
+
+.cen-gy {
+	padding: 0.2rem 0;
+	border-bottom: 1px solid #eee;
+}
+
+.cen-gy h4 {
+	text-indent: 0.2rem;
+	border-left: 2px solid #1f873e;
+}
+
+.p-style {
+	padding: 0.2rem 0;
+	text-indent: 0.42rem;
+}
+
+.about-mk {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap-reverse;
+}
+
+.about-mk .img1 {
+	width: 46%;
+	height: 1rem;
+	margin-bottom: 0.2rem;
+}
+
+.about-mk .img2 {
+	width: 46%;
+	height: 2rem;
+	margin-bottom: 0.2rem;
+}
+
+
+/*加盟合作*/
+
+.leagueBox {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.2rem;
+}
+
+.leagueBox .left,
+.leagueBox .right {
+	width: 48%;
+	color: #1F873E;
+}
+
+.leagueBox .left div,
+.leagueBox .right div {
+	display: flex;
+	padding: 0.1rem 0;
+	justify-content: space-around;
+}
+
+.lead-zi {
+	width: 2.8rem;
+	height: 0.6rem;
+	background-image: url(../image/jm2.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #fff;
+	font-size: 0.3rem;
+	background-position: 0px 0px;
+	position: relative;
+	top: -0.05rem;
+}
+
+.lead-zi span {
+	margin-top: -0.06rem;
+}

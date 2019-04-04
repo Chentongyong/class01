@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+		<title>首页</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/public.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<!--头部-->
+			<div id="head"></div>
+			<!--头部end-->
+			
+			<!--中部-->
+			<div class="mar_but">
+				<div class="indBox">
+					<div class="indZi">
+						<div>
+							<a href="about.html">关于我们</a>
+							<a href="server.html">项目服务</a>
+							<a href="news.html">新闻资讯</a>
+						</div>
+						<div>
+							<a href="industry.html">十大产业</a>
+							<a href="join">加盟合作</a>
+							<a href="contact.html">联系我们</a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class=" back_color text_style12" style="text-align: right;padding:0.1rem 0.2rem">
+						<a href="" class=" font_colorf">Top&nbsp;▲</a>
+					</div>
+					<div class="back_color2 font_colorf font_color0 text_style14" style="text-align: center;padding: 0.3rem 0 0.2rem 0;">
+						<p style="margin-bottom: 0.1rem;">Copyright&nbsp;&nbsp;@&nbsp;&nbsp; 2003-2018</p>
+						<p>江苏力臣科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;苏ICP备18071324号</p>
+					</div>
+				</div>
+			</div>
+			<!--中部end-->
+
+			<!--底部-->
+			<div id="tabbars"></div>
+			<!--底部end-->
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	$("#head").load("head.html");
+	$("#tabbars").load("tabbar.html");
+	$.cookie('ejdh',0)
+</script>

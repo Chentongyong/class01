@@ -1,0 +1,56 @@
+body{
+	background: #eee;
+}
+.mainCentent .img_box img{
+	width:100%;
+	height:3rem;
+}
+/*市场前景*/
+.mainCentent .market{
+	display: flex;
+	align-items: center;
+	padding: 0.3rem 0;
+	background: #eee;
+}
+h4{
+	text-indent: 0.3rem;
+	border-left: 3px solid #1D61A4;
+}
+.mainCentent .textDes{
+	padding:0.46rem 0.30rem;
+	background: #FFFFFF;
+	font-size: 0.28rem;
+	text-indent: 0.6rem;
+	line-height: 0.4rem;
+	color: #595757;
+}
+.lists{
+	display: flex;
+	flex-wrap: wrap;
+	padding:0.46rem 0.30rem;
+	background: #FFFFFF;
+	justify-content: space-around;
+}
+.lists .lists_item:nth-child(2n-1){
+	width:30%;
+	height: 0.58rem;
+	line-height: 0.58rem;
+	background: #1B60A3;
+	text-align:center;
+	font-size: 0.28rem;
+	color:#FFFFFF;
+	margin-bottom:0.18rem;
+	border-radius: 0.05rem;
+}
+
+.lists .lists_item:nth-child(2n){
+	width:30%;
+	height: 0.58rem;
+	line-height: 0.58rem;
+	background: #707070;
+	text-align:center;
+	font-size: 0.28rem;
+	color:#FFFFFF;
+	margin-bottom:0.18rem;
+	border-radius: 0.05rem;
+}

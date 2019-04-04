@@ -1,0 +1,131 @@
+*{padding: 0;margin: 0;}
+a{text-decoration: none;color: #666;}
+li{list-style-type: none;}
+.back-color{
+	background:#ec6a17
+}
+.back-colorb{
+	background:#fff
+}
+.p_tb{
+	padding: 0.2rem 0;
+}
+.p_lr{
+	padding: 0 0.3rem;
+}
+.p_padd{
+	padding: 0.2rem 0.3rem;
+}
+.m-top{
+	margin-top: 0.2rem;
+}
+
+.text_cf{
+	color: #fff;
+}
+.text_c0{
+	color: #000;
+}
+.text_c3{
+	color: #333;
+}
+.text_c6{
+	color: #666;
+}
+
+.font-s1{
+	font-size: 0.26rem;
+}
+.font-s2{
+	font-size: 0.28rem;
+}
+.font-s3{
+	font-size: 0.32rem;
+}
+
+.location{
+	background:#ec6a17 ;
+	text-align: right;
+	padding: 0.2rem;
+}
+.locaBot{
+	width: 100%;
+	text-align: center;
+}
+
+/*底部导航*/
+
+.tabbarBox {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	color: #fff;
+	height: 0.89rem;
+	padding: 0.2rem 0;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	font-size: 0.26rem;
+}
+
+.tabbarBox .bar_zi {
+	width: 25%;
+	height: 0.89rem;
+	text-align: center;
+}
+
+.tabbarBox img {
+	width: 0.42rem;
+	height: 0.5rem;
+}
+
+.tabbarBox span {
+	display: block;
+}
+
+.fdBox{
+	width: 3.5rem;
+	background: rgba(255,255,255,.6);
+	/*border: 2px solid #ccc;*/
+	box-sizing: border-box;
+	position: fixed;
+	top: 30%;
+	left: 0.3rem;
+	z-index: 100;
+	/*padding: 0.3rem 0.2rem 0.5rem 0.2rem;*/
+}
+.fdBox a{
+	width: 100%;
+	display: block;
+	padding: 0.2rem 0;
+	color: #000;
+}
+.fdBox a img{
+	width: 0.5rem;
+	height: 0.5rem;
+}
+.fdBox a span{
+	position: relative;
+	top: -0.1rem;
+	left: 0.2rem;
+}
+.fdBox a.s_sty{
+	color: #EC6A17;
+}
+.fdBox .imgBox{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	bottom: -0.5rem;
+	left: 0;
+}
+.fdBox .box{
+	overflow: hidden;
+	padding: 0 0.2rem;
+    border: 2px solid #ccc;
+    height: 5.3rem;
+}
+
+
+

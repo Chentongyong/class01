@@ -1,0 +1,93 @@
+.server{
+	padding: 0.2rem 0;
+	display: flex;
+	justify-content: space-around;
+}
+.server div{
+	width: 1.5rem;
+	height: 1.5rem;
+	text-align: center;
+	line-height: 1.5rem;
+	background: #1F873E;
+	border: 3px solid #fff45c;
+	border-radius: 50%;
+	color: #fff;
+}
+.server div.d-style{
+	border: 3px solid #e1a70a;
+	font-size: 0.30rem;
+} 
+
+.servTop{
+	width: 100%;
+	/*overflow: hidden;*/
+	height: 4rem;
+	position: relative;
+	margin: 0.3rem 0;
+}
+.servTop img{
+	width: 100%;
+	height: 4rem;
+}
+.servTop .img-sty2{
+	width: 50%;
+	height: 4rem;
+	background: #5fc37d;
+	position: absolute;
+	top: 0rem;
+	left: 0;
+	z-index: 10;
+}
+.servTop .img-sty{
+	width: 50%;
+	height: 4rem;
+	background-image: url('../image/jd.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -0.3rem;
+	left: -0.1rem;
+	z-index: 100;
+	background-size: 100%;
+}
+.img-sty b{
+	font-size: 0.36rem;
+	border-bottom: 2px solid #fff;
+}
+.img-sty p{
+	padding: 0 0.1rem;
+    text-indent: 0.45rem;
+    position: relative;
+    top: 0.2rem;
+    line-height: 0.42rem;
+}
+.padd-1{
+	display: none;
+}
+.ss{
+	display: block;
+}
+.about-mk{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap-reverse;
+}
+.about-mk div{
+	width: 46%;
+	height: 2rem;
+	margin-bottom: 0.2rem;
+	position: relative;
+}
+.about-mk div img{
+	width: 100%;
+	height: 2rem;
+}
+.about-mk div p{
+	padding: 0.2rem 0;
+	text-align: center;
+	background: rgba(72,119,83,.6);
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,394 @@
+.swiper-container {
+	width: 100%;
+	height: 3.2rem;
+}
+
+.swiper-container img {
+	width: 100%;
+}
+
+
+/*导航条*/
+
+.navigBox {
+	padding: 0.5rem 0.2rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navigBox a {
+	display: block;
+	width: 25%;
+	text-align: center;
+	color: #595757;
+}
+
+.navigBox a img {
+	width: 0.6rem;
+	height: 0.6rem;
+}
+
+.navigBox a span {
+	display: block;
+	margin-top: 0.1rem;
+}
+
+.gywm {
+	height: 4.99rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.gywm img {
+	width: 2.7rem;
+	height: 3.79rem;
+	position: absolute;
+	top: 0.9rem;
+	left: 0.2rem;
+	box-shadow: 7px 7px 5px #ccc;
+}
+
+.gywm .gywmZi {
+	width: 5rem;
+	height: 4.39rem;
+	float: right;
+	overflow: hidden;
+	padding: 0.3rem 0;
+}
+
+.gywm .gywmZi b {
+	margin-left: 1.2rem;
+	padding-bottom: 0.2rem;
+	border-bottom: 3px solid #F29539;
+}
+
+.gywm .gywmZi span {
+	display: block;
+	margin-left: 1rem;
+	text-indent: 0.7rem;
+	line-height: 0.5rem;
+	margin-right: 0.3rem;
+	position: relative;
+	top: 0.5rem;
+}
+
+
+/*服务范围*/
+
+.indGy h4 {
+	text-align: center;
+	color: #3B3535;
+	font-size: 0.36rem;
+	padding-bottom: 0.3rem;
+}
+
+.fwBox {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.fwBox .fwZi,
+.fwBox img {
+	width: 48%;
+	position: relative;
+}
+
+.fwBox .fwZi {
+	margin-bottom: 0.3rem;
+}
+
+.fwBox ul li {
+	width: 95%;
+	line-height: 0.8rem;
+	height: 0.8rem;
+	background: #eee;
+	border-top: 1px solid #FFF;
+	text-indent: 0.2rem;
+	color: #666;
+}
+
+.fwBox ul li.li_style {
+	background-color: #fff;
+	width: 100%;
+	height: 0.8rem;
+	background-image: url(../images/tg1_07.png);
+	background-repeat-y: inherit;
+	background-position-y: center;
+	background-size: 100%;
+	color: #fff;
+}
+
+.fwBox .fwZi img {
+	width: 100%;
+	height: 2.5rem;
+}
+
+.fwBox .fwZi span {
+	width: 100%;
+	padding: 0.1rem 0;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: absolute;
+	text-align: center;
+	background: #1D61A4;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	color:#fff
+}
+
+.indXw {
+	padding: 0.3rem 0;
+}
+
+.indXw a {
+	display: block;
+	padding: 0.1rem 0.2rem;
+	background: #eee;
+	margin-bottom: 0.1rem;
+}
+
+.indXw a .aBox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.indXw a .aBox span {
+	line-height: 0.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.indXw a .aBox span:nth-child(1) {
+	color: #1D61A4;
+}
+
+.indXw a .a_bon {
+	margin-left: 0.3rem;
+}
+
+.indXw a .a_left {
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.indXw a .a_right {
+	width: 10%;
+	text-align: right;
+}
+
+
+/*工程服务*/
+
+.servBox {
+	width: 100%;
+	background: #eee;
+}
+
+.servBox img {
+	width: 100%;
+	height: 1rem;
+}
+
+.servBox .topBox {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.servBox .topBox span {
+	display: block;
+	width: 32%;
+	line-height: 0.5rem;
+	text-align: center;
+	color: #5C5A5A;
+	margin-bottom: 0.2rem;
+}
+
+.servBox .topBox span.s_style {
+	background: #1D61A4;
+	border: 1px solid #1D61A4;
+	border-radius: 25px;
+	color: #fff;
+}
+
+.servXm {
+	background: #eee;
+	margin-top: 0.2rem;
+}
+
+.servXm:nth-child(1) {
+	margin-top: 0;
+}
+
+.servXm .xmZi {
+	padding: 0.2rem 0.3rem;
+	display: flex;
+	line-height: 0.35rem;
+	margin-top: 0.3rem;
+}
+
+.servXm .xmZi img {
+	width: 0.3rem;
+	height: 0.35rem;
+	margin-right: 0.3rem;
+}
+
+.xmBox {
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 0.1rem;
+}
+
+.xmBox a {
+	display: block;
+	width: 48%;
+	margin-bottom: 0.3rem;
+	color: #4A4A4A;
+}
+
+.xmBox a img {
+	width: 100%;
+	height: 2.5rem;
+}
+
+.xmBox a span {
+	display: block;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 0.1rem 0;
+}
+
+.xgBox {
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 0.1rem;
+}
+
+.xgBox a {
+	display: block;
+	width: 32%;
+	position: relative;
+}
+
+.xgBox a img {
+	width: 100%;
+	height: 2.5rem;
+	margin-bottom: 0.3rem;
+}
+
+.xgBox a .xgZi {
+	width: 1.3rem;
+	height: 0.8rem;
+	padding: 0.1rem 0.2rem;
+	background: rgba(29, 97, 164, .8);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	margin-top: -0.7rem;
+	margin-left: -0.85rem;
+}
+
+
+/*关于我们*/
+
+.about h4 {
+	width: 100%;
+	text-align: center;
+	padding: 0.3rem 0;
+}
+
+.aboutBox {
+	padding: 0 0.2rem 0.3rem 0.2rem;
+}
+
+.aboutBox .imgBox img {
+	width: 55%;
+	height: 3rem;
+	margin-bottom: 0.1rem;
+	margin-right: 0.2rem;
+	float: left;
+}
+
+.aboutBox .imgBox p {
+	text-indent: 0.6rem;
+	color: #595757;
+}
+
+
+/*新闻资讯*/
+
+.newsBox {
+	padding: 0.5rem 0.2rem;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+.newsBox div span {
+	line-height: 0.6rem;
+}
+
+.newsBox .newsBut {
+	width: 1.8rem;
+	line-height: 0.6rem;
+	border: 1px solid #1D61A4;
+	border-radius: 3px;
+	color: #1D61A4;
+}
+
+
+/*新闻详情*/
+
+.details {
+	display: flex;
+	justify-content: space-between;
+}
+
+.details div {
+	width: 0.5rem;
+	height: 0.5rem;
+	background: #FFF;
+	border-radius: 50%;
+	line-height: 0.5rem;
+	text-align: center;
+	opacity: .8;
+}
+
+.details img {
+	width: 0.3rem;
+	height: 0.3rem;
+	line-height: 0.5rem;
+}
+
+.details div b {
+	/*position: relative;
+	top: -0.05rem;*/
+	font-size: 0.4rem;
+}
+
+.servXm .xmZi.detaTop {
+	/*padding: 0.2rem 0.3rem;
+	display: flex;
+	line-height: 0.35rem;*/
+	margin-top: 0.1rem;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.servXm .topZi{
+	text-indent: 0.5rem;
+	line-height: 0.5rem;
+	background: #fff;
+}
