@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/advantage2.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">信息多</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="bargain_up">
+		    	<img src="images/20.png" alt="" />
+		    	<div class="statistics">
+		    		<ul>
+		    			<li>
+		    				<div id="zhengzaizhuanrang" class="up_box">
+						        <p>正在转让（家）</p> 
+						        <span>0</span>		    					
+		    				</div>
+		    			</li>
+		    			<li>
+		    				<div id="cityTozhuanrang" class="up_box bor_rig">
+		    					<p >转让（家）</p>
+		    					<span>0</span>
+		    				</div>
+		    			</li>
+		    			<li>
+		    				<div id="zhengzaizhaodian" class="up_box">
+		    					<p>正在找店（家）</p>
+		    					<span>0</span>
+		    				</div>
+		    			</li>
+		    			<li>
+		    				<div id="guangzhouzhaopu" class="up_box bor_rig">
+					            <p>找铺（家）</p>
+					            <span>0</span>
+		    				</div>
+		    			</li>
+		    		</ul>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+</html>
+<script>
+	mui.plusReady(function(){
+		//预加载
+		var city_text = '';
+		window.addEventListener('newsId', function(s) {
+			city_text = s.detail.city_text;
+			//查询所有转让
+			mui.ajax({
+				url:'http://wwwgezimd.com/Store/storeactions!zrsl.action',
+				type:'post',
+				async: true,
+			    dataType: 'json',
+			    crossDomain: true, //强制使用5+跨域
+			    timeout:'10000',
+				success:function(data){
+					zhengzaizhuanrang.innerHTML = '<p >正在转让（家）</p><span>'+data+'</span>';
+				},
+				error:function(xhr, type, errorThrown){
+					zhengzaizhuanrang.innerHTML = '<p >正在转让（家）</p><span>523,254</span>';
+				}
+			});
+			//根据市查询所有转让
+			data = {"store.address": city_text};
+			mui.ajax({
+				url:'http://wwwgezimd.com/Store/storeactions!cityTozhuanrang.action',
+				type:'post',
+				data:data,
+				async: true,
+			    dataType: 'json',
+			    crossDomain: true, //强制使用5+跨域
+			    timeout:'10000',
+				success:function(data){
+					cityTozhuanrang.innerHTML = '<p >'+city_text+'转让（家）</p><span>'+data+'</span>';
+				},
+				error:function(xhr, type, errorThrown){
+					cityTozhuanrang.innerHTML = '<p >'+city_text+'转让（家）</p><span>523,254</span>';
+				}
+			});
+			//查询所有找店
+			mui.ajax({
+				url:'http://wwwgezimd.com/Store/spapp!zzzd.action',
+				type:'post',
+				async: true,
+			    dataType: 'json',
+			    crossDomain: true, //强制使用5+跨域
+			    timeout:'10000',
+				success:function(data){
+					zhengzaizhaodian.innerHTML = '<p>正在找店（家）</p><span>'+data+'</span>';
+				},
+				error:function(xhr, type, errorThrown){
+					zhengzaizhaodian.innerHTML = '<p >正在找店（家）</p><span>523,254</span>';
+				}
+			});
+			//查询广州所有找店
+			data1 = {"shopPurchase.region": city_text};
+			mui.ajax({
+				url:'http://wwwgezimd.com/Store/spapp!cityTozzzd.action',
+				type:'post',
+				data:data1,
+				async: true,
+			    dataType: 'json',
+			    crossDomain: true, //强制使用5+跨域
+			    timeout:'10000',
+				success:function(data){
+					guangzhouzhaopu.innerHTML = '<p>'+city_text+'找铺（家）</p><span>'+data+'</span>';
+				},
+				error:function(xhr, type, errorThrown){
+					guangzhouzhaopu.innerHTML = '<p >'+city_text+'找铺（家）</p><span>523,254</span>';
+				}
+			});
+		})
+	})
+</script>

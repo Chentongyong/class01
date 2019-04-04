@@ -1,0 +1,64 @@
+.cenLeft{
+	display: inline-block;
+	width: 826px;
+	color: #666;
+	overflow: hidden;
+	}
+.cenLeft .leftUp{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+.cenLeft .leftUp h5{
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 5px;
+}
+.cenLeft .leftUp span{
+	font-size: 12px;
+}
+.cenLeft .leftUp .span{
+	margin-left: 10px;
+}
+.cenLeft .leftUp i{
+	font-size: 24px;
+	position: relative;
+	top: 3px;
+}
+.cenLeft .leftUp i.iStyle{
+	color: #0B9AD6;
+}
+.bor_bott{
+	padding: 15px 0;
+	border-bottom: 1px solid #eee;
+	font-size: 12px;
+}
+.bor_bott span b{
+	font-weight: 400;
+}
+.bor_bott p{font-size: 14px;color: #333;}
+.bor_bott span{
+	padding: 0 15px;
+	line-height: 20px;
+}
+.bor_bott span:nth-child(1n){
+	padding-left: 0;
+}
+.cenRight{
+	float: right;
+	width: 354px;
+	font-size: 12px;
+}
+.recRight img{
+	width: 206px;
+	height: 144px;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.recRight .rec_r{
+	display: inline-block;
+	padding-top:20px ;
+	vertical-align: top;
+}
+.recRight .rec_r p{
+   margin-bottom: 18px;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>转让发布</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/rent_issue.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+	     <div id="header"></div>
+		<!--顶部导航end-->
+
+		<!--中部-->
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html" class="a_back">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs" style="padding-bottom: 86px;">
+				<div class="issUp">
+					<span>1选择类型（<a href="issue.html">重选</a>）</span>
+					<span class="sps_back">2商铺转让</span>
+					<span>3发布成功</span>
+				</div>
+				<form id="uploading" action="" method="post"  enctype="multipart/form-data">
+					<div class="upBox">
+						<b>*</b>
+						<label>标&nbsp;&nbsp;&nbsp;&nbsp;题:</label>
+						<input type="text" id="title" placeholder="5-16个字"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>经营业态：</label>
+						<select  id="leixng" >
+						<option value="酒楼餐饮" selected="selected">酒楼餐饮</option>
+						<option value="美容美发">美容美发</option>
+						<option value="服饰鞋包">服饰鞋包</option>
+						<option value="休闲娱乐">休闲娱乐</option>
+						<option value="百货超市">百货超市</option>
+						<option value="生活服务">生活服务</option>
+						<option value="电子通讯">电子通讯</option>
+						<option value="汽修美容">汽修美容</option>
+						<option value="医药保健">医药保健</option>
+						<option value="家居建材">家居建材</option>
+						<option value="教育培训">教育培训</option>
+						<option value="空铺转让">空铺转让</option>
+						<option value="旅行宾馆">旅行宾馆</option>
+						<option value="其他行业">其他行业</option>
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>面&nbsp;&nbsp;&nbsp;&nbsp;积：</label>
+						<input type="text" id="mj" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请填写面积"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>租&nbsp;&nbsp;&nbsp;&nbsp;金：</label>
+						<input type="text" id="zj" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请填写租金"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>区&nbsp;&nbsp;&nbsp;&nbsp;域：</label>
+						<select id="region1">
+						 
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>地&nbsp;&nbsp;&nbsp;&nbsp;址：</label>
+						<input class="inps" type="text" id="detailedaddress" placeholder="请填写详细地址"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>地&nbsp;&nbsp;&nbsp;&nbsp;段：</label>
+						<input class="inps" id="dd" type="text" placeholder="2-16个字"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>转&nbsp;让&nbsp;费：</label>
+						<input type="text" id="zrf" placeholder="请填写转让费"/>
+					</div>
+
+					<div class="upBox">
+						<b>*</b>
+						<label>详细描述：</label>
+						<textarea id="xxms" placeholder="10-800字，如：地段描述、装修情况、交通情况、转让原因是"></textarea>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>联&nbsp;系&nbsp;人：</label>
+						<input type="text" id="lianxiren" placeholder="2-6个字"/>
+						<p style="display: none;" id="typead">转让</p>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>手机电话</label>
+						<input type="text" id="tel" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请手机号码"/>
+					</div>
+					<div class="img-box full">
+						<section class=" img-section">
+							<p class="up-p">作品图片：<span class="up-span">最多可以上传8张图片，马上上传</span></p>
+							<div class="z_photo upimg-div clear">
+								<section class="z_file fl">
+									<img src="img/a11.png" class="add-img">
+									<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+								</section>
+							</div>
+						</section>
+					</div>
+					<aside class="mask works-mask">
+						<div class="mask-content">
+							<p class="del-p ">您确定要删除作品图片吗？</p>
+							<p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+						</div>
+					</aside>
+					<div style="margin-top: 10px;">
+						<button type="button" id="but">立即发布</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--中部end-->
+
+		<!--发布成功-->
+        <div id="issue_succeed">
+			<div class="iss_suced">
+				<i><b class="iconfont icon-dagouwuquan"></b></i>
+				<span>发布成功</span>
+			</div>
+		</div>
+        <!--发布成功end-->
+
+	    <!--底部-->
+	    <div id="base"></div>
+	    <!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/islogin.js"></script>
+<script src="js/imgUp.js"></script>
+<script>
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+
+
+</script>

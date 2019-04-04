@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>出租详情</title>
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+	</head>
+
+	<body>
+
+		<h5>地理位置</h5>
+		<div class="recBox recLeft" style="position: relative; height: 382px;">
+			<div id="container" style="top: 20px;"></div>
+		</div>
+
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+<script>
+		var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [113.389052,23.12707],
+        zoom: 13
+    });
+    var marker = new AMap.Marker({
+        position: map.getCenter(),
+        draggable: true,
+        cursor: 'move',
+        raiseOnDrag: true
+    });
+    marker.setMap(map);
+</script>

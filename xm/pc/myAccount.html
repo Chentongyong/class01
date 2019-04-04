@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的账户</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<link rel="stylesheet" href="css/myAccount.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+		<!--中部-->
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs" style="margin-bottom: 50px;">
+				<div class="mineLeft">
+					<a href="collect.html">
+						<i class="iconfont icon-fav-1"></i>
+						<span>我的收藏</span>
+					</a>
+					<a href="preciseQuery.html">
+						<i class="iconfont icon-query1"></i>
+						<span>精准查询</span>
+					</a>
+					<a href="source.html">
+						<i class="iconfont icon-fabu"></i>
+						<span>我的发布</span>
+					</a>
+					<a href="myAccount.html" class="aStyle">
+						<i class="iconfont icon-30"></i>
+						<span>我的账户</span>
+					</a>
+					<a class="tcdl">
+						<i class="iconfont icon-iconfontguanji"></i>
+						<span>退出登录</span>
+					</a>
+				</div>
+				<div class="mineRight">
+					<div class="mine_top">
+						<div class="top_yuan">
+							<img src="images/collect_03.png" alt="" width="106" height="106" />
+						</div>
+						<div class="top_xinx">
+							<span id="span_id"></span><b>vip</b>
+							<p>会员充值</p>
+						</div>
+					</div>
+					<div class="mine_center">
+						<div class="cenUp">
+							<span class="czs">充值</span>
+							<span class="up_r">余额：<b id="yeq"></b></span>
+						</div>
+						<form action="" method="post" class="mine_form">
+							<div>
+								<label>用户名：</label>
+								<input type="text" class="f_input" name="" id="username" value="" />
+							</div>
+							<div>
+								<label>姓名：</label>
+								<input type="text" class="f_input" name="" id="name" value="" />
+								<span></span>
+							</div>
+							<div class="gender">
+								<label>性别：</label>
+								<input type="radio" id="sex" name="sex"   value="男"/>男 
+								<input type="radio" id="sex"  name="sex" value="女"/>女
+							</div>
+							<div>
+								<button type="button" onclick="uplodmy()">保存</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="member">
+			<div class="memBox">
+				<div class="memUp">
+					<img src="images/vip_06.png" alt="" />
+					<span class="memTitle">名店VIP会员</span>
+					<p>已有<span>N</span>名开店人成功升级</p>
+					<img class="imgs" src="images/vip_03.png" alt="" />
+				</div>
+				<ul>
+					<li>
+						<a href="vipcz.html?price=39">
+							<p>1个月期</p>
+						    <b>￥39</b>
+						    <p class="p_color">购买</p>
+						</a>
+					</li>
+					<li>
+						<a href="vipcz.html?price=105">
+							<p>一个季度</p>
+						    <b>￥105</b>
+						    <p class="p_color">购买</p>
+						</a>
+					</li>
+					<li>
+						<a href="vipcz.html?price=190">
+							<p>半年</p>
+						    <b>￥190</b>
+						    <p class="p_color">购买</p>
+						</a>
+					</li>
+					<li>
+						<a href="vipcz.html?price=300">
+							<p>1年</p>
+						    <b>￥300</b>
+						    <p class="p_color">购买</p>
+						</a>
+					</li>
+				</ul>
+				<div class="memBut">
+					<h4>升级名店VIP会员，独享专属特权</h4>
+					<div class="butBox">
+						<span class="span1">1</span>
+						<span>每天自动更新6次</span>
+						<p>每日我们会为您更新6次，实现你的信息一直排在前面，让您更快的转让或找到您有意向的店面</p>
+					</div>
+					<div class="butBox">
+						<span class="span1">2</span>
+						<span>免费发布信息</span>
+						<p>您可以享有免费发布真实信息，让更多的用户看到您的诚意</p>
+					</div>
+					<div class="butBox">
+						<span class="span1">3</span>
+						<span>优先显示</span>
+						<p>我们会将您的信息成功的展示在列表的前面，让用户跟快的看到你的店铺，找到/转出店铺</p>
+					</div>
+					<div class="butBox">
+						<span class="span1">4</span>
+						<span>查看手机号</span>
+						<p>您可以查看的转店、找店的详细信息，可以查看手机号以及编辑短信，从而进行面对面交流，无需中间商</p>
+					</div>
+				</div>
+			</div>
+			<div class="memFu"></div>
+		</div>
+		<!--中部end-->
+
+		<!--底部-->
+		<div id="base" style="position: relative;"></div>
+		<!--底部end-->
+		<div id="denglu">
+			<div class="denBox">
+				<h4>确定要退出登录?</h4>
+				<a href="javascript:void(0);" class="aStyle" id="tccdl">确定</a>
+				<a href="myAccount.html">取消</a>
+			</div>
+			<div class="zzc"></div>
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/islogin.js"></script>
+<script type="text/javascript" src="js/myAccount.js"></script>

@@ -1,0 +1,117 @@
+.top-dh {
+  width: 100%;
+  background-color: #fff;
+  height: 82rpx;
+  line-height: 82rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  position: fixed;
+  top: 0px;
+}
+
+.top-dh .top-dh-zi {
+  width: 33%;
+  text-align: center;
+}
+
+.top-dh image {
+  width: 22rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
+
+.district {
+  /* display: none; */
+  width: 100%;
+  position: absolute;
+  top: 82rpx;
+}
+
+.itemize1 {
+  position: fixed;
+  width: 94%;
+  left: 3%;
+  height: 1000rpx;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  z-index: 100;
+  top: 82rpx;
+}
+.itemize2 {
+  position: fixed;
+  width: 94%;
+  left: 3%;
+  height: 800rpx;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  z-index: 100;
+  top: 82rpx;
+}
+.item-list{
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.item-zzc{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(120, 120, 120, 0.4);
+  z-index: 10
+}
+
+.listBox {
+  margin-top: 82rpx;
+  width: 94%;
+  padding: 0 3%;
+}
+
+.listBox .listBox-box {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.li-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.itme {
+  font-size: 24rpx;
+}
+
+.box_rBox {
+  display: flex;
+  justify-content: center;
+  margin: 8rpx 0;
+}
+
+.box_rBox .rBox-zi {
+  width: 204rpx;
+  text-align: center;
+  padding: 10rpx 6rpx;
+  background-color: #ccc;
+  margin-right: 22rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

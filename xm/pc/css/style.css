@@ -1,0 +1,15 @@
+.container{width:1200px;margin: 0 auto;left:0;background-color:#ffffff;z-index:9999;position: relative;overflow: hidden;}
+.letter{width:100px;overflow:hidden;line-height:32px;font-size:16px;position:fixed;top:20px;right:10px;text-align:center;display: none;}
+.letter ul{list-style-type:none;}
+.letter ul li{border-bottom:1px solid #e8ecf1;}
+.letter ul li a{text-decoration:none;}
+.city{width:1200px;overflow:hidden;padding-bottom:20px;}
+.city-list{width:100%;overflow:hidden;}
+.city-list .city-letter{color:#0B9AD6;font-size:20px;display:inline-block;padding-top:15px;padding-bottom:5px;border-bottom:1px solid #e8ecf1;width:100%;}
+.city-list a{color:#666;padding:0 10px;height:30px;line-height:30px;cursor:pointer;float: left;}
+.city-list a:hover{color: #0B9AD6;}
+.UISelect{margin-top:5px}
+.hot{margin-top: 10px;border-bottom: 1px solid #eee; padding:5px 0;}
+.hot b{color: #0B9AD6;font-size: 18px;}
+.hot a{font-size: 18px;color: #333;}
+.hot a:hover{color: #0B9AD6;}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/exa_advantage.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">服务优势</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="m_top advantage_up">
+		    	<span>鸽子名店专注于店铺交易，是转店快速、找店专业、招商优质的专店方面的专家。</span>
+		    </div>
+		    <div class="m_top advantage_below">
+		    	<ul>
+		    		<li class="li1">
+		    			<i class="iconfont icon-chengjiao"></i>
+		    			<div class="adv_nei">
+		    				<h5>成交案例</h5>
+		    		        <p>独家十万成交案例</p>
+		    			</div>
+		    		    <a class="mui-icon mui-icon-arrowright" href=""></a>
+		    		</li>
+		    		<li class="li2">
+		    			<i class="iconfont icon-guangfan"></i>
+		    			<div class="adv_nei">
+		    				<h5>信息多</h5>
+		    		        <p>信息全面真实及时</p>
+		    			</div>
+		    		    <a class="mui-icon mui-icon-arrowright"></a>
+		    		</li>
+		    	</ul>
+		    </div>
+		</div>
+	</body>
+</html>
+<script>
+	mui.plusReady(function(){
+		//预加载
+		var city_text = '';
+		window.addEventListener('newsId', function(es) {
+			city_text = es.detail.city_text;
+			//成交案例
+			var detailPage = mui.preload({ url: 'advantage1.html', id: 'advantage1.html' })
+			mui('.advantage_below').on('tap','.li1',function(){
+				mui.fire(detailPage, 'newsId', {city_text: city_text });
+				mui.openWindow({ url: 'advantage1.html', id: 'advantage1.html' });
+			})
+			
+			//信息多
+			var detailPage1 = mui.preload({ url: 'advantage2.html', id: 'advantage2.html' })
+			mui('.advantage_below').on('tap','.li2',function(){
+				mui.fire(detailPage1, 'newsId', {city_text: city_text });
+				mui.openWindow({ url: 'advantage2.html', id: 'advantage2.html' });
+			})
+		})
+	})
+</script>

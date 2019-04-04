@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/accredit/accredit",
+    "pages/index/index",
+    "pages/map/map",
+    "pages/mine/mine",
+    "pages/transfer/transfer",
+    "pages/mine_issue/mine_issue",
+    "pages/wanted/wanted",
+    "pages/member/member",
+    "pages/issue/issue",
+    "pages/tran_issue/tran_issue",
+    "pages/tran_details/tran_details",
+    "pages/wan_details/wan_details",
+    "pages/wan_issue/wan_issue",
+    "pages/balance/balance"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0B9AD6",
+    "navigationBarTitleText": "鸽子名店",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#46B1DF",
+    "backgroundColor": "#eee",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/sy_2.png",
+        "selectedIconPath": "/images/sy_1.png"
+      },
+      {
+        "pagePath": "pages/issue/issue",
+        "text": "发布",
+        "iconPath": "/images/fb_2.png",
+        "selectedIconPath": "/images/fb_1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/my_2.png",
+        "selectedIconPath": "/images/my_1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

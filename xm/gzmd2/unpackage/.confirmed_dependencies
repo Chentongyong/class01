@@ -1,0 +1,592 @@
+{
+  "index.html": {
+    "resources": [
+      "css/index.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "dist/css/mui.picker.css",
+      "dist/js/mui.picker.min.js",
+      "dist/js/jquery.min.js",
+      "images/lunbo2.png",
+      "css/iconfont.css",
+      "dist/js/data.city.js",
+      "images/lunbo1.jpg",
+      "images/lunbo3.png",
+      "images/chjiao.jpg",
+      "images/chjiao2.png",
+      "images/chpin.jpg",
+      "examine.html",
+      "sy.html",
+      "issue.html",
+      "css/sy.css",
+      "js/getCity.js",
+      "js/index.js",
+      "images/chenjiao.jpg",
+      "images/5.png",
+      "images/6.png",
+      "js/ljz.js",
+      "images/logo2.png",
+      "images/13.png",
+      "images/gsjs.png",
+      "images/22.png",
+      "images/21.png",
+      "images/12.png"
+    ],
+    "refer": [
+      "issue.html",
+      "examine.html",
+      "mine.html",
+      "sy.html",
+      "map.html",
+      "sy_assign.html",
+      "mine_details.html",
+      "sy_search.html",
+      "sy_deal.html",
+      "sy_assign2_1.html",
+      "mine_xq.html",
+      "hg.html",
+      "er.html",
+      "sy_carousel1.html",
+      "sy_carousel2.html",
+      "sy_carousel3.html"
+    ]
+  },
+  "issue.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/issue.css",
+      "css/iconfont.css",
+      "js/index.js",
+      "exa_advantage.html"
+    ],
+    "refer": [
+      "issue1.html",
+      "issue3.html",
+      "issue4.html",
+      "issue2.html",
+      "issue5.html",
+      "mine_register.html",
+      "mine.html",
+      "exa_advantage.html",
+      "examine.html",
+      "index.html"
+    ]
+  },
+  "sy.html": {
+    "resources": [
+      "images/chpin.jpg",
+      "images/chjiao2.png",
+      "images/lunbo2.png",
+      "images/lunbo1.jpg",
+      "images/lunbo3.png",
+      "images/chjiao.jpg",
+      "css/index.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/sy.css",
+      "dist/js/jquery.min.js",
+      "dist/js/mui.picker.min.js",
+      "dist/js/data.city.js",
+      "dist/css/mui.picker.css",
+      "js/getCity.js",
+      "css/iconfont.css"
+    ],
+    "refer": [
+      "sy_assign.html",
+      "sy_assign2.html",
+      "mine_details.html",
+      "sy_carousel3.html",
+      "sy_carousel1.html",
+      "pullrefresh_main.html",
+      "sy_carousel2.html"
+    ]
+  },
+  "examine.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/examine.css",
+      "css/iconfont.css",
+      "images/js.jpg",
+      "js/index.js",
+      "images/gsjs.png"
+    ],
+    "refer": [
+      "exa_serve.html",
+      "exa_advantage.html",
+      "issue.html",
+      "mine.html",
+      "index.html"
+    ]
+  },
+  "mine.html": {
+    "resources": [
+      "css/mine.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/index.js",
+      "js/zhifu.js"
+    ],
+    "refer": [
+      "mine_register.html",
+      "mine_cookies.html",
+      "mine_mopp.html",
+      "mine_collect.html",
+      "mine_feedback.html",
+      "mine_cache.html",
+      "issue.html",
+      "index.html",
+      "examine.html"
+    ]
+  },
+  "map.html": {
+    "resources": [
+      "dist/css/mui.picker.css",
+      "dist/js/mui.picker.min.js",
+      "dist/js/jquery.min.js",
+      "dist/js/data.city.js"
+    ]
+  },
+  "exa_serve.html": {
+    "resources": [
+      "css/exa_serve.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "serve1.html",
+      "serve3.html",
+      "serve2.html"
+    ]
+  },
+  "exa_advantage.html": {
+    "resources": [
+      "css/exa_advantage.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/general.css",
+      "issue.html"
+    ],
+    "refer": [
+      "advantage2.html",
+      "advantage1.html",
+      "issue.html"
+    ]
+  },
+  "serve1.html": {
+    "resources": [
+      "css/serve1.css"
+    ]
+  },
+  "serve3.html": {
+    "resources": [
+      "css/serve3.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/general.css"
+    ]
+  },
+  "serve2.html": {
+    "resources": [
+      "css/serve2.css"
+    ]
+  },
+  "issue1.html": {
+    "resources": [
+      "css/issue1.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/issueZ.js",
+      "images/js.jpg",
+      "images/g2.jpg",
+      "images/g3.jpg",
+      "images/chpin.jpg",
+      "images/chjiao2.png",
+      "images/chjiao.jpg",
+      "js/Image_upload.js",
+      "js/issues.js",
+      "dist/js/jquery.min.js"
+    ]
+  },
+  "advantage2.html": {
+    "resources": [
+      "images/gtu1.jpg",
+      "css/advantage2.css",
+      "images/20.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css"
+    ]
+  },
+  "advantage1.html": {
+    "resources": [
+      "images/g2.jpg",
+      "css/advantage1.css",
+      "images/g3.jpg",
+      "images/gtu1.jpg",
+      "images/8.jpg",
+      "images/5.jpg",
+      "images/6.jpg",
+      "images/7.jpg",
+      "images/4.jpg",
+      "images/20.png",
+      "images/18.png",
+      "images/16.png",
+      "images/15.png",
+      "images/17.png",
+      "fonts/mui.ttf",
+      "css/general.css",
+      "images/2.png",
+      "images/1.png",
+      "js/mui.min.js",
+      "images/4.png",
+      "css/mui.min.css",
+      "images/6.png"
+    ]
+  },
+  "issue4.html": {
+    "resources": [
+      "css/issue1.css",
+      "js/issueZ.js",
+      "css/general.css",
+      "js/tpsc.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/issues.js",
+      "js/Image_upload.js",
+      "dist/js/jquery.min.js"
+    ],
+    "refer": [
+      "12345.html"
+    ]
+  },
+  "issue2.html": {
+    "resources": [
+      "css/issue3.css",
+      "js/issueZ.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/general.css",
+      "js/issues.js",
+      "fonts/mui.ttf"
+    ]
+  },
+  "mine_enroll1.html": {
+    "resources": [
+      "css/mine_enroll.css",
+      "js/mui.min.js"
+    ]
+  },
+  "mine_register.html": {
+    "resources": [
+      "css/mine_register.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "mine_enroll1.html",
+      "mine.html"
+    ]
+  },
+  "mine_cookies.html": {
+    "resources": [
+      "css/mine_cookies.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css"
+    ],
+    "refer": [
+      "mine_details.html"
+    ]
+  },
+  "mine_mopp.html": {
+    "resources": [
+      "css/mine_mopp.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "mine_details.html",
+      "mine_details3.html"
+    ]
+  },
+  "mine_collect.html": {
+    "resources": [
+      "css/mine_collect.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "mine_details.html"
+    ]
+  },
+  "mine_feedback.html": {
+    "resources": [
+      "css/mine_feedback.css"
+    ]
+  },
+  "issue5.html": {
+    "resources": [
+      "css/issue1.css",
+      "js/issueZ.js",
+      "css/general.css",
+      "js/Image_upload.js",
+      "js/mui.min.js",
+      "dist/js/jquery.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/issues.js"
+    ]
+  },
+  "mine_cache.html": {
+    "resources": [
+      "css/mine_cache.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "mine_register.html"
+    ]
+  },
+  "mine_details.html": {
+    "resources": [
+      "css/mine_details.css",
+      "js/mui.min.js",
+      "images/chjiao2.png",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css",
+      "images/lunbo2.png",
+      "images/lunbo1.jpg",
+      "images/logo2.png"
+    ]
+  },
+  "sy_assign.html": {
+    "resources": [
+      "css/sy_assign.css",
+      "css/general.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "sy_assign1_1.html",
+      "dist/js/jquery.min.js",
+      "images/11.png",
+      "images/logo2.png",
+      "js/ljz.js",
+      "css/iconfont.css"
+    ],
+    "refer": [
+      "sy_assign1_1.html"
+    ]
+  },
+  "sy_assign2.html": {
+    "resources": [
+      "css/sy_assign2.css",
+      "css/general.css",
+      "sy_assign2_1.html",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "mine_details.html",
+      "sy_assign2_1.html"
+    ]
+  },
+  "sy_carousel3.html": {
+    "resources": [
+      "images/g2.jpg",
+      "css/sy_carousel.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css",
+      "images/js.jpg",
+      "images/13.png"
+    ]
+  },
+  "sy_carousel1.html": {
+    "resources": [
+      "images/g3.jpg",
+      "css/sy_carousel.css",
+      "js/mui.min.js",
+      "images/cpjs.jpg",
+      "css/mui.min.css"
+    ]
+  },
+  "pullrefresh_main.html": {
+    "resources": [
+      "pullrefresh_sub.html",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/sy_assign.css",
+      "css/general.css"
+    ],
+    "refer": [
+      "pullrefresh_sub.html"
+    ]
+  },
+  "pullrefresh_sub.html": {
+    "resources": [
+      "css/sy_assign.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ]
+  },
+  "sy_assign1_1.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/sy_assign.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ]
+  },
+  "sy_assign2_1.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/sy_assign2.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css",
+      "dist/js/jquery.min.js"
+    ],
+    "refer": [
+      "mine_details2.html"
+    ]
+  },
+  "12345.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ]
+  },
+  "sy_carousel2.html": {
+    "resources": [
+      "images/gtu1.jpg",
+      "css/sy_carousel.css",
+      "images/chenjiao.jpg",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/general.css",
+      "images/2.png"
+    ],
+    "refer": [
+      "exa_serve.html",
+      "advantage1.html"
+    ]
+  },
+  "sy_deal.html": {
+    "refer": [
+      "mine_xq.html"
+    ],
+    "resources": [
+      "css/sy_deal.css",
+      "fonts/mui.ttf",
+      "css/general.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/11.png",
+      "images/logo2.png",
+      "js/ljz.js"
+    ]
+  },
+  "sy_search.html": {
+    "resources": [
+      "css/sy_search.css",
+      "css/general.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "sy_assign.html",
+      "sy_assign2_1.html",
+      "search_1.html",
+      "search_2.html"
+    ]
+  },
+  "issue3.html": {
+    "resources": [
+      "css/issue3.css",
+      "js/issueZ.js",
+      "fonts/mui.ttf",
+      "js/issues.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/general.css"
+    ]
+  },
+  "hg.html": {
+    "resources": [
+      "css/sy_assign.css"
+    ]
+  },
+  "er.html": {
+    "resources": [
+      "css/sy_assign2.css"
+    ]
+  },
+  "mine_details2.html": {
+    "resources": [
+      "css/mine_details.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/general.css"
+    ]
+  },
+  "search_1.html": {
+    "resources": [
+      "css/sy_assign.css",
+      "js/ljz.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/general.css"
+    ]
+  },
+  "search_2.html": {
+    "resources": [
+      "css/sy_assign2.css",
+      "css/mui.min.css",
+      "images/11.png",
+      "js/mui.min.js",
+      "dist/js/jquery.min.js",
+      "fonts/mui.ttf",
+      "css/general.css"
+    ]
+  }
+}

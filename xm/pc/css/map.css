@@ -1,0 +1,36 @@
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+.clear {
+	background: none;
+	border: 0;
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.none {
+	display: none;
+}

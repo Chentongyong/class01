@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>公司介绍</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/examine.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true, //启用右滑关闭功能
+				keyEventBind: {
+					backbutton: false, //Boolean(默认true)关闭back按键监听
+					menubutton: false //Boolean(默认true)关闭menu按键监听
+				}
+			})
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">公司介绍</h1>
+		</header>
+		<div class="mui-content">
+			<!--头部-->
+			<div class="introduce">
+				<span class="span_left">快速找铺转铺行家</span>
+				<span class="span_right"><i class="mui-icon mui-icon-phone"></i>联系我们</span>
+			</div>
+			<div id="she_tan">
+				<div class="tan_nei">
+					<p>
+						<i class="mui-icon mui-icon-phone"></i>
+						<span>请选择拨打电话</span>
+					</p>
+					<a href="tel:15902092789">15902092789</a>
+				</div>
+				<div id="sheet1">
+				</div>
+			</div>
+			<script>
+				var she_tan = document.getElementById('she_tan');
+				mui('.introduce').on('tap', '.span_right', function() {
+					she_tan.className = 'she_dis'
+				})
+				mui('#she_tan').on('tap', '#sheet1', function() {
+					she_tan.className = ''
+				})
+			</script>
+			<!--头部end-->
+			<!--服务-->
+			<div class="serve">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a id="serve" href="javascript:;">
+							<i class="iconfont icon-fuwu mui-pull-left"></i>
+							<div class="mui-media-body">
+								<span class="mui-ellipsis">服务介绍</span>
+								<span class="mui-pull-right">提供三大服务<i class="mui-icon mui-icon-arrowright"></i></span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a id="advantage" href="javascript:;">
+							<i class="iconfont icon-youshi mui-pull-left"></i>
+							<div class="mui-media-body">
+								<span class="mui-ellipsis">服务优势</span>
+								<span class="mui-pull-right">四大优势<i class="mui-icon mui-icon-arrowright"></i></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<script>
+				mui('li').on('tap', '#serve', function() {
+					mui.openWindow({
+						url: 'exa_serve.html',
+						id: 'exa_serve.html',
+						style: {},
+						show: {
+							autoShow: true,
+							aniShow: "slide-in-right,",
+							duration: 100
+						},
+						waiting: {
+							autoShow: true,
+							title: "正在加载...",
+							options: {}
+						}
+					})
+				})
+			</script>
+			<!--服务end-->
+			<!--公司介绍-->
+			<div class="About_us" style="margin-bottom: 100px;">
+				<p style="margin-bottom: 0px; font-size: 14px;">
+					(1)鸽子名店于2018年3月在广州成立，注册名为“广州鸽子名店网络科技有限公司”，注册资金300万元人民币。网站经营范围：商铺转让平台；招租平台；房屋写字楼平台，招聘平台。公司于2018年4月开始运营，运营城市高达80多个，国内一二三线城市统一运行。本公司是目前国内唯一一家不收中介费的转让平台。
+				</p>
+				<p style="margin-bottom: 0px; font-size: 14px;">
+					(2)鸽子名店是客户首选的以商铺信息为主的商业地产网站，可以让店铺经营者快速找店或转店，真真正正帮助有意在店铺行业中发展的老板快速解决找店转店问题以及商业店铺的快速招租。本公司也是唯一一个拥有上百万家店面信息，上万人在线找店的平台，可以有效帮助老板省时省力轻松搞定店铺的转让。公司每天平均成功转让出租店铺百家以上，众多的店铺成交案例，对老板其他各式各样的店铺的交易也具有高效的参考价值。
+				</p>
+				<p style="margin-bottom: 20px; font-size: 14px;">
+					(3)鸽子名店的宗旨是：打破传统中介服务模式，省去店铺老板通过传统中介转让店铺效率不高的烦恼，以最快的速度，合理的价位迅速接手或转出店铺。
+				</p>
+				<img src="images/gsjs.png" alt="" width="100%" height="200px"/>
+			</div>
+			<!--公司介绍end-->
+		</div>
+		<!--底部导航-->
+		<nav class="mui-bar mui-bar-tab">
+			<a id="shouye" class="mui-tab-item">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" style="color: #0b9ad6;">
+				<span class="mui-icon mui-icon-chatboxes"></span>
+				<span class="mui-tab-label">公司介绍</span>
+			</a>
+			<a id="fabu" class="mui-tab-item">
+				<span class="mui-icon mui-icon-compose"></span>
+				<span class="mui-tab-label">发布</span>
+			</a>
+			<a id="wode" class="mui-tab-item">
+				<span class="iconfont icon-home"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<!--底部导航end-->
+	</body>
+
+</html>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+	var uid = '';
+	var tel = '';
+	var uids = '';
+	var tels = '';
+	var member = '';
+	var city_text = '';
+	window.addEventListener('newsId', function(e) {
+		tels = e.detail.tel;
+		uids = e.detail.uid;
+		member = e.detail.member;
+		city_text = e.detail.city_text;
+
+		//首页
+		var detailPage1 = mui.preload({
+			url: 'index.html',
+			id: 'index.html'
+		})
+		mui('#shouye').on('tap', 'span', function(e) {
+			mui.fire(detailPage1, 'newsId', {
+				tel: tels,
+				uid: uids,
+				member: member,
+				city_text: city_text
+			});
+			mui.openWindow({
+				url: 'index.html',
+				id: 'index.html'
+			})
+		})
+
+		//发布
+		var detailPage = mui.preload({
+			url: 'issue.html',
+			id: 'issue.html'
+		})
+		mui('#fabu').on('tap', 'span', function(e) {
+			mui.fire(detailPage, 'newsId', {
+				tel: tels,
+				uid: uids,
+				member: member,
+				city_text: city_text
+			});
+			mui.openWindow({
+				url: 'issue.html',
+				id: 'issue.html'
+			})
+		})
+
+		//我的
+		var detailPage2 = mui.preload({
+			url: 'mine.html',
+			id: 'mine.html'
+		})
+		mui('#wode').on('tap', 'span', function(e) {
+			mui.fire(detailPage2, 'newsId', {
+				tel: tels,
+				uid: uids,
+				member: member,
+				city_text: city_text
+			});
+			mui.openWindow({
+				url: 'mine.html',
+				id: 'mine.html'
+			})
+		})
+
+		//服务优势
+		var detailPage3 = mui.preload({
+			url: 'exa_advantage.html',
+			id: 'exa_advantage.html'
+		})
+		mui('li').on('tap', '#advantage', function() {
+			mui.fire(detailPage3, 'newsId', {
+				city_text: city_text
+			});
+			mui.openWindow({
+				url: 'exa_advantage.html',
+				id: 'exa_advantage.html'
+			})
+		})
+	})
+</script>

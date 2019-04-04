@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/sy_deal.css" />
+		<script src="js/mui.min.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">成交客户</h1>
+			<!--<a href="" class="mui-action-back mui-icon mui-icon-home mui-pull-right"></a>-->
+		</header>
+		<div id="refreshContainer" class="mui-content  mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul id="list" class="mui-table-view mui-table-view-chevron">
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="js/ljz.js"></script>
+<script>
+//
+//mui.init();
+//	var uids = '';
+//	window.addEventListener('newsId', function(e) {
+//		uids = e.detail.uid;
+//	})
+
+	var pager = {}; //分页
+	var totalPage; //总页码
+	pullRefresh(pager); //启用上拉下拉 
+	function pullRefresh() {
+			mui("#refreshContainer").pullRefresh({
+				up: {
+					contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+					contentnomore: '', //可选，请求完毕若没有更多数据时显示的提醒内容；
+					callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+						window.setTimeout(function() {
+							getData(pager);
+						}, 500);
+					}
+				},
+				down: {
+					height: 50, //可选,默认50.触发下拉刷新拖动距离,
+					auto: true, //可选,默认false.首次加载自动下拉刷新一次
+					contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+					contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+					contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+					callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+						window.setTimeout(function() {
+							pager['size'] = 15; //条数
+							pager['page'] = 1; //页码      
+							//刷新要先清空父节点里面的子节点
+							var f = document.getElementById("list");
+							var childs = f.childNodes;
+							for(var i = childs.length - 1; i >= 0; i--) {
+								f.removeChild(childs[i]);
+							}
+							getData(pager);
+							mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+						}, 500);
+					}
+				}
+			})
+		}
+		//这个方法是负责向接口请求数据的，你可以选择你喜欢的方式，我这里是直接用的mui.ajax
+		function getData(params) { //params = = pager
+			mui.ajax("http://wwwgezimd.com/Store/storeactions!queryStateal.action?page=" + pager.page + "&rows=" + pager.size, {
+//				data:data,
+				dataType: 'json',
+				type: 'post',
+				//        headers:{'Content-Type':'application/json'},
+				success: function(data) {
+					console.log(data)
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+					//下面这坨都是在拼dom 你可以用jquery 或者是你所熟悉的angular,vue双向绑定
+					//					console.log(data[0].ext);//总条数
+					var returnData = data;
+					var element = document.getElementById("list");
+					var para;　　　
+					var node;
+					var table = document.body.querySelector('.mui-table-view'); //滑动刷新盒子
+					var cells = document.body.querySelectorAll('.mui-table-view-cell'); //滑动刷新盒子
+					for(var i = 0; i < returnData.length; i++) {
+						//              para = document.createElement("li");
+						//              node = document.createTextNode(returnData[i].name)
+						//              para.appendChild(node);
+						//              element.appendChild(para);
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						li.innerHTML=li.innerHTML = '<a id=' + data[i].sid + ' title="' + data[i].name + '"><img width="80px" height="60px" class="mui-media-object mui-pull-left" src="images/logo2.png" guoyu-src="' + data[i].img + '" />' +'<b class="b_box">成功转店</b><div class="mui-media-body"><h5>' + data[i].name + '</h5><p class="mui-ellipsis">' + '非常满意' + '</p></div></a>'
+						table.appendChild(li);
+						fu();
+					}
+//                  console.log(data)
+					//这里很重要，这里获取页码 公式：总条数/每页显示条数
+					totalPage = data[0].ext % pager.size != 0 ?
+						parseInt(data[0].ext / pager.size) + 1 :
+						data[0].ext / pager.size;
+//						console.log(data[0].ext)
+					if(totalPage == pager.page) { //总页码等于当前页码，停止上拉下拉
+						console.log(totalPage == pager.page)
+						mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+//                      mui("#refreshContainer").pullRefresh().setStopped(true);
+					} else {
+						pager.page++;
+						mui('#refreshContainer').pullRefresh().refresh(true);
+//						console.log(totalPage) //总页数
+//						console.log(data[0].ext) //总条数
+					}
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			})
+		}
+		
+</script>

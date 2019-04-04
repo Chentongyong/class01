@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='explain'>
+    <view class='exp-box'>
+      免责声明：平台发布的所有信息（收费、免费）；平台只负责发布、展示，与平台本身无关，平台不负任何责任。
+    </view>
+    <view class='iss-bt'>
+      <text class='iss-bt-bor'></text>
+      <text class='iss-bt-text'>请选择您要发布的栏目</text>
+      <text class='iss-bt-bor'></text>
+    </view>
+    <view class='tob-classify'>
+      <view class='tob-classify-listZi' bindtap='tranIssue'>
+        <image src='../../images/fb_06.png'></image>
+        <text>店铺转让</text>
+      </view>
+      <view class='tob-classify-listZi' bindtap='wanIssue'>
+        <image src='../../images/fb_03.png'></image>
+        <text>店铺选址</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/advantage1.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">成交案例</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="bargain_up">
+		    	<img src="images/20.png" alt=""/>
+		    	<div class="statistics">
+		    		<h5>鸽子名店有统计记录的已成交客户：</h5>
+		    		<span id="cjsl"></span>
+		    	</div>
+		    </div>
+		    <div class="bargain_below">
+		    	<div class="evaluate">
+		    		<h4>客户评价</h4>
+		    	    <div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/15.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/16.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/17.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/18.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/15.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/16.png" /></a></div>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="evaluate" style="margin-top: 20px;">
+		    		<h4>华夏商铺宣传片</h4>
+		    		<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/6.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/1.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/2.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/4.png" /></a></div>
+						    <div class="mui-slider-item"><a href="#"><img src="images/6.png" /></a></div>
+						    <!--支持循环，需要重复图片节点-->
+						    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/1.png" /></a></div>
+						</div>
+					</div>
+		    	    </div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+</html>
+<script>
+	var cjsl = document.getElementById('cjsl');
+	mui.plusReady(function(){
+		window.addEventListener('newsId', function(es) {
+			mui.ajax({
+				url:'http://wwwgezimd.com/Store/storeactions!Stateal.action',
+				type:'post',
+				async: true,
+			    dataType: 'json',
+			    crossDomain: true, //强制使用5+跨域
+			    timeout:'10000',
+				success:function(data){
+					cjsl.innerHTML = '<b>'+data+'</b>家';
+				},
+				error:function(xhr, type, errorThrown){
+					mui.toast("网络延迟")
+				}
+			});
+		})
+	})
+</script>

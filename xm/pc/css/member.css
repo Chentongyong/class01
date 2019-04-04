@@ -1,0 +1,56 @@
+/*会员*/
+.memBox{
+	width: 1100px;
+	margin: 60px auto 84px auto;
+	text-align: center;
+}
+.memBox h4{
+	width: 242px;
+	height: 62px;
+	border: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	border-radius: 25px;
+	font-size: 24px;
+	line-height: 62px;
+	color: #333;
+	margin: 0 auto 64px auto;
+}
+.mem_top{
+	margin-bottom: 64px;
+}
+.mem_top .topBox{
+	width: 416px;
+	padding: 30px 50px;
+	height: 168px;
+	display:inline-block;
+	vertical-align: top;
+	border: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	border-radius: 25px;
+}
+.mem_top .topBox h5{
+	width: 73px;
+	font-size: 18px;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	color: #333;
+	border-bottom: 2px solid #333;
+}
+.mem_top .topBox span{
+	display: block;
+	margin: 10px 0;
+}
+.mem_top a{
+	display: inline-block;
+	width: 162px;
+	height: 68px;
+	line-height: 68px;
+	background: #0B9AD6;
+	color: #FFF;
+	border-radius: 10px;
+	margin-right: 60px;
+	font-size: 18px;
+}
+.memBox a:nth-child(5){
+	margin-right:0px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>公司介绍</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/aboutUs.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+
+		<!--中部-->
+		<div class="wids" style="padding-bottom: 150px;">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html" class="a_back">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs">
+				<div class="aboLeft">
+					<a href="aboutUs.html" class="a_color">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>关于名店</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-huiyuanfazhanqushi"></i>
+						<span>发展历程</span>
+					</a>
+					<a href="contactUs.html">
+						<i class="iconfont icon-dianhua"></i>
+						<span>联系我们</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-huiyuan"></i>
+						<span>战略伙伴</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-jiarujiazu"></i>
+						<span>加入我们</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>员工风采</span>
+					</a>
+				</div>
+				<div class="aboRight">
+					<div class="rightBox">
+						<h5>关于我们</h5>
+						<p>广州鸽子名店网络科技有限公司（简称“名店”）， 专业于提升实体商铺，开店，转店效率的广告平台公司， 于2018年3月创立，总部设在广州，名店是中国领先的移动互联网商铺 交易平台，是创造精准找店、快速转店、打破了传统转店行业，不給中介任何机会， 把传统转店慢，开店难的问题--解决。 经过几年研究用新技术，新方法推动行业互联网的效率进化，打造没有中介环节的网络平台。
+						</p>
+					</div>
+					<div class="rightBox">
+						<h5>企业使命</h5>
+						<p>成为中介的终结者！！！</p>
+						<p>
+							公司用平台最新技术方法与专业技能， 整合找店，转店所有的数据与资源， 让每个准备开店或正在经营的店主， 需要时可一呼百应以最快的方式找到自己最适合的店铺， 最优越的价格转出，既保证了客户的利益， 还可以省下一大笔中介费。
+						</p>
+					</div>
+					<div class="rightBox">
+						<h5>公司的愿景</h5>
+						<p>创建出一个最好的网络推广平台</p>
+						<p>
+							让开店与转店不再是痛苦的事情，让客户一闪电般的速度找到自己心仪的店铺。
+						</p>
+					</div>
+				</div>
+
+				<div id=""></div>
+			</div>
+		</div>
+		<!--中部end-->
+
+		<!--底部-->
+		<div id="base"></div>
+		<!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/islogin.js"></script>
+<script>
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+	$('.aboLeft a').click(function() {
+		$(this).addClass('a_color').siblings('a').removeClass('a_color');
+	})
+</script>

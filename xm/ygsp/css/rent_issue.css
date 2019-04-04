@@ -1,0 +1,135 @@
+body{
+	background: #fff;
+}
+.issUp{
+	background: #fff;
+	font-size: 18px;
+	height: 50px;
+	margin-top: 70px;
+	display: flex;
+}
+.issUp span{
+	width: 375px;
+	height: 50px;
+	line-height: 52px;
+	/*text-indent: 10px;*/
+	margin-left: 25px;
+}
+.issUp .sps_back{
+	width: 385px;
+	height: 45px;
+	line-height: 45px;
+	color: #0B9AD6;
+	display: block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #0B9AD6;
+}
+.issUp a{
+	color: #0B9AD6;
+}
+
+#uploading{
+	margin-top: 22px;
+}
+#uploading .upBox{
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #333;
+}
+#uploading .upBox label{
+	width: 70px;
+	text-align: center;
+	padding: 10px 0;
+	display: inline-block;
+	vertical-align: top;
+}
+#uploading .upBox b{
+	padding: 10px 0;
+	display: inline-block;
+	vertical-align: top;
+	color: #0B9AD6;
+}
+#uploading .upBox input{
+	padding: 10px 0;
+	width: 200px;
+	text-indent: 10px;
+	border-style:none;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	 outline: none;
+}
+#uploading .upBox .inps{
+	width: 400px;
+}
+#uploading .upBox select{
+	padding: 10px 0;
+	width: 200px;
+	text-indent: 10px;
+	border-style:none;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	outline: none;
+}
+#uploading .upBox textarea{
+	width: 600px;
+	height: 206px;
+	padding: 10px;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+}
+.upBox p{
+	color: #666;
+}
+.upBox h4{
+	color: #0B9AD6;
+	padding: 5px 0 20px 0;
+	
+}
+.upBox .upImg{
+	width: 120px;
+	height: 120px;
+	position: relative;
+	left: 100px;
+	overflow: hidden;
+	border: 1px solid #eee;
+}
+.upBox .upImg span{
+	display: block;
+	width: 120px;
+	text-align: center;
+}
+.upBox .upImg .upImg_jia{
+	width: 120px;
+	height: 90px;
+	line-height: 90px;
+	font-size: 36px;
+	text-align: center;
+}
+#uploading .upBox .upImg input{
+	width: 120px;
+	height: 140px;
+	position: absolute;
+	top: -35px;
+	overflow: hidden;
+	border: 1px solid white;
+	padding: 0;
+}
+
+/*.upBox .upImg input[type="file"] {
+  color: transparent;
+}*/
+
+#uploading button{
+	width: 240px;
+	height: 52px;
+	border: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 52px;
+	background: #0B9AD6;
+	color: #fff;
+	font-size: 18px;
+	position: relative;
+	left: 100px;
+}

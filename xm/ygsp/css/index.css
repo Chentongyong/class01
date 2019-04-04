@@ -1,0 +1,184 @@
+/*轮播图*/
+
+.lunbo {
+	display: flex;
+	justify-content: space-between;
+    padding: 20px 0 10px 0;
+}
+
+#carousel {
+	width: 900px;
+	margin: 0 auto;
+}
+
+#carousel .box_up {
+	width: 900px;
+	height: 420px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+
+#carousel ul {
+	position: absolute;
+	bottom: 20px;
+	left: 45%;
+}
+
+#carousel ul li {
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 50%;
+}
+
+#carousel ul li.on {
+	background: #0B9AD6;
+}
+
+#carousel img {
+	width: 100%;
+	height: 420px;
+	display: block;
+}
+
+#carousel .w {
+	width: 36px;
+	height: 100px;
+	line-height: 100px;
+	background: rgba(102, 102, 102, .4);
+	opacity: .6;
+	text-align: center;
+	display: none;
+}
+
+#carousel .w i {
+	padding: 0;
+	margin: 0;
+	font-size: 36px;
+	color: #fff;
+}
+
+#carousel .w.w_l {
+	position: absolute;
+	bottom: 150px;
+	left: 10px;
+}
+
+#carousel .w.w_r {
+	position: absolute;
+	bottom: 150px;
+	right: 10px;
+}
+
+
+/*轮播图end*/
+
+.advertising {
+	width: 280px;
+	background-color: #fff;
+	margin-left: 20px;
+}
+.advertising .adveUp{
+	margin-left: 10px;
+}
+.advertising .adveUp h4{
+	padding: 14px 0;
+	font-size: 16px;
+	color: #0B9AD6;
+	border-bottom: 1px solid #0B9AD6 ;
+}
+.myscroll {
+	width: 260px;
+	height: 352px;
+	margin: 20px auto 0 auto;
+	line-height: 26px;
+	font-size: 12px;
+	overflow: hidden;
+	padding: 0 20px;
+}
+
+.myscroll li {
+	width: 100%;
+	margin-bottom: 10px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    right: 10px;
+}
+.myscroll a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*商铺*/
+.shop{
+	padding: 20px 0;
+}
+.shop .shopUP{
+	padding: 20px 0;
+	font-size: 21px;
+	color: #000;
+	font-weight: 600;
+}
+.shop .shopUP b{
+	color: #0B9AD6;
+}
+.shop ul{
+	display: flex;
+	flex-wrap: wrap; 
+}
+.shop ul li{
+	padding: 5px;
+	border: 1px solid #eee;
+	width: 200px;
+	margin-right: 35px;
+	margin-bottom: 40px;
+	box-sizing: border-box;
+}
+.shop ul li:hover{
+	border: 1px solid #0B9AD6;
+	opacity: .6;
+}
+.shop ul li:nth-child(5n){
+	margin-right: 0;
+}
+.shop ul li:nth-child(n+6){
+	margin-bottom: 0;
+}
+.shop ul li img{
+	width: 100%;
+}
+.shop ul li a h5{
+	font-size: 18px;
+	color: #000;
+	height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 18px;
+}
+.shop ul li a b{
+	font-size: 18px;
+	color: #ff0000;
+}
+.shop ul li a .aBox{
+	font-size: 14px;
+	padding: 10px;
+}
+.shop ul li a .aBox .aBox-zi{
+	display: flex;
+	justify-content: space-between;
+}
+.aBox-zi i{
+	color: #ff0000;
+}
+/*商铺end*/

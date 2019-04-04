@@ -1,0 +1,56 @@
+/*公司介紹*/
+.boxs{
+	background: #fff;
+	padding-bottom: 20px;
+}
+.boxs .aboLeft{
+	display: inline-block;
+	width: 256px;
+	text-align: center;
+	background: #E5E5E5;
+	font-size: 18px;
+}
+.boxs .aboLeft a{
+	padding: 15px 0;
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+.boxs .aboLeft a:hover{
+	background: #0B9AD6;
+	color: #fff;
+}
+.aboLeft a i{
+	font-size: 24px;
+	position: relative;
+	top: 3px;
+	right: 3px;
+}
+.boxs .aboLeft .a_color{
+	background: #0B9AD6;
+	color: #fff;
+}
+.boxs .aboRight{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+	width: 924px;
+}
+.boxs .aboRight .rightBox{
+	margin-bottom: 20px;
+}
+.boxs .aboRight .rightBox h5{
+	font-size: 18px;
+	border-bottom: 1px solid #0B9AD6;
+	
+}
+.boxs .aboRight .rightBox img{
+	margin-top: 30px;
+	width: 924px;
+	height: 428px;
+}
+.rightBox p{
+	padding-top: 10px ;
+}
+

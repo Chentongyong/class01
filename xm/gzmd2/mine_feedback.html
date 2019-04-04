@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>意见反馈</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_feedback.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="feedback" action="" method="post">
+		    	<p>感谢您提出的宝贵意见和建议，您的每一条意见都将帮助我们进步</p>
+		    	<textarea id="text" name="" autoFocus></textarea>
+		    	<div class="fee_sm">
+		    		删除
+		    		<i id="i_sc" class="mui-icon mui-icon-close"></i>
+		    	</div>
+		    	<button type="button" data-loading-text="提交中" class="mui-btn">确认</button>
+		    </form>
+		</div>
+		
+	</body>
+
+</html>
+<script>
+	var text = document.getElementById('text');
+	mui('.feedback').on('tap','.fee_sm',function(){
+		text.value = ''
+	})
+	var tel = '';
+	var member = '';
+	var uid = '';
+	window.addEventListener('newsId',function(m){
+		tel = m.detail.tel;
+		uid = m.detail.uid;
+		member = m.detail.member;
+	})
+	mui('.feedback').on('tap', 'button', function(e) {
+		var information = document.getElementById('text').value;
+		mui.ajax({
+			url:'http://wwwgezimd.com/Store/fbApp!addApp.action?feedback.information='+information,
+			type:'post',
+			async: true,
+		    dataType: 'json',
+		    crossDomain: true, //强制使用5+跨域
+		    timeout:'10000',
+			success:function(data){
+				if(data!=null){
+					alert('提交成功');
+				}
+			},
+			error:function(xhr, type, errorThrown){
+				alert("提交失败");
+			}
+		});
+	    mui(this).button('loading');
+	    setTimeout(function() {
+	        mui(this).button('reset');
+	        var detailPage = mui.preload({url:'mine.html',id:'mine.html'})
+	        mui.fire(detailPage,'newsId',{tel:tel,uid:uid,member:member});
+	        mui.openWindow({url:'mine.html',id:'mine.html'})
+	    }.bind(this), 2000);
+	});
+</script>

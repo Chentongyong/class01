@@ -1,0 +1,19 @@
+.boxs{
+	padding: 30px 0 80px 0;
+	background-color: #fff;
+	font-size: 14px;
+}
+.boxs .box-zis{
+	margin-bottom: 20px;
+}
+.boxs .box-zis h4{
+	line-height: 40px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #0B9AD6;
+}
+.boxs .box-zis b{
+  display: block;
+  font-size: 16px;	
+  margin-bottom: 20px;
+}

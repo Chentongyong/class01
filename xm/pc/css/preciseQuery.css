@@ -1,0 +1,131 @@
+.mineLeft{
+	width: 180px;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: 100px;
+}
+.mineLeft a i{
+	font-size: 24px;
+	/*color: #666;*/
+	margin-left: 40px;
+}
+.mineLeft a{
+	display: block;
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	font-size: 18px;
+	background: #fff;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.mineLeft a.aStyle{
+	background: #0B9AD6;
+	color: #fff;
+}
+.mineRight{
+	width: 900px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+}
+.formBox{
+	border-bottom: 1px solid #eee;
+	position: relative;
+	padding-bottom: 20px;
+	font-size: 12px;
+	position: relative;
+}
+.formBox .sublevel{
+	width: 100%;
+	padding: 10px 0;
+}
+.sublevel label{
+	font-size: 18px;
+}
+.sublevel .sub_type{
+	display: inline-block;
+}
+.sublevel .sub_type span{
+	padding: 10px 15px;
+}
+.sublevel .sub_type span.s_color{
+	color: #0B9AD6;
+}
+.sublevel .sub_message{
+	width: 600px;
+	display: inline-block;
+}
+.sublevel select{
+	width: 150px;
+	height: 34px;
+	outline:none;
+	border: 1px solid #eee;
+	color: #666;
+}
+.sublevel .sub_message:nth-child(2){
+	margin-left: 30px;
+}
+.sub_message input{
+	width: 400px;
+	height: 34px;
+	outline:none;
+	text-indent: 10px;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.sub_message span{
+	margin-left: 10px;
+}
+.formBox button{
+	width: 100px;
+	height: 44px;
+	border: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	background: #0B9AD6;
+	color: #fff;
+	font-size: 18px;
+	padding: 10px 0;
+	position: absolute;
+    right: 100px;
+    top: 60px;
+    outline:none;
+}
+
+.mineRight ul li{
+	padding: 20px 0;
+	position: relative;
+	border-bottom: 1px solid #eee;
+}
+.mineRight ul li a img{
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+}
+.mineRight ul li a b{
+	font-size: 18px;
+	color: #0B9AD6;
+}
+.mineRight ul li a .riBox{
+	width: 720px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
+.riBox h4{
+	text-overflow: ellipsis;
+	overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+}
+.riBox .r_subset{
+	padding: 3px 0;
+}
+
+.page{
+	width: 600px;
+	margin: 50px auto;
+	height: 30px;
+	text-align: center;
+}

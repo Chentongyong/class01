@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>店铺转让</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/rent.css" />
+		<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+
+		<div class="wids" style="margin-top: 30px;">
+			<div class="center">
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>行业</b>
+					</div>
+					<ul class="tabRight hangye">
+						<li class="col">不限</li>
+						<li>餐饮美食</li>
+						<li>美容美发</li>
+						<li>服饰鞋包</li>
+						<li>百货超市</li>
+						<li>商城专柜</li>
+						<li>旅馆公寓</li>
+						<li>休闲娱乐</li>
+						<li>医药保健</li>
+						<li>生活服务</li>
+						<li>汽车美容</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>地区</b>
+					</div>
+					<ul id="quyu" class="tabRight quyu">
+						<li class="col">不限</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>面积</b>
+					</div>
+					<ul class="tabRight pingfang">
+						<li class="col">不限</li>
+						<li>20m²以下</li>
+						<li>20m²-50m²</li>
+						<li>50m²-100m²</li>
+						<li>100m²-200m²</li>
+						<li>200m²-500m²</li>
+						<li>500m²以上</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>租金</b>
+					</div>
+					<ul class="tabRight zujing">
+						<li class="col">不限</li>
+						<li>2千元以下</li>
+						<li>2-5千元</li>
+						<li>5千-1万元</li>
+						<li>1-2万元</li>
+						<li>2-5万元</li>
+						<li>5万元以上</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="widMin centerBox">
+				<div class="box_tong">
+					<div class="boxTop">
+						<b>相关店铺</b>
+						(<span id='ztsBox'></span>)
+					</div>
+					<ul id="tbdy" class="boxLeft">
+					</ul>
+					<div class="page">
+						<div><span colspan="9"><div id="pageBar"></div></span></div>
+					</div>
+
+				</div>
+
+				<div class="box_tong boxRight">
+					<h5>相似店铺推荐</h5>
+					<div id="ggBox">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--底部导航-->
+		<div id="tabbar" style="margin-top: 71px;"></div>
+		<!--底部导航end-->
+	</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/rent.js"></script>

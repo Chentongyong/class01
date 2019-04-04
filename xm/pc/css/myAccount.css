@@ -1,0 +1,245 @@
+.mineLeft{
+	width: 180px;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: 100px;
+}
+.mineLeft a i{
+	font-size: 24px;
+	/*color: #666;*/
+	margin-left: 40px;
+}
+.mineLeft a{
+	display: block;
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	font-size: 18px;
+	background: #fff;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.mineLeft a.aStyle{
+	background: #0B9AD6;
+	color: #fff;
+}
+.mineRight{
+	width: 900px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+}
+.mineRight .mine_top{
+ border-bottom: 1px solid #eee;
+ padding: 10px 0;
+}
+.mineRight .mine_top .top_yuan{
+	width: 106px;
+	height: 106px;
+	border: 1px solid #D6C0C0;
+	background: #D6C0C0;
+	border-radius: 50%;
+	box-sizing: border-box;
+	display: inline-block;
+	overflow: hidden;
+}
+.mineRight .mine_top .top_xinx{
+	display: inline-block;
+	height: 66px;
+	padding: 30px 0 30px 30px;
+	vertical-align: top;
+	color: #593b3b;
+	font-size: 18px;
+}
+.mineRight .mine_top .top_xinx b{
+	width: 40px;
+	height: 16px;
+	line-height: 16px;
+	background: #999999;
+	display: inline-block;
+	text-align: center;
+	font-size: 12px ;
+	color: #fff;
+	border-radius: 25px;
+	position: relative;
+	left: 20px;
+	top: -2px;
+}
+.mineRight .mine_top .top_xinx b.b_style{
+	background: #F4D31D;
+}
+.mineRight .mine_top .top_xinx p{
+	margin-top: 10px;
+}
+.mineRight .mine_center{
+	position: relative;
+	margin-top: 20px;
+}
+.mine_center .cenUp{
+	padding-bottom: 15px;
+}
+.mine_center .cenUp .czs{
+	padding: 10px 20px;
+    background: #0B9AD6;
+    color: #fff;
+    border-radius: 10px;
+}
+.mine_center .cenUp .up_r{
+	margin-left: 300px;
+}
+.mine_center .mine_form{
+	width: 320px;
+	margin-top: 80px;
+	padding: 0 290px;
+	font-size: #666;
+}
+.mine_form label{
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	display: inline-block;
+	text-align: right;
+}
+.mine_form .f_input{
+	width: 220px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	display: inline-block;
+	outline:none;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	text-indent: 10px;
+}
+.mine_form .i_back1{
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
+	display: inline-block;
+	background: url(../images/anniu.png) 0px 0px no-repeat;
+	background-size: 100%;
+}
+.mine_form .i_back1.i_back2{
+	background: url(../images/anniu2.png) 0px 0px no-repeat;
+}
+.mine_form button{
+	width: 200px;
+	height: 40px;
+	margin-top: 50px;
+	line-height: 40px;
+	text-align: center;
+	position: relative;
+	font-size: 18px;
+	color: #fff;
+	background: #0B9AD6;
+	border: 1px solid #0B9AD6;
+	left: 60px;
+}
+#member{
+	position: relative;
+	display: none;
+}
+#member .memBox{
+	position: fixed;
+	width: 742px;
+	height: 760px;
+	padding: 0 62px;
+	background: #fff;
+	z-index: 100;
+	left: 25%;
+	top: 15%;
+}
+#member .memFu{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(120,120,120,.4);
+	z-index: 10;
+}
+.memBox .memUp{
+	padding: 14px 0 24px 0;
+	text-align: center;
+	color: #333;
+}
+.memUp .memTitle{
+	font-size: 24px;
+}
+.memUp p{
+	font-size: 18px;
+	margin-top: 14px;
+}
+.memUp .imgs{
+	position: absolute;
+    top: -5px;
+    left: -7px;
+}
+.memBox ul{
+	height: 108px;
+	overflow: hidden;
+	position: relative;
+}
+.memBox ul li{
+	width: 175px;
+	height: 108px;
+	float: left;
+	margin-right: 13px;
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+}
+.memBox ul li a{
+	color: #fff;
+}
+
+.memBox ul li:nth-child(4){
+	margin-right: 0;
+}
+.memBox ul li b{
+	color: #a24a02;
+}
+.memBox ul li .p_color{
+	color: #fff;
+	background: #0B9AD6;
+	height: 42px;
+	border-radius: 10px;
+	line-height: 42px;
+}
+.memBox .memBut{
+	width: 596px;
+	height: 336px;
+	border: 1px solid #0B9AD6;
+	margin: 50px auto 0 auto;
+	border-radius: 10px;
+	padding: 10px;
+}
+.memBut h4{
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+.memBut .butBox{
+	margin-bottom: 28px;
+}
+.memBut span{
+	font-size: 16px;
+}
+.memBut p{
+	font-size: 12px;
+	margin-top: 10px;
+	text-indent: 23px;
+}
+.memBut .span1{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	line-height: 16px;
+	border: 1px solid #0B9AD6;
+	background: #0B9AD6;
+	font-size: 14px;
+	border-radius: 50%;
+	color: #fff;
+}

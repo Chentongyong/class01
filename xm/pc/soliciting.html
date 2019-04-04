@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺求租</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<link rel="stylesheet" href="css/soliciting.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+	     <div id="header"></div>
+		<!--顶部导航end-->
+
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html" class="a_back" id="shangpuqiuzu">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="center">
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>行业</b>
+					</div>
+					<ul class="tabRight hangye" id="hangye">
+						<li class="col">不限</li>
+						<li>餐饮美食</li>
+						<li>美容美发</li>
+						<li>服饰鞋包</li>
+						<li>百货超市</li>
+						<li>商城专柜</li>
+						<li>旅馆公寓</li>
+						<li>休闲娱乐</li>
+						<li>医药保健</li>
+						<li>生活服务</li>
+						<li>汽车美容</li>
+						<li>临街门面</li>
+						<li>商业街商铺</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>地区</b>
+					</div>
+					<ul class="tabRight quyu" id="quyu">
+						<li class="col">不限</li><!--  onclick="mohuchaxun()" -->
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>面积</b>
+					</div>
+					<ul class="tabRight pingfang" id="minaji">
+						<li class="col">不限</li>
+						<li>20m²以下</li>
+						<li>20m²-50m²</li>
+						<li>50m²-100m²</li>
+						<li>100m²-200m²</li>
+						<li>200m²-500m²</li>
+						<li>500m²以上</li>
+					</ul>
+					<div class="tabFu tabFu1">
+						<input type="text" id="txt1"/>&nbsp;m²-&nbsp;<input type="text" id="txt2"/>m²
+						<button type="button" id="btn1" onclick="shaixuan1()">筛选</button>
+					</div>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>租金</b>
+					</div>
+					<ul class="tabRight zujing" id="zujin">
+						<li class="col">不限</li>
+						<li>2千元以下</li>
+						<li>2-5千元</li>
+						<li>5千-1万元</li>
+						<li>1-2万元</li>
+						<li>2-5万元</li>
+						<li>5万元以上</li>
+					</ul>
+					<div class="tabFu tabFu2">
+						<input type="text" id="txt3"/>&nbsp;-&nbsp;<input type="text" id="txt4"/>元
+						<button type="button" onclick="shaixuan2()">筛选</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="boxs centerBox">
+				<div class="box_tong">
+					<ul id="tbdy" class="boxLeft">
+						<!-- <li>
+							<a target="_blank" href="soli_details.html">
+								<div class="le_details">
+									<h5>天河东圃商业街招商</h5>
+									<div>
+										<span>商业街商铺</span>
+										<span>300m²</span>
+										<span class="post_right1"><b>20000</b>元/月</span>
+									</div>
+									<div>
+										<span>番禺-大石</span>
+									</div>
+								</div>
+							</a>
+						</li> -->
+					</ul>
+					<div class="page">
+						<div><span colspan="9"><div id="pageBar"></div></span></div>
+					</div>
+
+				</div>
+
+				<div class="box_tong boxRight">
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+
+	    <!--底部-->
+	    <div id="base"></div>
+	    <!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/soliciting.js"></script>
+<script src="js/islogin.js"></script>
+<script>
+	quyu();
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+</script>
+

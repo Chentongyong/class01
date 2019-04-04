@@ -1,0 +1,33 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+     <text class="log-item">{{index + 1}}. {{log}}</text> 
+  </block>
+  <text>index.html-------------首页</text>
+  <text>map.html---------------选择城市</text>
+  <text>transfer.html----------商铺转让</text>
+  <text>wanted.html------------商铺出租</text>
+  <text>wan_details.wxml-------转让详情</text>
+  <text>tran_details.wxml------出租详情</text>
+  <text>mine.wxml--------------我的</text>
+  <text>mine_issue.wxml--------我的发布信息</text>
+  <text>balance.wxmll----------账户充值</text>
+  <text>member.wxml------------会员充值</text>
+  <text>issue.wxml-------------发布信息</text>
+  <text>tran_issue.wxml--------商铺求租发布</text>
+  <text>wan_issue.wxml--------商铺转让发布</text>
+</view> -->
+
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

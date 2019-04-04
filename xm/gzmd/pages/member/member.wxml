@@ -1,0 +1,74 @@
+<view class='container'>
+  <view class='memBox'>
+    <view class='mem-header'>
+      <text>名店VIP会员套餐</text>
+    </view>
+
+    <view class=''>
+      <view wx:for="{{pres}}" wx:for-item="item" wx:key="{{Ids}}" bindtap='click' data-text="{{item.je}}" data-id="{{index}}" class="member-t {{index == id?'mem-types':'mem-type'}}" >
+        <text class='type-text'>{{item.preX}}</text>
+        <text>{{item.sj}}</text>
+        <view class='mem-pf'>
+          <text>￥</text>
+          <text class='pf-text'>{{item.je}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='intrBox'>
+    <view class='introduce'>
+      <view class='int-bt'>
+        <text>升级名店VIP会员，独享专属权</text>
+      </view>
+      <view class='int-box'>
+        <view class='bt-types'>
+          <view>
+            <text class='bt-list'>1</text>
+            <text class='bt-list-text'>每天自动更新6次</text>
+          </view>
+          <view class='list-zi'>
+            <text>每日我们会为您更新6次，实现你的信息一直排在前面，让你更快的转让或者找到您有意向的店铺</text>
+          </view>
+        </view>
+        <view class='bt-types'>
+          <view>
+            <text class='bt-list'>2</text>
+            <text class='bt-list-text'>免费发布信息</text>
+          </view>
+          <view class='list-zi'>
+            <text>您可以享有免费发布真实信息，让更多的用户看到您的诚意</text>
+          </view>
+        </view>
+        <view class='bt-types'>
+          <view>
+            <text class='bt-list'>3</text>
+            <text class='bt-list-text'>代理服务</text>
+          </view>
+          <view class='list-zi'>
+            <text>899代理:把店面转出;成交为止 服务内容(在线平台推广,介绍客户,撮合价格,到成交)</text>
+          </view>
+        </view>
+        <view class='bt-types'>
+          <view>
+            <text class='bt-list'>4</text>
+            <text class='bt-list-text'>全权代理</text>
+          </view>
+          <view class='list-zi'>
+            <text>2899全权:商铺全权交由乙方代理. 服务内容:(筛选客户,带客户上门,商定价格)直到成交</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='base'>
+    <view class='base-je'>
+      <text>总计</text>
+      <text class='base-text'>￥{{money}}</text>
+    </view>
+    <view class='base-but' bindtap='pays'>
+      <text>确认支付</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+.advantage_up{padding:10px 15px;font-size:16px;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.advantage_up span{display:block;text-indent:2em;line-height:25px}
+.advantage_below ul{padding:0}
+.advantage_below ul li{padding:10px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;position:relative}
+.advantage_below ul li .adv_nei,i{display:inline-block}
+.advantage_below ul li .adv_nei{width:70%;margin-left:20px}
+.advantage_below i{height:60px;width:60px;line-height:60px;font-size:40px;background:#0b9ad6;color:#fff;text-align:center}
+.advantage_below .adv_nei h5,p{margin:0;position:relative;top:5px}
+.advantage_below .adv_nei h5{font-size:24px;color:#000}
+.advantage_below .adv_nei p{font-size:16px;margin-top:5px}
+.advantage_below a{font-size:36px;position:absolute;top:20px;right:10px}

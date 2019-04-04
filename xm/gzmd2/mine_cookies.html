@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的浏览记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_cookies.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">我的浏览记录</h1>
+		    <a class="mui-icon mui-pull-right">清空</a>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view" id='liulan'>
+			    
+		    </ul>
+		</div>
+	</body>
+</html>
+<script>
+ mui.plusReady(function(){
+	var cw = plus.webview.currentWebview();
+	uid = cw.uid;
+	member = cw.member;
+	mui.ajax({
+		url:'http://wwwgezimd.com/Store/appclt!liulang.action?u.uid='+uid,
+		type:'post',
+		async: true,
+	    dataType: 'json',
+	    crossDomain: true, //强制使用5+跨域
+	    timeout:'10000',
+		success:function(data){
+			if(data!=null){
+				for(var i = 0; i<data.length;i++){
+					var li = document.createElement('li');
+//					li.setAttribute('class','mui-table-view-cell');
+                    li.className = 'mui-table-view-cell mui-media';
+					li.innerHTML += '<a id="'+data[i].sid+'" title="'+data[i].sname+'"><p>20小时前</p>'
+					+'<span>'+data[i].sname+'</span><p>'+data[i].typead+'</p></a>';
+					console.log(data[i].typead)
+					liulan.appendChild(li);
+				}
+			}
+			//跳转详情页
+			var detailPage = mui.preload({ url: 'mine_details.html', id: 'mine_details.html' })
+			mui('li').on('tap','a',function(){
+				var sid = this.getAttribute('id');
+				mui.fire(detailPage, 'newsId', {sid: sid,member: member,uid:uid});
+				mui.openWindow({ url: 'mine_details.html', id: 'mine_details.html' })
+			})
+			
+			//清空
+			mui('header').on('tap','.mui-pull-right',function(){
+				mui.ajax({
+					url:'http://wwwgezimd.com/Store/appclt!deleteall.action?u.uid='+uid,
+					type:'post',
+					async: true,
+				    dataType: 'json',
+				    crossDomain: true, //强制使用5+跨域
+				    timeout:'10000',
+					success:function(data){
+						var wobj = plus.webview.getWebviewById("mine_cookies.html");
+						wobj.reload(true);
+						console.log("空空如也")
+					},
+					error:function(xhr, type, errorThrown){
+						mui.toast("网络延迟")
+					}
+				});
+			})
+		},
+		error:function(xhr, type, errorThrown){
+			mui.toast("网络延迟")
+		}
+	});
+})
+</script>

@@ -1,0 +1,177 @@
+/*妫ｆ牠銆�*/
+
+
+/*缁鐎�*/
+
+.center {
+	width: 1200px;
+	height:880px;
+	margin: 0 auto;
+	background: #fff;
+	padding-bottom: 50px;
+	position: relative;
+}
+
+.cen_tab {
+	width: 888px;
+	height: 92px;
+	position: relative;
+}
+
+.cen_tab span {
+	width: 296px;
+	height: 92px;
+	text-align: center;
+	display: block;
+	float: left;
+	line-height: 92px;
+	font-size: 18px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+}
+
+.cen_tab span.span_back {
+	background-color: #0B9AD6;
+	border: 1px solid #0B9AD6;
+	color: #fff;
+}
+.center .cen_gg{
+	width: 288px;
+	position: absolute;
+	top: 0px;
+	right: 0;
+}
+.center .cen_gg a{
+	display: block;
+	width: 288px;
+	height: 140px;
+	margin-bottom: 40px;
+}
+.center .cen_gg a img{
+	width: 288px;
+	height: 140px;
+}
+
+.center ul {
+	width: 888px;
+	position: relative;
+	margin-top: 48px;
+	overflow: hidden;
+}
+
+.center ul li {
+	width: 260px;
+	display: inline-block;
+	margin-right: 48px;
+	margin-bottom: 15px;
+	padding: 5px 0;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+
+.center ul li:nth-child(3n) {
+	margin-right: 0;
+}
+
+.center ul li img {
+	width: 260px;
+	height: 260px;
+}
+
+.center ul li a .cen_explain {
+	padding: 0 10px;
+}
+
+.center ul li a .cen_explain h5 {
+	/*margin-bottom: 10px;*/
+	display:block;/*閸愬懓浠堢�电钖勯棁锟介崝鐕榓rret*/
+	width:255px;
+	word-break:keep-all;/* 娑撳秵宕茬悰锟� */
+	white-space:nowrap;/* 娑撳秵宕茬悰锟� */
+	overflow:hidden;/* 閸愬懎顔愮搾鍛毉鐎硅棄瀹抽弮鍫曟閽樺繗绉撮崙娲劥閸掑棛娈戦崘鍛啇 */
+	text-overflow:ellipsis;
+}
+
+.center ul li a .cen_explain p {
+	font-size: 12px;
+	display:block;/*閸愬懓浠堢�电钖勯棁锟介崝鐕榓rret*/
+	width:255px;
+	word-break:keep-all;/* 娑撳秵宕茬悰锟� */
+	white-space:nowrap;/* 娑撳秵宕茬悰锟� */
+	overflow:hidden;/* 閸愬懎顔愮搾鍛毉鐎硅棄瀹抽弮鍫曟閽樺繗绉撮崙娲劥閸掑棛娈戦崘鍛啇 */
+	text-overflow:ellipsis;
+	/*margin-bottom: 5px;*/
+}
+
+
+/*缁鐎積nd*/
+
+
+/*鏉烆喗鎸遍崶锟�*/
+
+#carousel {
+	margin: 0 auto 100px auto;
+}
+
+#carousel .box_up {
+	width: 1200px;
+	height: 480px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+
+#carousel ul {
+	position: absolute;
+	bottom: 20px;
+	left: 45%;
+}
+
+#carousel ul li {
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 50%;
+}
+
+#carousel ul li.on {
+	background: #0B9AD6;
+}
+
+#carousel img {
+	width: 100%;
+	height: 480px;
+	display: block;
+}
+
+#carousel .w {
+	width: 36px;
+	height: 100px;
+	line-height: 100px;
+	background: rgba(102,102,102,.4);
+	opacity: .6;
+	text-align: center;
+	display: none;
+}
+#carousel .w i{
+	padding: 0;
+	margin: 0;
+	font-size: 36px;
+	color: #fff;
+}
+#carousel .w.w_l {
+	position: absolute;
+	bottom: 150px;
+	left: 10px;
+}
+
+#carousel .w.w_r {
+	position: absolute;
+	bottom: 150px;
+	right: 10px;
+}
+
+
+/*鏉烆喗鎸遍崶绶�nd*/

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_register.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">登录</h1>
+		    <a class="mui-pull-right">注册</a>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+			    <div class="mui-input-row">
+			        <label>用户名</label>
+			    <input type="text" id="tel" class="mui-input-clear" placeholder="请输入手机号码">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>密码</label>
+			        <input type="password" id="password" class="mui-input-password" placeholder="请输入密码">
+			    </div>
+			    <div class="mui-button-row" style="text-align: left;text-indent: 1.2em;">
+			    	<input type="checkbox" id="chkRem" />记住密码
+			    	<a href="" class="mui-pull-right a_wjmm">
+			    		<span>忘记密码？</span>
+			    	</a>
+			    </div>
+			    
+			    <div class="mui-button-row">
+			    	<button id="loginBtn" type="button" data-loading-icon-position="right" class="mui_btn">确认登录</button>
+			    </div>
+			</form>
+		</div>
+	</body>
+</html>
+<script>
+//	记住密码
+var city_text = '';
+mui.plusReady(function(){
+	var cw = plus.webview.currentWebview();
+	city_text = cw.city_text;
+	window.addEventListener('newsId', function(es) {
+		//city_text = es.detail.city_text;
+		tels = es.detail.tel;
+		uids = es.detail.uid;
+		pwd = es.detail.pwd;
+		member = es.detail.member;
+		document.getElementById('tel').value = tels;
+		document.getElementById('password').value = pwd;
+	})
+})
+    var Id = localStorage.getItem("tel"); 
+		if(Id != null) //如果缓存中有数据，则加载出来 B5教程网 
+		{ 
+			document.getElementById("tel").value = Id; 
+			document.getElementById("password").value = localStorage.getItem("password"); 
+			document.getElementById("chkRem").checked = "checked"; 
+		 }
+		//将账号与密码保存到Localstore 
+		function remPwd() { 
+			var check = document.getElementById("chkRem"); 
+			if(check.checked) //判断记住密码项是否勾选，是则记住密码到本地缓存 
+			{ 
+			    var id = document.getElementById("tel").value; 
+			    var pwd = document.getElementById("password").value; 
+			    localStorage.setItem("tel", id); 
+			    localStorage.setItem("password", pwd); 
+			} else //否则就移除本地缓存 
+			{ 
+			    localStorage.removeItem("tel"); 
+			    localStorage.removeItem("password"); 
+			} 
+		 }
+
+	//注册
+	mui('.mui-bar-nav').on('tap','.mui-pull-right',function(){
+		mui.openWindow({
+			url:'mine_enroll1.html',
+			id:'mine_enroll1.html',
+			style:{},			
+		})
+	})
+	
+	//忘记密码
+	mui('.mui-button-row').on('tap','.a_wjmm',function(){
+		mui.openWindow({
+			url:'mine_enroll2.html',
+			id:'mine_enroll2.html',
+					style:{},			
+		})
+	})
+
+// 确认登陆
+mui(document.body).on('tap', '.mui_btn', function(e) {
+	mui(this).button('loading');
+	setTimeout(function() {
+		mui(this).button('reset');
+		remPwd();
+		var tel = document.getElementById("tel").value;
+		var pwd = document.getElementById("password").value;
+		var data = {
+			"u.tel": tel,
+			"u.password": pwd
+		};
+	// 调用ajax  
+	postData("http://wwwgezimd.com/Store/appuser!login.action", //服务端的URL  
+		data, // json 数据  
+		function(data) {
+			if(data.tel == null) {
+				mui.alert("用户名或密码错误", "登录错误", "关闭");
+				return;
+			}
+			remPwd();
+			var tel=data.tel;
+			var pwd=data.password;
+			var uid=data.uid;
+			var member=data.member;
+			var detailPage = mui.preload({url:'mine.html',id:'mine.html'});
+			mui.fire(detailPage,'newsId',{tel:tel,uid:uid,member:member,pwd:pwd,city_text:city_text});
+			mui.openWindow({url:'mine.html',id:'mine.html'});
+		}
+	);
+	}.bind(this), 2000);
+});
+	var result = [];
+	
+	function postData(url, data, callback, waitingDialog) {
+		mui.ajax(url, {
+			data: data,
+			dataType: 'json',
+			type: 'post',
+			contentType: "application/x-www-form-urlencoded; charset=utf-8",
+			timeout: 60000,
+			success: callback,
+			error: function(xhr, type, errorThrown) {
+				waitingDialog.close();
+				mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);
+			}
+		});
+	}
+
+//	document.getElementById("loginBtn").addEventListener('tap', function() { 
+//		
+//});
+</script>

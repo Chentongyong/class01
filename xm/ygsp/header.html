@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>头部</title>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+		<!-- <script type="text/javascript" src="jquery.min.js"></script> -->
+	</head>
+
+	<body>
+		<div class="widStyel bgColor box">
+			<div class="widMin box-zi">
+				<div>
+					<i class="iconfont icon-map"></i>
+					<b id="city_text" class="box-zi-left">广州</b>
+					<a href="map.html">【切换】</a>
+					<span>欢迎来到阳光商铺</span>
+				</div>
+				<div>
+					<span>免费电话：</span>
+					<b class="box-zi-right">020-83850115</b>
+				</div>
+			</div>
+		</div>
+		<div class="bgColor1 border-bott">
+			<div class="box-zi widMin bottUp">
+				<a href="index.html">
+					<img src="images/fb_07.png" alt="" />
+				</a>
+				<a href="issue.html" class="aStyle">
+					<i class="iconfont icon-fabu"></i>
+					<span>免费发布</span>
+				</a>
+			</div>
+			<div class="widMin ulbox">
+				<a href="index.html" class="li_baColor">首页</a>
+				<a href="rent.html">商铺转让</a>
+				<a href="wanted.html">商铺求租</a>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	/*
+	 * myCity  cookie保存城市值
+	 *
+	 */
+
+
+	var myCity = null;
+	var mapObj = new AMap.Map('iCenter');
+	var cs = $.cookie("myCity");
+	var aa = null;
+	$('.ulbox a').click(function(){
+		aa = $(this).index();
+		$.cookie("header", aa);
+	})
+	aa = $.cookie("header");
+	if(aa!=null){
+		$('.ulbox a').eq(aa).addClass('li_baColor').siblings('a').removeClass('li_baColor');
+	}
+    $('.bottUp a').click(function(){
+    	aa=0;
+    	$.cookie("header", aa);
+//  	$('.ulbox a').eq(0).addClass('li_baColor').siblings('a').removeClass('li_baColor');
+    })
+
+	if(cs==null){
+		mapObj.plugin("AMap.CitySearch", function() {
+		var citysearch = new AMap.CitySearch();
+		//自动获取用户IP，返回当前城市
+		citysearch.getLocalCity();
+		//监听触发了调用定位时发生
+		AMap.event.addListener(citysearch, "complete", function(result) {
+			if(result && result.city && result.info == "OK") {
+				console.log(result.city)
+				myCity = result.city;
+				var cityText = document.getElementById('city_text');
+				cityText.innerHTML = myCity;
+				$.cookie("myCity", myCity, {
+					expires: 7,
+			//		path: '/'
+				});
+			}
+		});
+		//
+		AMap.event.addListener(citysearch, "error", function(result) {
+			throw '获取定位失败';
+			$.cookie("myCity", '广州', {
+					expires: 7,
+			//		path: '/'
+				});
+		});
+	});
+	}else{
+		document.getElementById('city_text').innerText = $.cookie("myCity")
+	}
+
+</script>

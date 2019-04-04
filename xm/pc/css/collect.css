@@ -1,0 +1,75 @@
+.mineLeft{
+	width: 180px;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: 100px;
+}
+.mineLeft a i{
+	font-size: 24px;
+	/*color: #666;*/
+	margin-left: 35px;
+}
+.mineLeft a{
+	display: block;
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	font-size: 18px;
+	background: #fff;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+.mineLeft a.aStyle{
+	background: #0B9AD6;
+	color: #fff;
+}
+.mineRight{
+	width: 900px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+}
+.mineRight ul li{
+	padding: 20px 0;
+	position: relative;
+	border-bottom: 1px solid #eee;
+}
+.mineRight ul li a img{
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+}
+.mineRight ul li a .riBox{
+	width: 720px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
+.riBox h4{
+	text-overflow: ellipsis;
+	overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+}
+.riBox .r_subset{
+	padding: 5px 0;
+}
+.r_sc{
+	color: #666;
+	position: absolute;
+    bottom: 50px;
+    left: 170px;
+	
+}
+.r_sc.sc_color{
+	color: #0B9AD6;
+}
+.riBox .r_subset span{
+	font-size: 12px;
+}
+.riBox .r_subset span b{
+	font-size: 18px;
+	color: #0B9AD6;
+}
+

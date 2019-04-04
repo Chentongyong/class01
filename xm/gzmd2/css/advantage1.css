@@ -1,0 +1,12 @@
+.bargain_up{border-bottom:1px solid #ccc;background:#fff}
+.bargain_up img{width:100%;height:50px}
+.bargain_up .statistics{padding:0 10px;font-size:16px}
+.bargain_up .statistics h5{padding:10px 0;color:#000}
+.bargain_up .statistics span{display:block;padding:10px 0 30px 0;text-align:center}
+.bargain_up .statistics span b{font-size:36px;margin-right:10px;color:red}
+.bargain_below{padding:10px;margin-top:10px;border-top:1px solid #ccc;background:#fff}
+.bargain_below .evaluate{overflow:hidden;text-align:center;position:relative;height:200px}
+.mui-slider .mui-slider-group .mui-slider-item img{width:100%}
+.bargain_below .evaluate img{height:160px}
+.bargain_below .evaluat h4{color:#999}
+.mui-slider{margin-top:20px}

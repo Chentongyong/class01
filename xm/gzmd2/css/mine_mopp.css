@@ -1,0 +1,16 @@
+ul{padding:0;margin:0}
+.up_left,ul li a{display:inline-block;margin-left:-4px;vertical-align:top}
+ul li{border-bottom:1px solid #ccc}
+ul li .li_up{height:60px;position:relative;background:#fff;padding:10px 0;overflow:hidden}
+ul li .li_up a{width:100%}
+ul li .li_up .span{display:block;width:20%;line-height:40px;border-right:1px solid #ccc;color:#ACACB4;text-align:center;font-size:14px;float:left}
+ul li .li_up .up_left{width:80%;padding:0 10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;float:right}
+ul li .li_up .up_left .up_span1{display:block;font-size:16;color:#333}
+ul li .li_up .up_left .up_span2{display:block;font-size:14px;color:#ACACB4}
+ul li i{width:30px;height:30px;border:1px solid #ccc;border-radius:50%;text-align:center;position:absolute;top:15px;right:10px;color:#ACACB4}
+ul li .mui-icon{line-height:30px}
+#li_hide{display:none;padding:5px 10px;text-align:center}
+#li_hide.hide_disp{display:block}
+#li_hide a{width:25%;text-align:center;margin:0 auto;margin-right:-4px;padding:5px 0}
+#li_hide a span{display:block}
+#li_hide a .mui-icon{margin-bottom:10px}

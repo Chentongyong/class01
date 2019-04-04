@@ -1,0 +1,49 @@
+.mui-popover.mui-popover-action.mui-popover-bottom{left:0}
+#sheet1 .she_nei{padding:15px 0}
+#sheet1 .she_nei a{width:20%;display:inline-block;font-size:36px;color:#f0f}
+.mui-bar-nav a{color:#fff}
+#scwx{font-weight:900;font-size:24px}
+.mui-bar-nav a.a_color{color:#ff0}
+.mui-content{padding:10px;margin-bottom:70px}
+#details{margin-top:10px}
+#details h4{font-size:18px;color:#333;margin-bottom:10px}
+#details .det_up{background:#fff;padding:10px;border-bottom:1px solid #ccc}
+#details .det_up .up_xx{height:21px;position:relative}
+#details .det_up span{font-size:14px;color:#ACACB4}
+#details .det_up i{font-style:inherit}
+#details .det_center{position:relative;padding:10px 15px;font-size:14px;background:#fff}
+#details .det_center img{position:absolute;right:15px;top:15px}
+#details .det_center div{position:relative;padding:5px 0;color:#666}
+#details .det_center div.s_style{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#details .det_center div span{color:#333;text-indent:2em}
+#details .det_center div span.s_color{color:#CF2D28}
+#details .det_xia{margin-top:10px;background:#fff;padding:10px 0}
+#details .det_xia h4{border-left:2px solid #333;text-indent:10px}
+#details .det_xia p{border-top:1px dashed #ccc;padding:10px 10px 0 10px;margin:0}
+.hint{padding:15px 10px;border:1px solid #ccc;border-radius:5px;margin-top:30px;position:relative}
+.hint h5{margin:0 auto;line-height:30px;width:100px;background-color:#efeff4;height:30px;text-align:center;margin-top:-30px;font-size:16px;color:#333}
+.hint div span{font-size:12px;color:#666}
+.hint div span.spos_a{width:60px;height:25px;text-align:center;line-height:25px;border-radius:5px;color:#fff;background:#CF2D28;position:absolute;bottom:10px;right:10px}
+.mui-bar-tab{background-color:#fff;padding:10px}
+.mui-bar-tab a{width:60%;display:inline-block;margin-right:-4px;vertical-align:top}
+.mui-bar-tab span{width:40%;display:inline-block;margin-right:-4px;vertical-align:top}
+.mui-bar-tab .a_left span{width:100%;display:block;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mui-bar-tab .a_left span.sp_color{color:#333}
+.mui-bar-tab .a_right{text-align:right}
+.mui-bar-tab .a_right a{width:50%;line-height:42px;font-size:24px;color:#2AC845;padding:0;text-align:center}
+#sheet1{width:100%;height:100%;background:#000;opacity:.3;position:fixed;top:0;left:0;z-index:33}
+#she_tan{width:100%;margin:0 auto;display:none}
+#she_tan.she_dis{display:block}
+#she_tan .tan_nei{width:90%;background:#fff;margin:0 auto;padding:20px 0;position:absolute;top:200px;left:5%;z-index:999;border-radius:10px}
+#she_tan .tan_nei p{padding-bottom:10px;font-size:16px;font-weight:600;color:#f0f;text-indent:10px;border-bottom:1px solid #ccc;margin:0}
+#she_tan .tan_nei a{display:block;font-size:16px;text-indent:30px;padding:10px 0;color:#666;border-top:1px solid #ccc}
+.transfer_up{font-size:14px;color:#666}
+.transfer_up .tr_upTop{padding:5px 0}
+#details .transfer_up .tr_upTop .spr1{color:#000}
+#details .transfer_up .tr_upTop .spr2{color:#FE4049}
+#details .transfer_up .tr_upTop .spr3{color:#332}
+.transfer_cen{background-color:#fff;padding:10px;border-radius right:10px;margin-bottom:10px;position:relative}
+.transfer_cen img{position:absolute;right:10px;top:10px}
+.transfer_cen h4{border-left:2px solid #000;text-indent:.5em;font-size:24px}
+.transfer_cen .cen_appraise{padding:5px 0;font-size:14px;color:#333}
+.transfer_cen .cen_appraise i{display:block;width:100px;height:30px;background-position:-145px -42px;background-image:url(../images/wjx1.png)}

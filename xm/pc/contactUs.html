@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>联系我们</title>
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/aboutUs.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+
+		<!--中部-->
+		<div class="wids">
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html" class="a_back">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs">
+				<div class="aboLeft">
+					<a href="aboutUs.html">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>关于名店</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-huiyuanfazhanqushi"></i>
+						<span>发展历程</span>
+					</a>
+					<a href="contactUs.html" class="a_color">
+						<i class="iconfont icon-dianhua"></i>
+						<span>联系我们</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-huiyuan"></i>
+						<span>战略伙伴</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-jiarujiazu"></i>
+						<span>加入我们</span>
+					</a>
+					<a href="#">
+						<i class="iconfont icon-gerenzhongxin"></i>
+						<span>员工风采</span>
+					</a>
+				</div>
+				<div class="aboRight">
+					<div class="rightBox" style="position: relative;">
+						<h5>关于我们</h5>
+						<!--<img src="images/details_11.png" alt="" width="100%"/>-->
+					</div>
+					<div style="position: relative;width: 100%;height: 420px;margin-bottom: 20px;">
+						<div id="container"></div>
+				    </div>
+					<div class="rightBox">
+						<h5>企业使命</h5>
+						<p>成为中介的终结者！！！</p>
+						<p>
+							公司用平台最新技术方法与专业技能， 整合找店，转店所有的数据与资源， 让每个准备开店或正在经营的店主， 需要时可一呼百应以最快的方式找到自己最适合的店铺， 最优越的价格转出，既保证了客户的利益， 还可以省下一大笔中介费。
+						</p>
+					</div>
+				</div>
+
+				<div id=""></div>
+			</div>
+		</div>
+		<!--中部end-->
+
+		<!--底部-->
+		<div id="base"></div>
+		<!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+<script>
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+	$('.aboLeft a').click(function() {
+		$(this).addClass('a_color').siblings('a').removeClass('a_color');
+	})
+
+	var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [113.389052,23.12707],
+        zoom: 13
+    });
+    var marker = new AMap.Marker({
+        position: map.getCenter(),
+        draggable: true,
+        cursor: 'move',
+        raiseOnDrag: true
+    });
+    marker.setMap(map);
+</script>

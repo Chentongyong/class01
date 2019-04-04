@@ -1,0 +1,86 @@
+.issUp{
+	/*text-align: center;*/
+	background: #fff;
+	font-size: 18px;
+	height: 50px;
+	margin-top: 70px;
+	display: flex;
+}
+.issUp span{
+	width: 375px;
+	height: 50px;
+	line-height: 52px;
+	/*text-indent: 10px;*/
+	margin-left: 25px;
+}
+.issUp span:nth-child(1){
+	margin-left:0
+}
+.issUp .sps_back{
+	width: 385px;
+	height: 50px;
+	line-height: 50px;
+	color: #0B9AD6;
+	display: block;
+	border-bottom: 1px solid #0B9AD6;
+}
+
+.issCenter{
+	width: 800px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 80px 0 86px 0;
+	height: 120px;
+}
+.issCenter a{
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+}
+.issCenter a .i_back1{
+	width: 92px;
+	height: 92px;
+	display: block;
+	background: url(../images/fb_15.png) 0px 0px no-repeat;
+	background-size: 100%;
+	position: relative;
+    left: 104px;
+}
+.issCenter a .i_back2{
+	width: 92px;
+	height: 92px;
+	display: block;
+	background: url(../images/fb_17.png) 0px 0px no-repeat;
+	background-size: 100%;
+	position: relative;
+    left: 104px;
+}
+.issCenter a span{
+	position: relative;
+	top: 10px;
+	font-size: 12px;
+}
+.issBoot{
+	width: 800px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.issBoot div{
+	width: 260px;
+	float: left;
+	font-size: 12px;
+	position: relative;
+	left: 100px;
+}
+.issBoot div h4{
+	font-size: 14px;
+	border-left: 3px solid #0b9ad6;
+	text-indent: 1em;
+	margin-bottom: 10px;
+}
+.issBoot div p{
+	padding: 3px 0;
+}

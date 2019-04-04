@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺出租</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<link rel="stylesheet" href="css/rent.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html" class="a_back">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="center">
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>行业</b>
+					</div>
+					<ul class="tabRight hangye">
+						<li class="col">不限</li>
+						<li>酒楼餐饮</li>
+						<li>美容美发</li>
+						<li>服饰鞋包</li>
+						<li>休闲娱乐</li>
+						<li>百货超市</li>
+						<li>生活服务</li>
+						<li>电子通讯</li>
+						<li>汽修美容</li>
+						<li>医药保健</li>
+						<li>家居建材</li>
+						<li>教育培训</li>
+						<li>空铺转让</li>
+						<li>旅行宾馆</li>
+						<li>其他行业</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>地区</b>
+					</div>
+					<ul class="tabRight quyu" id="quyu">
+						<li class="col">不限</li>
+					</ul>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>面积</b>
+					</div>
+					<ul class="tabRight pingfang">
+						<li class="col">不限</li>
+						<li>20m²以下</li>
+						<li>20m²-50m²</li>
+						<li>50m²-100m²</li>
+						<li>100m²-200m²</li>
+						<li>200m²-500m²</li>
+						<li>500m²以上</li>
+					</ul>
+					<div class="tabFu tabFu1">
+						<input type="text" id="mjmjs" />&nbsp;-&nbsp;<input type="text" id="mjmjd" />m²
+						<button type="button" id="pf_but" onclick="fromtable(1)">筛选</button>
+					</div>
+				</div>
+				<div class="cenTab">
+					<div class="tabLeft">
+						<b>租金</b>
+					</div>
+					<ul class="tabRight zujing">
+						<li class="col">不限</li>
+						<li>2千元以下</li>
+						<li>2-5千元</li>
+						<li>5千-1万元</li>
+						<li>1-2万元</li>
+						<li>2-5万元</li>
+						<li>5万元以上</li>
+					</ul>
+					<div class="tabFu tabFu2">
+						<input type="text" id="zijimjs" />&nbsp;-&nbsp;<input type="text" id="zijimjd" />元
+						<button type="button" id="zj_but"  onclick="fromtable(1)">筛选</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="boxs centerBox">
+				<div class="box_tong">
+					<ul id="tbdy" class="boxLeft">
+					</ul>
+					<div class="page">
+						<div><span colspan="9"><div id="pageBar"></div></span></div>
+					</div>
+
+				</div>
+
+				<div class="box_tong boxRight">
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+					<a target="_blank" href="#"><img src="images/hareG.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+
+		<!--底部-->
+		<div id="base"></div>
+		<!--底部end-->
+
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/rent.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/islogin.js"></script>

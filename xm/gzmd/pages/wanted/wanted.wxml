@@ -1,0 +1,55 @@
+<view class='container'>
+  <view class='top-dh'>
+    <view class='top-dh-zi' bindtap="onChangeShowState2">
+      <text>{{leix}}</text>
+      <image src='../../images/jts_03.png'></image>
+    </view>
+    <view class='top-dh-zi' bindtap="onChangeShowState1">
+      <text>{{quyu}}</text>
+      <image src='../../images/jts_03.png'></image>
+    </view>
+    <view class='top-dh-zi' bindtap="onChangeShowState3">
+      <text>{{mianji}}</text>
+      <image src='../../images/jts_03.png'></image>
+    </view>
+  </view>
+
+  <view class='district'>
+     <view class="itemize1 hide{{lx?'show':''}}">
+      <view wx:for="{{lx_list}}" wx:for-item="items1" wx:key="{{itemId1}}" data-text=" {{items1}}" class='item-list' bindtap='types'>
+        {{items1}}
+      </view>
+    </view>
+    <view class="itemize2 hide{{qu?'show':''}}">
+      <view wx:for="{{lx_qy}}" wx:for-item="items2" wx:key="{{itemId1}}" data-text=" {{items2.text}}" class="item-list" bindtap='qus'>
+        {{items2.text}}
+      </view>
+    </view> 
+    <view class="itemize2 hide{{mj?'show':''}}">
+      <view wx:for="{{lx_mj}}" wx:for-item="items3" wx:key="{{itemId2}}" data-id="{{index}}" data-text=" {{items3.mj}}{{items3.mj_sm}}" class='item-list' bindtap='area'>
+        {{items3.mj}}{{items3.mj_sm}}
+      </view>
+    </view>
+    <view class="item-zzc hide{{zzc?'show':''}}" bindtap='zzc'></view>
+  </view>
+
+  <view class='listBox'>
+    <view wx:for="{{moment}}" wx:key="{{indexId}}" class='listBox-box' data-id="{{item.spid}}" bindtap='wanClick'>
+      <view class='li-text'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='box_rBox'>
+        <view class='rBox-zi'>
+          <text>{{item.acreage}}</text>
+          <text>平方</text>
+        </view>
+        <text class='rBox-zi'>{{item.region}}</text>
+        <text class='rBox-zi'>{{item.type}}</text>
+      </view>
+      <view class='itme'>
+        <text>更新时间：</text>
+        <text class='text'>{{item.startdate}}</text>
+      </view>
+    </view>
+  </view>
+</view>

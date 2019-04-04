@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺出租</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />		
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/issue1.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				gestureConfig:{
+			    longtap: false, //默认为false
+			    release:true,
+			    hold:true,
+			   }
+			})
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">商铺出租</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+		    	<!--图片上传-->
+			    <div class="feedback picture">
+                    <div class="dynamic_images">  
+                    	<div class="dynamie_up" id="addnew">
+                    		<span class="mui-icon mui-icon-camera" ></span>
+                    	</div>
+                        <ul id="imgObj"></ul>  
+                    </div>  
+                </div>		    
+			    <!--图片上传end-->
+			    <div class="mui-input-row">
+			        <label>区&nbsp;&nbsp;域</label>
+			        <input type="text" value="" id="quyu" class="mui-input-clear" placeholder="请填写地区">
+			        <input type="text" id="assignment" class="mui-input-clear" value="出租" style="display: none;">
+			    </div>
+			    <div id="diqv">
+					<div id="fenqv" class="diqv_zi">
+					</div>
+					<div id="diqv_fu"></div>
+				</div>
+			    
+			    <div class="mui-input-row">
+			        <label>地&nbsp;&nbsp;段</label>
+			        <input type="text" id="diduan" class="mui-input-clear" placeholder="2~16字">
+			    </div>
+			    
+			    <div class="mui-input-row">
+			        <label>面&nbsp;&nbsp;积</label>
+			        <input type="text" id="mj" class="mui-input-clear" placeholder="请填写面积">
+			        <span class="span1">平方</span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>租&nbsp;&nbsp;金</label>
+			        <input type="text" id="zujin" class="mui-input-clear" placeholder="请填写租金">
+			        <input type="text" id="zrf" class="mui-input-clear"  style="display: none;">
+			        <span class="span1">元/月</span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>历史经营</label>
+			        <input type="text" id="hy" class="mui-input-clear" value="" placeholder="请选择">
+			        <span class="mui-icon mui-icon-arrowright span2"></span>
+			    </div>
+			    <div id="suspend">
+			    	<ul>
+			    		<li>
+			    			<span>酒楼餐饮</span>
+			    		</li>
+			    		<li>
+			    			<span>美容美发</span>
+			    		</li>
+			    		<li>
+			    			<span>服饰鞋包</span>
+			    		</li>
+			    		<li>
+			    			<span>休闲娱乐</span>
+			    		</li>
+			    		<li>
+			    			<span>百货超市</span>
+			    		</li>
+			    		<li>
+			    			<span>生活服务</span>
+			    		</li>
+			    		<li>
+			    			<span>电子通讯</span>
+			    		</li>
+			    		<li>
+			    			<span>汽修美容</span>
+			    		</li>
+			    		<li>
+			    			<span>医药保健</span>
+			    		</li>
+			    		<li>
+			    			<span>家居建材</span>
+			    		</li>
+			    		<li>
+			    			<span>教育培训</span>
+			    		</li>
+			    		<li>
+			    			<span>空铺转让</span>
+			    		</li>
+			    		<li>
+			    			<span>旅行宾馆</span>
+			    		</li>
+			    		<li>
+			    			<span>其他行业</span>
+			    		</li>
+			    	</ul>
+			    	<div id="shade"></div>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>标&nbsp;&nbsp;题</label>
+			        <input type="text" id="biaoti" class="mui-input-clear" placeholder="5~20字">
+			        <span class="mui-icon mui-icon-arrowright span2"></span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>描&nbsp;&nbsp;述</label>
+			        <input type="text" id="ms" class="mui-input-clear" placeholder="10~200字">
+			    </div>
+			    <div id="describe">
+			    	<div class="des_nei">
+			    		<textarea id="text" name=""  placeholder="请输入详细描述，10~200字"></textarea>
+			    		<div class="nei_sm">
+			    			<span class="mui-pull-left">已输入<i id="i_color">0</i>字</span>
+			    			<span class="mui-pull-right"><i class="mui-icon mui-icon-trash"></i>清空所有</span>
+			    		</div>
+			    		<button id="but2" type="button">完成</button>
+			    	</div>
+			    	<div id="shade" class="ercds"></div>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>联系人</label>
+			        <input type="text" id="lianxiren" class="mui-input-clear" placeholder="2~6字">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>手&nbsp;&nbsp;机</label>
+			        <input onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" id="phoness" type="text" class="mui-input-clear" placeholder="请输入手机号码">
+			    </div>
+			    </div>
+			    <div class="smsy">
+			    	<span>填写越详细，排名越靠前</span>
+			    </div>
+			    <button type="button" id="but" onclick="upload()">发布</button>
+			</form>
+		</div>
+	</body>
+
+</html>
+<script src="js/issues.js"></script>
+<!--<script src="js/tpsc.js"></script>-->
+<script src="dist/js/jquery.min.js"></script>
+<script src="js/Image_upload.js"></script>
+<script>
+	mui.plusReady(function(){
+		window.addEventListener('newsId', function(e) {
+			var sid = e.detail.sid;
+			if(sid!=null){
+				var sname='';
+				mui.ajax({
+					url:'http://192.168.3.7:8080/Store/storeactions!oneToOne.action?store.sid='+sid,
+					type:'post',
+					async: true,
+				    dataType: 'json',
+				    crossDomain: true, //强制使用5+跨域
+				    timeout:'10000',
+					success:function(data){
+						if(data!=null){
+							sname=data.sname;
+						}
+					},
+					error:function(xhr, type, errorThrown){
+						mui.toast("网络出错")
+					}
+				})
+			}
+		})
+	})
+</script>

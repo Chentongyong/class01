@@ -1,0 +1,62 @@
+<view class='container'>
+  <view class='boxBox'>
+    <view class='top-img'>
+      <image src='{{datas.img}}'></image>
+    </view>
+    <view class='box-xx'>
+      <view class='xx-up'>
+        <text class='up-text'>{{datas.sname}}</text>
+        <view>
+          <text>更新时间：</text>
+          <text>{{date}}</text>
+        </view>
+      </view>
+
+      <view class='xx-center'>
+        <view class='cen-zi'>
+          <text>租金：</text>
+          <text class='zi-text'>{{datas.price}}</text>
+        </view>
+        <view class='cen-zi'>
+          <text>面积：</text>
+          <text>{{datas.square}}</text>
+        </view>
+        <view class='cen-zi'>
+          <text>商铺类型：</text>
+          <text>{{datas.shoptype}}</text>
+        </view>
+        <view class='cen-zi'>
+          <text>地址：</text>
+          <text>{{datas.address}}</text>
+        </view>
+        <view class='cen-zi'>
+          <text>地段：</text>
+          <text>{{datas.residuallease}}</text>
+        </view>
+        <view class='cen-zi'>
+          <text>详细地址：</text>
+          <text>{{datas.detailedaddress}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='describe'>
+      <text class='text'>详细描述：</text>
+      <view class='des-text'>
+        {{datas.shopintroduction}}
+      </view>
+    </view>
+  </view>
+
+  <view class='tabbar'>
+    <view class='tab-left'>
+      <text>{{datas.monthlyrent}}</text>
+      <text>{{datas.theshortestlease}}</text>
+    </view>
+    <view class='tab-right'>
+      <view data-reply-phone="{{datas.theshortestlease}}" bindtap="phoneCall">
+        <image src='../../images/s_06.png'></image>
+      </view>
+      <!-- <image src='../../images/s_03.png'></image> -->
+    </view>
+  </view>
+</view>

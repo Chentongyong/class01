@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>求租发布</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/soli_issue.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+	     <div id="header"></div>
+		<!--顶部导航end-->
+
+		<!--中部-->
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html" class="a_back">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html" class="a_back">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs" style="padding-bottom: 86px;">
+				<div class="issUp">
+					<span>1选择类型（<a href="issue.html">重选</a>）</span>
+					<span class="sps_back">2找店信息</span>
+					<span>3发布成功</span>
+				</div>
+				<form id="uploading" action="" method="post">
+					<div class="upBox">
+						<b>*</b>
+						<label>标&nbsp;&nbsp;&nbsp;&nbsp;题:</label>
+						<input type="text" placeholder="5-16个字" id="title"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>经营业态：</label>
+						<select id="type_type">
+						  	<option value="餐饮美食" selected="selected">餐饮美食</option>
+						  	<option value="美容美发">美容美发</option>
+						  	<option value="服饰鞋包">服饰鞋包</option>
+						  	<option value="百货超市">百货超市</option>
+						  	<option value="商场专柜">商场专柜</option>
+						  	<option value="旅馆公寓">旅馆公寓</option>
+						  	<option value="休闲娱乐">休闲娱乐</option>
+						  	<option value="医药保健">医药保健</option>
+						  	<option value="生活服务">生活服务</option>
+						 	<option value="汽车美容">汽车美容</option>
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>面&nbsp;&nbsp;&nbsp;&nbsp;积：</label>
+						<input type="text" placeholder="请填写面积" id="acreage"/>
+					</div>
+
+					<div class="upBox">
+						<b>*</b>
+						<label>租&nbsp;&nbsp;&nbsp;&nbsp;金：</label>
+						<input type="text" placeholder="请填写租金"/ id="purchaseBudget">
+					</div>
+					<!-- <div class="upBox">
+						<b>*</b>
+						<label>最短租期：</label>
+						<select>
+						  <option value="">一年</option>
+						  <option value="">两年</option>
+						  <option value="" selected="selected">三年</option>
+						  <option value="">五年</option>
+						</select>
+					</div> -->
+					<div class="upBox">
+						<b>*</b>
+						<label>区&nbsp;&nbsp;&nbsp;&nbsp;域：</label>
+						<select id="region1">
+						  <!-- <option value="区域">天河区</option>
+						  <option value="区域" selected="selected">黄埔区</option>
+						  <option value="区域">越秀区</option>
+						  <option value="区域">番禺区</option>
+						  <option value="区域">花都区</option>
+						  <option value="区域">增城区</option>
+						  <option value="区域">从化市</option> -->
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>地&nbsp;&nbsp;&nbsp;&nbsp;址：</label>
+						<input class="inps" type="text" placeholder="请填写详细地址"/ id="region2">
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>临&nbsp;&nbsp;&nbsp;&nbsp;近：</label>
+						<input class="inps" type="text" placeholder="2-16个字" id="near"/>
+					</div>
+
+					<div class="upBox">
+						<b>*</b>
+						<label>商铺配套：</label>
+						<ul>
+							<li>
+								<i></i>
+								<span>客梯</span>
+							</li>
+							<li>
+								<i></i>
+								<span>货梯</span>
+							</li>
+							<li>
+								<i></i>
+								<span>中央空调</span>
+							</li>
+							<li>
+								<i></i>
+								<span>停车位</span>
+							</li>
+							<li>
+								<i></i>
+								<span>天然气</span>
+							</li>
+							<li>
+								<i></i>
+								<span>电话</span>
+							</li>
+							<li>
+								<i></i>
+								<span>扶梯</span>
+							</li>
+							<li>
+								<i></i>
+								<span>上水</span>
+							</li>
+							<li>
+								<i></i>
+								<span>下水</span>
+							</li>
+							<li>
+								<i></i>
+								<span>排烟</span>
+							</li>
+							<li>
+								<i></i>
+								<span>排污</span>
+							</li>
+							<li>
+								<i></i>
+								<span>管煤</span>
+							</li>
+							<li>
+								<i></i>
+								<span>可明火</span>
+							</li>
+							<li>
+								<i></i>
+								<span>外摆区</span>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="upBox">
+						<b>*</b>
+						<label>详细描述：</label>
+						<textarea placeholder="10-800字，如：地段描述、装修情况、交通情况、转让原因是" id="describe"></textarea>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>联&nbsp;系&nbsp;人：</label>
+						<input type="text" placeholder="2-6个字" id="contacts"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>手机电话</label>
+						<input type="text" placeholder="请手机号码" id="tel"/>
+					</div>
+					<div>
+						<button type="button" class="btn">立即发布</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--中部end-->
+
+		<!--发布成功-->
+        <div id="issue_succeed">
+			<div class="iss_suced">
+				<i><b class="iconfont icon-dagouwuquan"></b></i>
+				<span>发布成功</span>
+			</div>
+		</div>
+        <!--发布成功end-->
+       
+	    <!--底部-->
+	    <div id="base"></div>
+	    <!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/soli_issue.js"></script>
+<script src="js/islogin.js"></script>

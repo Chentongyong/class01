@@ -1,0 +1,114 @@
+.issUp{
+	background: #fff;
+	font-size: 18px;
+	height: 50px;
+	margin-top: 70px;
+	display: flex;
+}
+.issUp span{
+	width: 375px;
+	height: 50px;
+	line-height: 52px;
+	/*text-indent: 10px;*/
+	margin-left: 25px;
+}
+.issUp .sps_back{
+	width: 385px;
+	height: 45px;
+	line-height: 45px;
+	color: #0B9AD6;
+	display: block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #0B9AD6;
+}
+.issUp a{
+	color: #0B9AD6;
+}
+
+#uploading{
+	margin-top: 22px;
+}
+#uploading .upBox{
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #333;
+}
+#uploading .upBox label{
+	width: 70px;
+	text-align: center;
+	padding: 10px 0;
+	display: inline-block;
+	vertical-align: top;
+}
+#uploading .upBox b{
+	padding: 10px 0;
+	display: inline-block;
+	vertical-align: top;
+	color: #0B9AD6;
+}
+#uploading .upBox input{
+	padding: 10px 0;
+	width: 200px;
+	text-indent: 10px;
+	border-style:none;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	 outline: none;
+}
+#uploading .upBox .inps{
+	width: 400px;
+}
+#uploading .upBox select{
+	padding: 10px 0;
+	width: 200px;
+	text-indent: 10px;
+	border-style:none;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	outline: none;
+}
+#uploading .upBox textarea{
+	width: 600px;
+	height: 206px;
+	padding: 10px;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+}
+
+#uploading .upBox ul{
+	width: 600px;
+	display: inline-block;
+	padding: 10px 0;
+}
+#uploading .upBox ul li{
+	width: 70px;
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	margin-right: 28px;
+	margin-bottom: 20px;
+}
+#uploading .upBox ul li i{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	vertical-align: bottom;
+	font-weight: 600;
+	color: #0b9ad6;
+}
+#uploading button{
+	width: 240px;
+	height: 52px;
+	border: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 52px;
+	background: #0B9AD6;
+	color: #fff;
+	font-size: 18px;
+	position: relative;
+	left: 100px;
+}

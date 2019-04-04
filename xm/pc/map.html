@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>地图定位</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/tab.css" />
+        <style type="text/css">
+        	.hot a{padding: 0 10px;}
+        </style>
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="issue.html" class="issue back">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html" class="a_back" target="_blank">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html" target="_blank">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html" target="_blank">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html" target="_blank">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="z-index: 9999; ">
+			<div class="hot">
+				<b>热门城市：</b>
+				<a href="index.html">北京市</a>
+				<a href="index.html">深圳市</a>
+				<a href="index.html">广州市</a>
+				<a href="index.html">上海市</a>
+				<a href="index.html">武汉市</a>
+			</div>
+			<div class="city">
+				<div class="city-list"><span class="city-letter">A</span>
+					<a href="index.html">鞍山市</a>
+					<a href="index.html">安庆市</a>
+					<a href="index.html">安阳市</a>
+					<a href="index.html">安康市</a>
+					<a href="index.html">安顺市</a>
+					<a href="index.html">澳门</a>
+				</div>
+				<div class="city-list"><span class="city-letter">B</span>
+					<a href="index.html">白城市</a>
+					<a href="index.html">包头市</a>
+					<a href="index.html">保定市</a>
+					<a href="index.html">本溪市</a>
+					<a href="index.html">白山市</a>
+					<a href="index.html">亳州市</a>
+					<a href="index.html">蚌埠市</a>
+					<a href="index.html">滨州市</a>
+					<a href="index.html">白银市</a>
+					<a href="index.html">宝鸡市</a>
+					<a href="index.html">保山市</a>
+					<a href="index.html">百色市</a>
+					<a href="index.html">毕节市</a>
+					<a href="index.html">北海市</a>
+					<a href="index.html">巴中市</a>
+					<a href="index.html">北京市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">C</span>
+					<a href="index.html">长治市</a>
+					<a href="index.html">沧州市</a>
+					<a href="index.html">常州市</a>
+					<a href="index.html">慈溪市</a>
+					<a href="index.html">常熟市</a>
+					<a href="index.html">承德市</a>
+					<a href="index.html">赤峰市</a>
+					<a href="index.html">长春市</a>
+					<a href="index.html">郴州市</a>
+					<a href="index.html">长沙市</a>
+					<a href="index.html">滁州市</a>
+					<a href="index.html">常德市</a>
+					<a href="index.html">巢湖市</a>
+					<a href="index.html">池州市</a>
+					<a href="index.html">澄迈县</a>
+					<a href="index.html">崇左市</a>
+					<a href="index.html">潮州市</a>
+					<a href="index.html">重庆市</a>
+					<a href="index.html">成都市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">D</span>
+					<a href="index.html">大同市</a>
+					<a href="index.html">大庆市</a>
+					<a href="index.html">丹阳市</a>
+					<a href="index.html">大连市</a>
+					<a href="index.html">丹东市</a>
+					<a href="index.html">东营市</a>
+					<a href="index.html">德州市</a>
+					<a href="index.html">达州市</a>
+					<a href="index.html">儋州市</a>
+					<a href="index.html">定安县</a>
+					<a href="index.html">德阳市</a>
+					<a href="index.html">东方市</a>
+					<a href="index.html">东莞市</a>
+					<a href="index.html">定西市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">E</span>
+					<a href="index.html">鄂州市</a>
+					<a href="index.html">恩施</a>
+				</div>
+				<div class="city-list"><span class="city-letter">F</span>
+					<a href="index.html">阜新市</a>
+					<a href="index.html">抚顺市</a>
+					<a href="index.html">福清市</a>
+					<a href="index.html">阜阳市</a>
+					<a href="index.html">肥城市</a>
+					<a href="index.html">抚州市</a>
+					<a href="index.html">福州市</a>
+					<a href="index.html">佛山市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">G</span>
+					<a href="index.html">广州市</a>
+					<a href="index.html">赣州市</a>
+					<a href="index.html">广元市</a>
+					<a href="index.html">广安市</a>
+					<a href="index.html">桂林市</a>
+					<a href="index.html">贵港市</a>
+					<a href="index.html">贵阳市</a>
+					<a href="index.html">固原市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">H</span>
+					<a href="index.html">黑河市</a>
+					<a href="index.html">葫芦岛市</a>
+					<a href="index.html">海宁市</a>
+					<a href="index.html">淮安市</a>
+					<a href="index.html">衡水市</a>
+					<a href="index.html">湖州市</a>
+					<a href="index.html">鹤岗市</a>
+					<a href="index.html">哈尔滨市</a>
+					<a href="index.html">邯郸市</a>
+					<a href="index.html">杭州市</a>
+					<a href="index.html">鹤壁市</a>
+					<a href="index.html">菏泽市</a>
+					<a href="index.html">黄石市</a>
+					<a href="index.html">怀化市</a>
+					<a href="index.html">淮北市</a>
+					<a href="index.html">黄冈市</a>
+					<a href="index.html">衡阳市</a>
+					<a href="index.html">合肥市</a>
+					<a href="index.html">淮南市</a>
+					<a href="index.html">黄山市</a>
+					<a href="index.html">河池市</a>
+					<a href="index.html">海口市</a>
+					<a href="index.html">河源市</a>
+					<a href="index.html">惠州市</a>
+					<a href="index.html">汉中市</a>
+					<a href="index.html">贺州市</a>
+					<a href="index.html">海东市</a>
+					<a href="index.html">哈密地区</a>
+					<a href="index.html">和田地区</a>
+				</div>
+				<div class="city-list"><span class="city-letter">J</span>
+					<a href="index.html">锦州市</a>
+					<a href="index.html">金华市</a>
+					<a href="index.html">晋中市</a>
+					<a href="index.html">江阴市</a>
+					<a href="index.html">吉林市</a>
+					<a href="index.html">鸡西市</a>
+					<a href="index.html">嘉兴市</a>
+					<a href="index.html">晋城市</a>
+					<a href="index.html">晋江市</a>
+					<a href="index.html">即墨市</a>
+					<a href="index.html">吉安市</a>
+					<a href="index.html">济南市</a>
+					<a href="index.html">荆门市</a>
+					<a href="index.html">焦作市</a>
+					<a href="index.html">济宁市</a>
+					<a href="index.html">济源市</a>
+					<a href="index.html">荆州市</a>
+					<a href="index.html">九江市</a>
+					<a href="index.html">揭阳市</a>
+					<a href="index.html">金昌市</a>
+					<a href="index.html">江门市</a>
+					<a href="index.html">嘉峪关市</a>
+					<a href="index.html">酒泉市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">K</span>
+					<a href="index.html">昆山市</a>
+					<a href="index.html">开封市</a>
+					<a href="index.html">昆明市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">L</span>
+					<a href="index.html">临汾市</a>
+					<a href="index.html">廊坊市</a>
+					<a href="index.html">辽阳市</a>
+					<a href="index.html">辽源市</a>
+					<a href="index.html">吕梁市</a>
+					<a href="index.html">连云港市</a>
+					<a href="index.html">莱芜市</a>
+					<a href="index.html">漯河市</a>
+					<a href="index.html">丽水市</a>
+					<a href="index.html">六安市</a>
+					<a href="index.html">娄底市</a>
+					<a href="index.html">龙岩市</a>
+					<a href="index.html">龙口市</a>
+					<a href="index.html">临沂市</a>
+					<a href="index.html">洛阳市</a>
+					<a href="index.html">聊城市</a>
+					<a href="index.html">丽江市</a>
+					<a href="index.html">来宾市</a>
+					<a href="index.html">泸州市</a>
+					<a href="index.html">临沧市</a>
+					<a href="index.html">乐山市</a>
+					<a href="index.html">兰州市</a>
+					<a href="index.html">柳州市</a>
+					<a href="index.html">林芝地区</a>
+					<a href="index.html">临高县</a>
+					<a href="index.html">拉萨市</a>
+					<a href="index.html">六盘水市</a>
+					<a href="index.html">陇南市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">M</span>
+					<a href="index.html">牡丹江市</a>
+					<a href="index.html">马鞍山市</a>
+					<a href="index.html">绵阳市</a>
+					<a href="index.html">眉山市</a>
+					<a href="index.html">茂名市</a>
+					<a href="index.html">梅州市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">N</span>
+					<a href="index.html">南京市</a>
+					<a href="index.html">宁波市</a>
+					<a href="index.html">南通市</a>
+					<a href="index.html">南昌市</a>
+					<a href="index.html">南阳市</a>
+					<a href="index.html">南平市</a>
+					<a href="index.html">宁德市</a>
+					<a href="index.html">南安市</a>
+					<a href="index.html">那曲地区</a>
+					<a href="index.html">南宁市</a>
+					<a href="index.html">南充市</a>
+					<a href="index.html">内江市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">P</span>
+					<a href="index.html">盘锦市</a>
+					<a href="index.html">萍乡市</a>
+					<a href="index.html">濮阳市</a>
+					<a href="index.html">莆田市</a>
+					<a href="index.html">普洱市</a>
+					<a href="index.html">平凉市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">Q</span>
+					<a href="index.html">秦皇岛市</a>
+					<a href="index.html">齐齐哈尔市</a>
+					<a href="index.html">七台河市</a>
+					<a href="index.html">泉州市</a>
+					<a href="index.html">潜江市</a>
+					<a href="index.html">青岛市</a>
+					<a href="index.html">衢州市</a>
+					<a href="index.html">清远市</a>
+					<a href="index.html">钦州市</a>
+					<a href="index.html">曲靖市</a>
+					<a href="index.html">庆阳市</a>
+					<a href="index.html">琼海市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">R</span>
+					<a href="index.html">如皋市</a>
+					<a href="index.html">荣成市</a>
+					<a href="index.html">日照市</a>
+					<a href="index.html">日喀则市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">S</span>
+					<a href="index.html">四平市</a>
+					<a href="index.html">绥化市</a>
+					<a href="index.html">松原市</a>
+					<a href="index.html">苏州市</a>
+					<a href="index.html">上海市</a>
+					<a href="index.html">宿迁市</a>
+					<a href="index.html">绍兴市</a>
+					<a href="index.html">朔州市</a>
+					<a href="index.html">双鸭山市</a>
+					<a href="index.html">沈阳市</a>
+					<a href="index.html">上虞市</a>
+					<a href="index.html">石家庄市</a>
+					<a href="index.html">汕头市</a>
+					<a href="index.html">三明市</a>
+					<a href="index.html">上饶市</a>
+					<a href="index.html">商丘市</a>
+					<a href="index.html">随州市</a>
+					<a href="index.html">宿州市</a>
+					<a href="index.html">三门峡市</a>
+					<a href="index.html">十堰市</a>
+					<a href="index.html">深圳市</a>
+					<a href="index.html">邵阳市</a>
+					<a href="index.html">韶关市</a>
+					<a href="index.html">汕尾市</a>
+					<a href="index.html">遂宁市</a>
+					<a href="index.html">商洛市</a>
+					<a href="index.html">山南地区</a>
+					<a href="index.html">三亚市</a>
+					<a href="index.html">石嘴山市</a>
+					<a href="index.html">石河子市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">T</span>
+					<a href="index.html">太原市</a>
+					<a href="index.html">铁岭市</a>
+					<a href="index.html">通化市</a>
+					<a href="index.html">唐山市</a>
+					<a href="index.html">太仓市</a>
+					<a href="index.html">天津市</a>
+					<a href="index.html">泰州市</a>
+					<a href="index.html">通辽市</a>
+					<a href="index.html">台州市</a>
+					<a href="index.html">泰安市</a>
+					<a href="index.html">天门市</a>
+					<a href="index.html">铜陵市</a>
+					<a href="index.html">铜仁市</a>
+					<a href="index.html">屯昌县</a>
+					<a href="index.html">铜川市</a>
+					<a href="index.html">天水市</a>
+					<a href="index.html">塔城地区</a>
+					<a href="index.html">台湾</a>
+				</div>
+				<div class="city-list"><span class="city-letter">W</span>
+					<a href="index.html">温州市</a>
+					<a href="index.html">无锡市</a>
+					<a href="index.html">乌兰察布市</a>
+					<a href="index.html">乌海市</a>
+					<a href="index.html">芜湖市</a>
+					<a href="index.html">武汉市</a>
+					<a href="index.html">潍坊市</a>
+					<a href="index.html">威海市</a>
+					<a href="index.html">万宁市</a>
+					<a href="index.html">渭南市</a>
+					<a href="index.html">文昌市</a>
+					<a href="index.html">五指山市</a>
+					<a href="index.html">武威市</a>
+					<a href="index.html">梧州市</a>
+					<a href="index.html">五家渠市</a>
+					<a href="index.html">吴忠市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">X</span>
+					<a href="index.html">忻州市</a>
+					<a href="index.html">邢台市</a>
+					<a href="index.html">兴安盟</a>
+					<a href="index.html">徐州市</a>
+					<a href="index.html">新乡市</a>
+					<a href="index.html">襄阳市</a>
+					<a href="index.html">新余市</a>
+					<a href="index.html">信阳市</a>
+					<a href="index.html">仙桃市</a>
+					<a href="index.html">许昌市</a>
+					<a href="index.html">湘潭市</a>
+					<a href="index.html">厦门市</a>
+					<a href="index.html">宣城市</a>
+					<a href="index.html">孝感市</a>
+					<a href="index.html">咸宁市</a>
+					<a href="index.html">西安市</a>
+					<a href="index.html">咸阳市</a>
+					<a href="index.html">西宁市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">Y</span>
+					<a href="index.html">宜兴市</a>
+					<a href="index.html">扬州市</a>
+					<a href="index.html">运城市</a>
+					<a href="index.html">盐城市</a>
+					<a href="index.html">阳泉市</a>
+					<a href="index.html">余姚市</a>
+					<a href="index.html">伊春市</a>
+					<a href="index.html">营口市</a>
+					<a href="index.html">烟台市</a>
+					<a href="index.html">宜昌市</a>
+					<a href="index.html">岳阳市</a>
+					<a href="index.html">宜春市</a>
+					<a href="index.html">益阳市</a>
+					<a href="index.html">义乌市</a>
+					<a href="index.html">鹰潭市</a>
+					<a href="index.html">永州市</a>
+					<a href="index.html">玉林市</a>
+					<a href="index.html">雅安市</a>
+					<a href="index.html">玉溪市</a>
+					<a href="index.html">阳江市</a>
+					<a href="index.html">榆林市</a>
+					<a href="index.html">宜宾市</a>
+					<a href="index.html">云浮市</a>
+					<a href="index.html">延安市</a>
+					<a href="index.html">银川市</a>
+				</div>
+				<div class="city-list"><span class="city-letter">Z</span>
+					<a href="index.html">张家口市</a>
+					<a href="index.html">诸暨市</a>
+					<a href="index.html">镇江市</a>
+					<a href="index.html">张家港市</a>
+					<a href="index.html">朝阳市</a>
+					<a href="index.html">张家界市</a>
+					<a href="index.html">郑州市</a>
+					<a href="index.html">枣庄市</a>
+					<a href="index.html">舟山市</a>
+					<a href="index.html">增城市</a>
+					<a href="index.html">珠海市</a>
+					<a href="index.html">周口市</a>
+					<a href="index.html">淄博市</a>
+					<a href="index.html">株洲市</a>
+					<a href="index.html">漳州市</a>
+					<a href="index.html">驻马店市</a>
+					<a href="index.html">湛江市</a>
+					<a href="index.html">遵义市</a>
+					<a href="index.html">自贡市</a>
+					<a href="index.html">昭通市</a>
+					<a href="index.html">肇庆市</a>
+					<a href="index.html">中山市</a>
+					<a href="index.html">张掖市</a>
+					<a href="index.html">资阳市</a>
+					<a href="index.html">中卫市</a>
+				</div>
+			</div>
+		</div>
+
+		<!--底部-->
+		<div id="base"></div>
+		<!--底部end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/map.js"></script>

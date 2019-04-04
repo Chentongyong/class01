@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>出租详情</title>
+<link rel="stylesheet"href="http://cache.amap.com/lbs/static/main1119.css" />
+<link rel="stylesheet" href="css/iconfont.css" />
+<link rel="stylesheet" href="css/public.css" />
+<link rel="stylesheet" href="css/tab.css" />
+<link rel="stylesheet" href="css/rent_details.css" />
+</head>
+
+<body>
+	<!--顶部导航-->
+	<div id="header"></div>
+	<!--顶部导航end-->
+
+	<!--中部-->
+	<div class="wids">
+		<div class="tabBox">
+			<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+			<div class="search">
+				<input type="text" placeholder="请输入关键字" />
+				<button class="back" type="button">搜索</button>
+				<a href="javascript:void(0);" class="issue back" id="mffb">免费发布</a>
+			</div>
+		</div>
+		<div class="mokuai">
+			<div class="tab_xia">
+				<ul id="xiaSype">
+					<li><a href="index.html"> 首页 </a></li>
+					<li><a href="rent.html" > 商铺出租 </a></li>
+					<li><a href="transfer.html"> 商铺转让 </a></li>
+					<li><a href="soliciting.html"> 商铺求租 </a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="boxs">
+			<div class="center_up">
+				<div class="cen_float upLeft">
+					<img id="img1"  />
+					<ul id="img">
+					</ul>
+					<div class="w w_left"><</div>
+					<div class="w w_right">></div>
+				</div>
+				<div class="cen_float upRight">
+					<div class="superior">
+						<h5 id="bt"></h5>
+						<span>更新时间：<b></b></span> 
+						<span id="scjl"><i
+							class="iconfont icon-shoucang"></i><span>收藏</span></span>
+					</div>
+					<div class="upRig_cen">
+						<div class="up_cenBox">
+							<div>
+								面积： <span id="pf"></span>平方
+							</div>
+							<div>
+								租金： <span><b id="zj"></b>元/月</span>
+							</div>
+							<div>
+								转让费： <span id="zrf"></span>
+							</div>
+						</div>
+						<div class="up_cenBox">
+							<div>
+								类型： <span id="lx"></span>
+							</div>
+							<div>
+								目前经营： <span>餐饮（<b>营业中</b>）
+								</span>
+							</div>
+							<div>
+								详细地址： <span id="xxdz"></span>
+							</div>
+							<div>适合经营：没有限制</div>
+						</div>
+						<div class="up_cenBox">
+							<div>
+								客户身份： <span>个人</span>
+							</div>
+							<div>
+								联系人： <span id="lxr"></span>
+							</div>
+							<div>
+								电话： <span id="tel"></span>
+							</div>
+							<div>联系我时，请说明实在鸽子名店看的，谢谢</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="recommend">
+				<h5>详细介绍</h5>
+				<div class="recBox" id="xxjs"></div>
+				<h5>地理位置</h5>
+				<div class="recBox recLeft" style="position: relative; height: 382px;">
+					<div id="container" style="top: 20px;"></div>
+				</div>
+				<div class="recRight">
+					<div class="mar_bot">
+						<a target="_blank" href="#"> <img src="images/wanted.png"
+							alt="" />
+							<div class="rec_r">
+								<p>天河区珠光御景出租招商</p>
+								<div>
+									区域：<span>天河区珠江新城</span>
+								</div>
+								<div>
+									租金：<span>50000元/月</span>
+								</div>
+								<div>
+									面积：<span>250平方米</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="mar_bot">
+						<a target="_blank" href="#"> <img src="images/wanted.png"
+							alt="" />
+							<div class="rec_r">
+								<p>天河区珠光御景出租招商</p>
+								<div>
+									区域：<span>天河区珠江新城</span>
+								</div>
+								<div>
+									租金：<span>50000元/月</span>
+								</div>
+								<div>
+									面积：<span>250平方米</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="mar_bot">
+						<a target="_blank" href="#"> <img src="images/wanted.png"
+							alt="" />
+							<div class="rec_r">
+								<p>天河区珠光御景出租招商</p>
+								<div>
+									区域：<span>天河区珠江新城</span>
+								</div>
+								<div>
+									租金：<span>50000元/月</span>
+								</div>
+								<div>
+									面积：<span>250平方米</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--中部-->
+
+	<!--底部-->
+	<div id="base"></div>
+	<!--底部end-->
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/rent_details.js"></script>
+<script src="js/islogin.js"></script>

@@ -1,0 +1,10 @@
+.serve_up{padding:10px;text-indent:2em;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.serve span{font-size:14px;color:#666}
+.serve_below{text-align:center;padding:15px 15px 0 15px;border-top:1px solid #ccc;position:relative}
+.serve_below h3{font-size:24px;color:#000}
+.serve_below span,i{display:inline-block;color:#fff}
+.serve_below .ser_nei{position:relative}
+.serve_below .i_ter{width:70px;height:70px;border:2px solid #fff;border-radius:50%;position:absolute;top:22px;left:13px;background:#0b9ad6}
+.serve_below .i_ter i{font-size:36px;font-weight:600;line-height:70px}
+.serve_below .span{width:70%;padding:15px 0;background:#0b9ad6;margin-top:30px;font-size:24px;margin-left:40px;text-indent:1em}
+.serve_below .span i{margin-left:10px;text-indent:0}

@@ -1,0 +1,47 @@
+<view class='container'>
+
+  <view class='message'>
+    <view class='mess-zi' wx:for="{{data_list}}" wx:for-item="item" wx:key="{{Id1}}" bindtap="{{stype?'wanClick':'tranClick'}}" data-id="{{item.sid}}">
+      <view class='mess-xx'>
+        <view class='xx-sm'>
+          <text>显示中</text>
+        </view>
+        <view class='xx-nr'>
+          <view class='xx-nr-bt'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='xx-nr-lx'>
+            <text>{{item.shoptype}}</text>
+          </view>
+          <image src="{{index == id && ames?'../../images/jts_03.png':'../../images/my_10.png'}}" catchtap='click' data-id="{{index}}"></image>
+        </view>
+      </view>
+      <view class="{{index == id && ames?'show':'hide'}}">
+        <view class='amend'>
+          <view class='amend-lb' catchtap="{{stype?'wanIssue':'tranIssue'}}" data-id="{{item.sid}}">
+            <image src='../../images/fz_06.png'></image>
+            <text>修改</text>
+          </view>
+          <view class='amend-lb' catchtap="{{stype?'delete2':'delete1'}}" data-id="{{item.sid}}" data-text='{{index}}'>
+            <image src='../../images/fz_03.png'></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="box-type hide{{types?'show':''}}">
+    <view class='type-ej'>
+      <view class='ej-list' wx:for="{{sum}}" wx:for-item="items1" wx:key="{{sum1}}" data-id=" {{index}}" bindtap='xuanze'>
+        <text>{{items1}}</text>
+      </view>
+    </view>
+    <view class='type-zzc' bindtap='hides'></view>
+  </view>
+
+  <view class='con-tabbar' bindtap='shows' data-text="{{set}}">
+    <text>{{set}}</text>
+    <text>选择我发布店铺信息内容</text>
+  </view>
+</view>

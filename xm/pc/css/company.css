@@ -1,0 +1,23 @@
+/*公司介绍*/
+.member{
+	width:728px;
+	margin: 48px auto 0 auto;
+	font-size: 12px;
+}
+.member p{
+	margin-bottom: 50px;
+	text-indent: 2em;
+	line-height: 18px;
+}
+.member .mem_but{
+	margin-bottom: 100px;
+}
+.member .mem_but h1{
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.member .mem_but span{
+	text-indent: 2em;
+	line-height: 18px;
+}

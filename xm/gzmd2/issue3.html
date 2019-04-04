@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺求购</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/issue3.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				gestureConfig:{
+			    longtap: false, //默认为false
+			    release:true,
+			    hold:true,
+			   }
+			})
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">商铺求购</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+			    <div class="mui-input-row">
+			        <label>区&nbsp;&nbsp;&nbsp;域</label>
+			        <input id="quyu" type="text" class="mui-input-clear" placeholder="请填写地区">
+			    </div>
+			    <div id="diqv">
+					<div id='fenqv' class="diqv_zi">
+					</div>
+					<div id="diqv_fu"></div>
+				</div>
+			    <div class="mui-input-row">
+			        <label>面&nbsp;&nbsp;&nbsp;积</label>
+			        <input id="mianji" type="text" class="mui-input-clear" placeholder="请填写面积">
+			        <span>平方</span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>购买预算</label>
+			        <input id="zujinyusuan" type="text" class="mui-input-clear" placeholder="请填写租金">
+			        <span>元/月</span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>类&nbsp;&nbsp;&nbsp;型</label>
+			        <input type="text" id="hy" class="mui-input-clear" value="" placeholder="请选择类型">
+			        <span class="mui-icon mui-icon-arrowright span2"></span>
+			    </div>
+			    <div id="suspend">
+			    	<ul>
+			    		<li>
+			    			<span>酒楼餐饮</span>
+			    		</li>
+			    		<li>
+			    			<span>美容美发</span>
+			    		</li>
+			    		<li>
+			    			<span>服饰鞋包</span>
+			    		</li>
+			    		<li>
+			    			<span>休闲娱乐</span>
+			    		</li>
+			    		<li>
+			    			<span>百货超市</span>
+			    		</li>
+			    		<li>
+			    			<span>生活服务</span>
+			    		</li>
+			    		<li>
+			    			<span>电子通讯</span>
+			    		</li>
+			    		<li>
+			    			<span>汽修美容</span>
+			    		</li>
+			    		<li>
+			    			<span>医药保健</span>
+			    		</li>
+			    		<li>
+			    			<span>家居建材</span>
+			    		</li>
+			    		<li>
+			    			<span>教育培训</span>
+			    		</li>
+			    		<li>
+			    			<span>空铺转让</span>
+			    		</li>
+			    		<li>
+			    			<span>旅行宾馆</span>
+			    		</li>
+			    		<li>
+			    			<span>其他行业</span>
+			    		</li>
+			    	</ul>
+			    	<div id="shade"></div>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>标&nbsp;&nbsp;&nbsp;题</label>
+			        <input id="title1" type="text" class="mui-input-clear" placeholder="10~500个字">
+			        <span class="mui-icon mui-icon-arrowright span2"></span>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>描&nbsp;&nbsp;&nbsp;述</label>
+			        <input type="text" id="ms" class="mui-input-clear" placeholder="10~100个字">
+			    </div>
+			    <div id="describe">
+			    	<div class="des_nei">
+			    		<textarea id="text" name=""  placeholder="请输入详细描述，10~200字"></textarea>
+			    		<div class="nei_sm">
+			    			<span class="mui-pull-left">已输入<i id="i_color">0</i>字</span>
+			    			<span class="mui-pull-right"><i class="mui-icon mui-icon-trash"></i>清空所有</span>
+			    		</div>
+			    		<button id="but2" type="button">完成</button>
+			    	</div>
+			    	<div id="shade" class="ercds"></div>
+			    </div>
+			    <div class="mui-input-row">
+			        <label>联系人</label>
+			        <input id="lianxiren" type="text" class="mui-input-clear" placeholder="2~6个字">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>手&nbsp;&nbsp;&nbsp;机</label>
+			        <input onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" id="phoness" type="text" class="mui-input-clear" placeholder="请输入手机号码">
+			    </div>
+			    <div class="mui-input-row">
+			        <label>身&nbsp;&nbsp;&nbsp;份</label>
+			        <div id="identity">
+			        	<span class="span_color">个人</span>
+			        	<span>中介</span>
+			        </div>
+			    </div>
+			    
+			</form>
+			<div class="smsy">
+			    <span>填写越详细，排名越靠前</span>
+			</div>
+			<button type="button" id="but">发布</button>
+		</div>
+	</body>
+</html>
+<script src="js/issues.js"></script>
+<script src="js/issueZ.js"></script>

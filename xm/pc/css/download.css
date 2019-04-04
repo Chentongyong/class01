@@ -1,0 +1,117 @@
+.dow_app{
+	width: 100%;
+	height: 814px;
+	background-image: url(../images/app1_02.png);
+	margin-bottom: 20px;
+}
+.boxs a{
+	display: block;
+	padding: 10px 0;
+}
+.boxs a .span{
+	vertical-align: top;
+	font-size: 18px;
+	position: relative;
+	top: 18px;
+	left: 10px;
+	border-left: 3px solid #0B9AD6;
+	padding-left:10px ;
+}
+.dow_app .shouji{
+	width: 348px;
+	height: 706px;
+	background-image: url(../images/app1_01.png);
+	margin-top:50px;
+	display: inline-block;
+}
+.shouji .shouBox{
+    width: 307px;
+    height: 542px;
+    overflow: hidden;
+    position: relative;
+    top: 82px;
+    left: 21px;
+}
+.shouji .shouBox img{
+	width: 307px;
+	height: 542px;
+}
+.xiazai{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	top: 244px;
+	left: 170px;
+	color: #fff;
+}
+h1{font-size: 36px;margin-bottom: 5px;}
+.xiazai .xzBox{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	left: 30px;
+}
+.xiazai .xzBox a:nth-child(1){
+	width: 160px;
+	display: block;
+	height: 44px;
+	border: 1px solid #fff;
+	margin-bottom: 20px;
+	line-height: 44px;
+	text-align: center;
+	background: #fff;
+	border-radius: 25px;
+	box-sizing: border-box;
+	color: red;
+}
+.xiazai .xzBox a:nth-child(2){
+	width: 160px;
+	display: block;
+	height: 44px;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	line-height: 44px;
+	text-align: center;
+	box-sizing: border-box;
+	color: #fff;
+}
+.xiazai .xzBox .iBox1{
+	width: 18px;
+	height: 22px;
+	background-image: url(../images/xzlogo_03.png);
+	display: inline-block;
+	vertical-align: top;
+	/*margin-right: 10px;*/
+}
+.xiazai .xzBox .iBox2{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background-image: url(../images/xzlogo_06.png);
+	position: relative;
+	top: -8px;
+	/*margin-right: 10px;*/
+}
+.xiazai .xzBox a span{
+    position: relative;
+    top: -10px;
+    left: 5px;
+}
+ul{
+	position: absolute;
+	bottom: 10px;
+	left: 38%;
+}
+ul li{
+	width: 10px;
+	height: 10px;
+	background: #000;
+	border: 1px solid #000;
+	border-radius: 50%;
+	float: left;
+	margin-right: 10px;
+}
+ul li.li_style{
+	background: #0B9AD6;
+	border: 1px solid #0B9AD6;
+}

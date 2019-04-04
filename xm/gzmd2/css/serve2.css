@@ -1,0 +1,14 @@
+body{background:#fff}
+.mui-content{background:#fff;width:100%;height:100%}
+.serve_up{padding:30px 20px 50px 20px;height: 252px;}
+.serve_up .up_left{width:50%;float: left;text-align:center;vertical-align:top;margin-top:30px}
+.serve_up .up_left i{display:block;font-size:48px;color:#2AC845}
+.serve_up .up_left span{display:block;font-size:20px;font-weight:600;color:#2AC845;position:relative;top:30px}
+.serve_up .up_right{width:50%;float: left;}
+.serve_up .up_right span{display:block;padding:15px 10px;border-top:1px solid #ccc;color:#2AC845;font-size:18px}
+.serve_up .up_right span i{font-size:28px;margin-right:10px}
+.serve_below .below_db{margin-left:10px;width:120px;height:40px;font-size:16px;line-height:40px;border-radius:5px;background:#2AC845;text-align:center;color:#fff}
+.serve_below .below_db i{font-size:24px}
+.serve_below .below_jb{margin-top:50px;width:100%}
+.serve_below .below_jb span{display:block;padding:10px 10px;width:50%;float:left;font-size:14px;position:relative}
+.serve_below .below_jb span i{display:block;width:15px;height:15px;line-height:15px;text-align:center;background:#2AC845;border-radius:50%;color:#fff;float:left;font-style:normal;margin-right:5px;margin-top:3px}

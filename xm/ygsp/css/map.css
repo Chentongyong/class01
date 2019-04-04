@@ -1,0 +1,48 @@
+.mapUp{
+	display: flex;
+	font-size: 18px;
+	color: #666;
+	margin-top: 20px;
+}
+
+.mapUp h5{
+	color: #0B9AD6;
+	font-size: 18px;
+}
+.mapUp div{
+	margin-left: 10px;
+	
+}
+.mapUp div a{
+	padding: 0 5px;
+}
+
+.mapBox{
+	font-size: 14px;
+}
+.mapBox h5{
+	padding: 24px 0;
+	font-size: 14px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 20px;
+}
+.mapBox div{
+	display: flex;
+	margin-bottom: 10px;
+}
+.mapBox div span{
+	width: 30px;
+	font-size: 24px;
+	color: #000;
+	display: block;
+	padding: 0 10px;
+}
+.mapBox div a{
+	display: block;
+	line-height: 26px;
+	font-size: 18px;
+	padding: 0 5px;
+	color: #0B9AD6;
+	position: relative;
+	top: 3px;
+}

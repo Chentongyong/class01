@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的发布</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_mopp.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的发布信息</h1>
+		</header>
+		<div class="mui-content">
+			<ul id="ulObj" class="liObj">
+				
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script>
+	var hides = document.getElementsByClassName('hides');
+	var ulObj = document.getElementById('ulObj');
+	var liObj = document.getElementsByTagName('li');
+	var aObj = document.getElementById('aObj');
+	var h_a4 = document.getElementsByClassName('h_a4');
+	var iObj = document.getElementsByTagName('i');
+	mui.plusReady(function() {
+		var cw = plus.webview.currentWebview();
+		uid = cw.uid;
+		member = cw.member;
+		tel = cw.tel;
+		mui.ajax({
+			url: 'http://wwwgezimd.com/Store/storeactions!MyStore.action?user.uid=' + uid,
+			type: 'post',
+			async: true,
+			dataType: 'json',
+			crossDomain: true, //强制使用5+跨域
+			timeout: '10000',
+			success: function(data) {
+				if(data != null) {
+					for(var j = 0; j < data.length; j++) {
+						var li = document.createElement('li');
+						li.style.padding = '10px';
+						li.innerHTML += '<div class="li_up" title="' + data[j].name + '"><a class="aObj" id=' + data[j].sid + '><span class="span">' + '显示中' + '</span><div class="up_left"><span class="up_span1">' +
+							data[j].name + '</span><span class="up_span2">' + data[j].typead + '</span></div></a>' +
+							'<i class="mui-icon mui-icon-arrowdown mui-pull-right"></i></div>' +
+							'<div id="li_hide" class="hides"><a class="h_a1"><span class="mui-icon mui-icon-navigate"></span><span id="spansss">' + '推荐匹配' +
+							'</span></a><a class="h_a2"><span class="mui-icon mui-icon-spinner-cycle mui-spin"></span><span>' + '刷新' + '</span></a><a class="h_a3" id="' + data[j].sid + '" title=' + data[j].typead + '>' +
+							'<span class="mui-icon mui-icon-compose"></span><span>' +
+							'修改' + '</span></a><a class="h_a4" id=' + data[j].sid + ' title=""><span class="mui-icon mui-icon-trash"></span><span>' + '删除' + '</span></a></div>';
+						ulObj.appendChild(li);
+					}
+				}
+				//跳转详情页
+				var detailPage = mui.preload({
+					url: 'mine_details3.html',
+					id: 'mine_details3.html'
+				});
+				mui('.liObj').on('tap', '.aObj', function() {
+					var title = this.getAttribute('title');
+					var sid = this.getAttribute('id');
+					mui.fire(detailPage, 'newsId', {
+						tltit: title,
+						sid: sid,
+						uid: uid
+					});
+					mui.openWindow({
+						url: 'mine_details3.html',
+						id: 'mine_details3.html'
+					})
+				})
+				//推荐匹配
+				mui('.hides').on('tap', '.h_a1', function() {
+					mui.toast("暂时不操作")
+				})
+				//刷新
+				mui('.hides').on('tap', '.h_a2', function() {
+					var wobj = plus.webview.getWebviewById("mine_mopp.html");
+					wobj.reload(true);
+				})
+
+				//修改
+				mui('.hides').on('tap', '.h_a3', function() {
+					var sid = this.getAttribute('id');
+					var title = this.getAttribute('title');
+					if(title == "转让") {
+						var detailPage1 = mui.preload({
+							url: 'issue1.html',
+							id: 'issue1.html'
+						});
+						mui.fire(detailPage1, 'newsId', {
+							sid: sid,
+							uid: uid,
+							tel: tel,
+							member: member
+						});
+						mui.openWindow({
+							url: 'issue1.html',
+							id: 'issue1.html'
+						})
+					}
+					if(title == "求租") {
+						var detailPage2 = mui.preload({
+							url: 'issue2.html',
+							id: 'issue2.html'
+						});
+						mui.fire(detailPage2, 'newsId', {
+							sid: sid,
+							uid: uid,
+							tel: tel,
+							member: member
+						});
+						mui.openWindow({
+							url: 'issue2.html',
+							id: 'issue2.html'
+						})
+					}
+					if(title == "求购") {
+						var detailPage3 = mui.preload({
+							url: 'issue3.html',
+							id: 'issue3.html'
+						});
+						mui.fire(detailPage3, 'newsId', {
+							sid: sid,
+							uid: uid,
+							tel: tel,
+							member: member
+						});
+						mui.openWindow({
+							url: 'issue3.html',
+							id: 'issue3.html'
+						})
+					}
+					if(title == "出租") {
+						var detailPage4 = mui.preload({
+							url: 'issue4.html',
+							id: 'issue4.html'
+						});
+						mui.fire(detailPage4, 'newsId', {
+							sid: sid,
+							uid: uid,
+							tel: tel,
+							member: member
+						});
+						mui.openWindow({
+							url: 'issue4.html',
+							id: 'issue4.html'
+						})
+					}
+					if(title == "出售") {
+						var detailPage5 = mui.preload({
+							url: 'issue5.html',
+							id: 'issue5.html'
+						});
+						mui.fire(detailPage5, 'newsId', {
+							sid: sid,
+							uid: uid,
+							tel: tel,
+							member: member
+						});
+						mui.openWindow({
+							url: 'issue5.html',
+							id: 'issue5.html'
+						})
+					}
+				})
+
+				//删除
+				mui('.hides').on('tap', '.h_a4', function() {
+					var sid = this.getAttribute('id');
+					mui.ajax({
+						url: 'http://wwwgezimd.com/Store/storeactions!my_delete.action?store.sid=' + sid,
+						type: 'post',
+						async: true,
+						dataType: 'json',
+						crossDomain: true, //强制使用5+跨域
+						timeout: '10000',
+						success: function(data) {
+							mui.toast("删除成功")
+						},
+						error: function(xhr, type, errorThrown) {
+							mui.toast("网络出错")
+						}
+					});
+				})
+			},
+			error: function(xhr, type, errorThrown) {
+				mui.toast("网络出错666")
+			}
+		});
+
+	})
+
+	mui('.liObj').on('tap', 'i', function() {
+		for(var j = 0; j < iObj.length; j++) {
+			iObj[j].index = j;
+		}
+		var k = this.index;
+		if(hides[k].className == 'hides hide_disp') {
+			hides[k].className = 'hides';
+		} else {
+			hides[k].className = 'hides hide_disp';
+		}
+		h_a4[k].addEventListener('tap', function() {
+			var thisNode = this.parentNode.parentNode;
+			thisNode.remove();
+		});
+	})
+</script>

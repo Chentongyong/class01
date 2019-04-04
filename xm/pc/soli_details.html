@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>求租详情</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/soli_details.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+	     <div id="header"></div>
+		<!--顶部导航end-->
+
+		<!--中部-->
+		<div class="wids">
+			<div class="tabBox">
+				<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+				<div class="search">
+					<input type="text" placeholder="请输入关键字" />
+					<button class="back" type="button">搜索</button>
+					<a href="javascript:void(0);" id="mffb" class="issue back">免费发布</a>
+				</div>
+			</div>
+			<div class="mokuai">
+				<div class="tab_xia">
+					<ul id="xiaSype">
+						<li>
+							<a href="index.html">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="rent.html">
+								商铺出租
+							</a>
+						</li>
+						<li>
+							<a href="transfer.html">
+								商铺转让
+							</a>
+						</li>
+						<li>
+							<a href="soliciting.html" class="a_back">
+								商铺求租
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxs">
+				<!--左部-->
+				<div class="cenLeft" id="qiugouxiang">
+					<!-- <div class="leftUp">
+						<h5>大排档招烧烤合作，免租金</h5>
+						<span>更新时间：2018-04-18&nbsp;&nbsp;09:04:09</span>
+						<span class="span">
+						<i class="iconfont icon-shoucang"></i><span id="spans">取消收藏</span></span>
+					</div>
+					<div>
+						<div class="bor_bott">
+							<span>姓名：<b>萝莉</b></span>
+							<span>联系电话：<b>13562489562</b></span>
+							<span>咨询名店：<b>400-123-568</b></span>
+						</div>
+						<div class="bor_bott">
+							<span>面积需求：<b>15-30平方</b></span>
+							<span>租金预算：<b>10000-20000元/月</b></span>
+							<span>经营业态：<b>酒楼餐饮</b></span>
+						</div>
+						<div class="bor_bott">
+							<span>区域：<b>天河</b></span>
+							<span>配套设施：<b>客梯</b></span>
+						</div>
+						<div class="bor_bott">
+							<p>意向商铺描述：</p>
+							<span>
+								财经大学冷饮小吃店痛心转让，在海珠区官洲学校门口旁临街铺面，
+								租金：10500元/月、面积：10方，在校大学生3万多人，
+								还有一个华立学校几千人,门口位置可租2500~3000一个月,
+								设备证件齐全，因自己另有生意发展，无暇顾及，才忍痛转让，
+								 有意请联系，去看店的老板不要打扰到员工，请先联系本人，谢谢
+							</span>
+						</div>
+					</div> -->
+				</div>
+
+			    <!--右部广告-->
+				<div class="cenRight">
+					<div class="recRight">
+						<div class="mar_bot">
+							<a target="_blank" href="soli_details.html">
+								<img src="images/wanted.png" alt="" />
+								<div class="rec_r">
+									<p>天河区珠光御景出租招商</p>
+									<div>区域：<span>天河区珠江新城</span></div>
+									<div>租金：<span>50000元/月</span></div>
+									<div>面积：<span>250平方米</span></div>
+								</div>
+							</a>
+						</div>
+						<div class="mar_bot">
+							<a target="_blank" href="soli_details.html">
+								<img src="images/wanted.png" alt="" />
+								<div class="rec_r">
+									<p>天河区珠光御景出租招商</p>
+									<div>区域：<span>天河区珠江新城</span></div>
+									<div>租金：<span>50000元/月</span></div>
+									<div>面积：<span>250平方米</span></div>
+								</div>
+							</a>
+						</div>
+						<div class="mar_bot">
+							<a target="_blank" href="soli_details.html">
+								<img src="images/wanted.png" alt="" />
+								<div class="rec_r">
+									<p>天河区珠光御景出租招商</p>
+									<div>区域：<span>天河区珠江新城</span></div>
+									<div>租金：<span>50000元/月</span></div>
+									<div>面积：<span>250平方米</span></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--中部end-->
+
+	    <!--底部-->
+	    <div id="base"></div>
+	    <!--底部end-->
+	</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/soli_details.js"></script>
+<script src="js/pcjs.js"></script>
+<script>
+	qiuzuxiangqing();
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+	$('.span i').click(function(){//收藏
+		if($(this).attr("class")=='iconfont icon-shoucang iStyle'){
+			$(this).attr("class",'iconfont icon-shoucang')
+		}else{
+			$(this).attr("class",'iconfont icon-shoucang iStyle')
+		}
+	})
+</script>
+<script src="js/islogin.js"></script>
+<script src="js/pcjs.js"></script>
+<script>
+	qiuzuxiangqing();
+	$("#header").load("header.html");
+	$('#base').load('base.html');
+	$('.span i').click(function(){//收藏
+		if($(this).attr("class")=='iconfont icon-shoucang iStyle'){
+			$(this).attr("class",'iconfont icon-shoucang')
+		}else{
+			$(this).attr("class",'iconfont icon-shoucang iStyle')
+		}
+	})
+</script>

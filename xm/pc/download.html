@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>APP下载页</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/tab.css" />
+		<link rel="stylesheet" href="css/download.css" />
+	</head>
+
+	<body>
+		<div class="wids">
+			<div class="boxs">
+				<a href="index.html">
+					<img src="images/homes_11.png" alt="" />
+					<span class="span">鸽子名店手机app</span>
+				</a>
+			</div>
+			<div class="dow_app">
+				<div class="boxs">
+					<div class="shouji">
+						<div class="shouBox">
+							<img class="imgs" src="images/app1.png" alt="" />
+							<img class="imgs" src="images/app2.png" alt="" />
+							<img class="imgs" src="images/app3.png" alt="" />
+							<img class="imgs" src="images/app4.png" alt="" />
+							<ul>
+								<li class="li_style"></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+					</div>
+					<div class="xiazai">
+						<h1>鸽子名店</h1>
+						<p>店铺经营全流程服务 名店客户端10万铺源尽在我手</p>
+						<div style="margin-top: 40px;">
+							<img src="images/homes_15.png" alt="" />
+							<div class="xzBox">
+								<a href="#">
+									<i class="iBox1"></i>
+									<span>Iphone下载</span>
+								</a>
+								<a href="#">
+									<i class="iBox2"></i>
+									<span>Android下载</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+	var sum = 0;
+	var lis = $('ul li').length;
+	console.log(lis)
+	//定时器
+	time = setInterval(function() {
+		clock();
+	}, 3000);
+
+	function clock() {
+		sum++;
+		if(sum == lis) {
+			sum = 0;
+		}
+		//eq(sum)当前li添加class='on',它的其他兄弟姐妹li删除class='on'
+		$('ul li').eq(sum).addClass('li_style').siblings('li').removeClass('li_style'); //添加class名on（让小球背景色变成红色）
+		//eq(sum)当前img添加class='ion',它的其他兄弟姐妹img删除class='ion'
+		$('.imgs').eq(sum).show().siblings('img').hide();
+	}
+</script>

@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mine.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true, //启用右滑关闭功能
+				//监听Android手机的menu按键
+				keyEventBind: {
+					backbutton: false, //Boolean(默认true)关闭back按键监听
+					menubutton: false //Boolean(默认true)关闭menu按键监听
+				}
+			})
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">我的</h1>
+		</header>
+		<div class="mui-content" style="padding-bottom: 60px;">
+			<div class="mune_up" style="text-align: center;position: relative;">
+				<div id="dlBox" class="register" style="position: relative;top: 10px;">
+					<h2 class="mui-pull-left" style="text-align: center;">登录</h2 >
+			    	<a class="mui-pull-left"><i class="mui-icon mui-icon-arrowright"></i></a>
+		    	</div>
+		    	<p id="P_zh" style="display: inline-block;width: 160px;text-align: center;"></p>
+		    	<span id="huiYuan" class="iconfont icon-huiyuan"></span>
+		    	<div id="hy_sh" style="display: none;">
+		    		<ul class="members">
+			    		<li class="mem_li">
+			    			<div>月套餐：<b>39</b><span>元/月</span></div>
+			    			<i></i>
+			    		</li>
+			    		<li class="mem_li">
+			    			<div>季度套餐：<b>105</b><span>元/月</span></div>
+			    			<i></i>
+			    		</li>
+			    		<li class="mem_li">
+			    			<div>半年套餐：<b>190</b><span>元/月</span></div>
+			    			<i></i>
+			    		</li>
+			    		<li class="mem_li">
+			    			<div>全年套餐：<b>300</b><span>元/月</span></div>
+			    			<i></i>
+			    		</li>
+			    		<li>
+			    			<h4>支付方式：</h4>
+			    			<button id="zhifubao" type="button" class="mui-btn mui-btn-outlined butt1">支付宝</button>
+			    			<button id="weixin" type="button" class="mui-btn mui-btn-outlined butt2">微信</button>
+			    		</li>
+			    	</ul>
+			    	<div id="mem_fu"></div>
+		    	</div>
+
+		    	<div id="hy_sh2" style="display: none;">
+		    		<div class="members">
+		    			<input id="zhcz" type="text" value="" placeholder="请输入支付金额"/>
+			    		<h4>支付方式：</h4>
+			    		<button id="zhifubao" type="button" class="mui-btn mui-btn-outlined butt1">支付宝</button>
+			    		<button id="weixin" type="button" class="mui-btn mui-btn-outlined butt2">微信</button>
+			    	</div>
+			    	<div id="mem_fu2"></div>
+		    	</div>
+		    </div>
+
+		    <ul class="mui-table-view">
+		    	<li class="mui-table-view-cell mui-media" id="top_up">
+		            <a>
+		                <i class="mui-media-object mui-pull-left iconfont icon-yinglimoshi" style="font-size: 24px;"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">我的账户</span>
+		                    <span class="mui-ellipsis" style="float:right;padding-right: 30px;">余额：<b id="jinqian">0.00</b></span>
+		                </div>
+		            </a>
+		        </li>
+
+		        <li class="mui-table-view-cell mui-media li1">
+		            <a href="javascript:;">
+		                <i class="mui-media-object mui-pull-left mui-icon mui-icon-star"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">我的收藏</span>
+		                </div>
+		            </a>
+		        </li>
+
+		        <li class="mui-table-view-cell mui-media li2">
+		            <a href="javascript:;">
+		                <i class="mui-media-object mui-pull-left mui-icon mui-icon-compose"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">我的发布</span>
+		                </div>
+		            </a>
+		        </li>
+
+		        <li class="mui-table-view-cell mui-media li3">
+		            <a href="javascript:;">
+		                <i class="mui-media-object mui-pull-left mui-icon mui-icon-loop"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">浏览记录</span>
+		                </div>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell mui-media li4">
+		            <a href="javascript:;">
+		                <i class="mui-media-object mui-pull-left mui-icon mui-icon-gear"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">设置</span>
+		                </div>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell mui-media li5">
+		            <a href="javascript:;">
+		                <i class="mui-media-object mui-pull-left mui-icon mui-icon-chat"></i>
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">意见反馈</span>
+		                </div>
+		            </a>
+		        </li>
+		    </ul>
+		    <div id="qianshu" style="display: none;"></div>
+		</div>
+		<!--底部导航-->
+		<nav class="mui-bar mui-bar-tab">
+		    <a id="shouye" class="mui-tab-item">
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a id="gongsi" class="mui-tab-item">
+		        <span class="mui-icon mui-icon-chatboxes"></span>
+		        <span class="mui-tab-label">公司介绍</span>
+		    </a>
+		    <a id="fabu" class="mui-tab-item">
+		        <span class="mui-icon mui-icon-compose"></span>
+		        <span class="mui-tab-label">发布</span>
+		    </a>
+		    <a id="" class="mui-tab-item" style="color: #0b9ad6;">
+		        <span class="iconfont icon-home"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		</nav>
+	    <!--底部导航end-->
+	</body>
+</html>
+<!--<script src="js/zhifu.js"></script>-->
+<!--<script src="js/index.js"></script>-->
+<script>
+	var p_zh = document.getElementById('P_zh');//账号
+	var dlBox = document.getElementById('dlBox');//点击登录
+	var huiYuan = document.getElementById('huiYuan');//会员
+	var hy_sh = document.getElementById('hy_sh');//充值会员的显示与隐藏
+	var hy_sh2 = document.getElementById('hy_sh2')//账户充值的显示与隐藏
+	var mem_fu = document.getElementById('mem_fu');//会员遮罩层
+	var mem_fu2 = document.getElementById('mem_fu2');//账户遮罩层
+	var iObj = hy_sh.getElementsByTagName('i');
+	var bObj = hy_sh.getElementsByTagName('b');
+	var mem_li = document.getElementsByClassName('mem_li');//充值
+	var mem_i = document.getElementsByClassName('mem_i');//选中充值方式
+	var top_up = document.getElementById('top_up')//我的账户
+	var qianshu = document.getElementById('qianshu');//选中充值钱数
+	var jinqian = document.getElementById('jinqian');//账户余额
+	var zhcz = document.getElementById('zhcz')//余额充值
+	var uid='';
+	var tel='';
+	var pwd='';
+	var member='';
+	var city_text = '';
+
+	
+	mui.plusReady(function(){
+		// 获取支付通道
+//      plus.payment.getChannels(function(channels){
+//          aliChannel=channels[0];
+//          wxChannel=channels[1];
+//      },function(e){
+//          alert("获取支付通道失败："+e.message);
+//      });
+
+		window.addEventListener('newsId',function(m){
+			if(p_zh.innerText!=''&&p_zh.innerText!=undefined){//判断是否显示会员
+				huiYuan.style.display = 'inline-block';
+			}else{
+				huiYuan.style.display = 'none';
+			}
+			hy_sh.style.display = 'none';
+			hy_sh2.style.display = 'none'
+			tel=m.detail.tel;
+			pwd=m.detail.pwd;
+			uid=m.detail.uid;
+			member=m.detail.member;
+			city_text = m.detail.city_text;
+			if(tel !=null && tel != '' ){
+				p_zh.innerText=tel;
+				dlBox.style.display = 'none';
+				huiYuan.style.display = 'inline-block';
+
+			}else{
+				dlBox.style.display = 'block';
+                huiYuan.style.display = 'none';
+				p_zh.innerTex='';
+			}
+			if(member==3){
+				huiYuan.style.color = '#FFFF00'
+			}else{
+				huiYuan.style.color = '#FFF'
+			}
+		})
+		var detailPage = mui.preload({url:'index.html',id:'index.html'})
+		mui('#shouye').on('tap','span',function(e){
+			mui.fire(detailPage,'newsId',{tel:tel,uid:uid,member:member,city_text:city_text});
+			mui.openWindow({url:'index.html',id:'index.html'})
+		})
+		var detailPage1 = mui.preload({url:'examine.html',id:'examine.html'})
+		mui('#gongsi').on('tap','span',function(e){
+			mui.fire(detailPage1,'newsId',{tel:tel,uid:uid,member:member,city_text:city_text});
+			mui.openWindow({url:'examine.html',id:'examine.html'})
+		})
+		var detailPage2 = mui.preload({url:'issue.html',id:'issue.html'})
+		mui('#fabu').on('tap','span',function(e){
+			mui.fire(detailPage2,'newsId',{tel:tel,uid:uid,member:member,city_text:city_text});
+			mui.openWindow({url:'issue.html',id:'issue.html'})
+		})
+
+	//跳转收藏页面
+	mui('.mui-table-view').on('tap','.li1',function(){
+		if(p_zh.innerText!=''){
+    		mui.openWindow({
+		    	url: "mine_collect.html",
+		    	id: "mine_collect.html",
+		    	style:{},
+		    	extras:{
+		    		uid:uid,
+		    		tel:tel,
+		    		member:member
+		    	},
+		    	show: {
+		    		autoShow:true,
+		    		aniShow:"slide-in-right",
+		    		duration:100
+		    	},
+		    })
+	    }else{
+			denglu();
+		}
+	})
+    //跳转发布页面
+    mui('.mui-table-view').on('tap','.li2',function(){
+    	if(p_zh.innerText!=''){
+    		mui.openWindow({
+		    	url: "mine_mopp.html",
+		    	id: "mine_mopp.html",
+		    	style:{},
+		    	extras:{
+		    		uid:uid,
+		    		tel:tel,
+		    		member:member
+		    	},
+		    	show: {
+		    		autoShow:true,
+		    		aniShow:"slide-in-right",
+		    		duration:100
+		    	},
+		    })
+	    }else{
+			denglu();
+		}
+	})
+
+//  跳转浏览记录页面
+    mui('.mui-table-view').on('tap','.li3',function(){
+    	if(p_zh.innerText!=''){
+    		mui.openWindow({
+		    	url: "mine_cookies.html",
+		    	id: "mine_cookies.html",
+		    	style:{},
+		    	extras:{
+		    		uid:uid,
+		    		member:member
+		    	},
+		    	show: {
+		    		autoShow:true,
+		    		aniShow:"slide-in-right",
+		    		duration:100
+		    	},
+		    })
+        }else{
+			denglu();
+		}
+    })
+
+	//  跳转意见反馈页面
+    mui('.mui-table-view').on('tap','.li5',function(){
+	    if(p_zh.innerText!=''){
+	    	var detailPage6 = mui.preload({ url: 'mine_feedback.html', id: 'mine_feedback.html' })
+			mui.fire(detailPage6, 'newsId', {uid: uid,tel:tel,member:member});
+			mui.openWindow({ url: 'mine_feedback.html', id: 'mine_feedback.html' })
+        }else{
+			denglu();
+		}
+    })
+
+//  点击跳转设置页面
+    mui('.mui-table-view').on('tap','.li4',function(){
+    	var detailPage7 = mui.preload({ url: 'mine_cache.html', id: 'mine_cache.html' })
+		mui.fire(detailPage7, 'newsId', {uid: uid,tel: tel,pwd: pwd});
+		mui.openWindow({ url: 'mine_cache.html', id: 'mine_cache.html' })
+	})
+	})
+
+	//	点击弹出充值会员
+    huiYuan.addEventListener('tap',function(){
+//  	hy_sh.style.display = 'block';
+        mui.toast('暂时未开通此功能')
+   })
+    //关闭会员充值弹窗
+    mem_fu.addEventListener('tap',function(){
+    	hy_sh.style.display = 'none';
+    })
+
+     //关闭会员充值弹窗
+    mem_fu2.addEventListener('tap',function(){
+    	hy_sh2.style.display = 'none';
+    })
+
+    //我的账户
+	top_up.addEventListener('tap',function(){
+//		if(p_zh.innerText!=''){
+			// hy_sh2.style.display = 'block';
+//		}else{
+////			denglu();
+			mui.toast('暂时未开通此功能')
+//		}
+	})
+
+    for(var t = 0 ; t < iObj.length ; t++){
+    	iObj[t].index = t;
+    }
+    mui('.members').on('tap','i',function(){
+    	var sst = this.index;
+    	for(var j = 0 ;j < iObj.length ;j++){
+    		iObj[j].className = '';
+    	}
+    	this.className = 'mui-icon mui-icon-checkmarkempty';
+    	this.style.fontWeight=600;
+    	qianshu.innerText=bObj[sst].innerText;//选择支付金额
+
+
+    	 //确认支付方式支付宝支付
+//		mui('li').on('tap','.butt1',function(){
+//			var amount = bObj[sst].innerText;//选择支付金额
+//          console.log(bObj[sst].innerText)
+//			mui.toast('支付宝支付')
+//			hy_sh.style.display = 'none';
+//			huiYuan.style.color = '#FFFF00'
+//		})
+
+
+		//确认支付方式微信支付
+//	    mui('li').on('tap','.butt2',function(){
+//	    	var amount = bObj[sst].innerText;//选择支付金额
+//          console.log(bObj[sst].innerText)
+//	    	mui.toast('微信支付')
+//	    	hy_sh.style.display = 'none';
+//	    	huiYuan.style.color = '#FFFF00';
+//	    })
+    })
+
+    document.getElementById('weixin').addEventListener('tap',function() {
+//      mui.toast('微信支付')
+//	    hy_sh.style.display = 'none';
+//	    huiYuan.style.color = '#FFFF00';
+
+        mui.toast('暂时未开通支付功能')
+    })
+
+
+    document.getElementById('zhifubao').addEventListener('tap',function() {
+    	var aa = qianshu.innerText;
+//  	if(P_zh.innerText!=null&&P_zh.innerText!=''){
+//  		console.log("zhifubao");
+//          pay('alipay');
+//          hy_sh.style.display = 'none';
+//          huiYuan.style.color = '#FFFF00'
+//  	}else{
+//  		mui.toast('请先登录您的账号')
+//  	}
+        mui.toast('暂时未开通支付功能')
+
+    })
+
+//      var ALIPAYSERVER='http://wwwgezimd.com/Store/PayService?total=';
+//      var WXPAYSERVER='http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=';
+//      // 2. 发起支付请求
+//      function pay(id){
+//              // 从服务器请求支付订单
+//              var PAYSERVER='';
+//              if(id=='alipay'){
+//              PAYSERVER=ALIPAYSERVER;
+//              channel = aliChannel;
+//          }else if(id=='wxpay'){
+//                  PAYSERVER=WXPAYSERVER;
+//                  channel = wxChannel;
+//              }else{
+//                  plus.nativeUI.alert("不支持此支付通道！",null,"捐赠");
+//                  return;
+//           }
+//              var xhr=new XMLHttpRequest();
+//              xhr.onreadystatechange=function(){
+//              	console.log(xhr.responseText)
+//                  switch(xhr.readyState){
+//                      case 4:
+//                      if(xhr.status==200){
+//                          plus.payment.request(channel,xhr.responseText,function(result){
+//                              plus.nativeUI.alert("支付成功！",function(){
+//                              	jinqian.innerText = aa;
+//                              back();
+//                          });
+//                          },function(error){
+//                              plus.nativeUI.alert("支付失败：");
+//                              console.log(error.code)
+//                          });
+//                      }else{
+//                          alert("获取订单信息失败！");
+//                      }
+//                      break;
+//                  default:
+//                  break;
+//              }
+//       }
+//          xhr.open('GET',PAYSERVER+aa);
+//          xhr.send();
+//  }
+
+
+
+
+	//跳转登录页面
+	var denglu = function(){
+		/*var detailPage8 = mui.preload({ url: 'mine_register.html', id: 'mine_register.html' })
+		mui.fire(detailPage8, 'newsId', {city_text:city_text});
+		mui.openWindow({ url: 'mine_register.html', id: 'mine_register.html' })*/
+		mui.openWindow({
+			url:'mine_register.html',
+			id:'mine_register.html',
+			extras:{
+		    		city_text:city_text
+		    	},
+			style:{},
+			show:{
+			    autoShow:true,
+				aniShow:"slide-in-right,",
+				duration:100
+			},
+			waiting:{
+				autoShow:true,
+				title:"正在加载...",
+				options:{}
+			}
+		})
+	}
+	mui('.mune_up').on('tap','.register',function(){
+		denglu();
+	})
+
+</script>

@@ -1,0 +1,91 @@
+<view class="container">
+    <view class='pictureBox'>
+      <view class='box-click' bindtap="chooseImg">
+        <text class='box-icon'>+</text>
+        <text style='position: relative;top: -20rpx;'>上传图片</text>
+      </view>
+      <view style='display: flex;width:100%;flex-wrap:wrap;padding:20rpx 0'>
+        <view class="img" wx:for="{{imgs}}" wx:for-item="item" wx:key="this">
+          <image class='image' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+          <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">X</view>
+        </view>
+      </view>
+    </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='listBox'>
+      <view class='box-list'>
+        <view class="section" bindtap='xsqy'>
+          <text class='sec-text' decode="{{true}}">区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;域：</text>
+          <input type="text" name="area" placeholder="请填写地区" value='{{area}}' />
+          <image class='list_icon' src='../../images/my_10.png'></image>
+        </view>
+        <view class="section">
+          <text class='sec-text'>详细地址：</text>
+          <input type="text" name="tranXxdz" placeholder="请填写详细地址" value='{{tranXxdz}}' />
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积：</text>
+          <input type="digit" name="tranMj" placeholder="请填写面积" value='{{tranMj}}'/>
+          <text class='list_icon'>平方</text>
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金：</text>
+          <input type="digit" name="tranZj" placeholder="请填写租金" value='{{tranZj}}'/>
+          <text class='list_icon'>元/月</text>
+        </view>
+
+        <view class="section" bindtap='genres'>
+          <text class='sec-text' decode="{{true}}">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</text>
+          <input type="text" name="types" placeholder="请填写类型" value='{{types}}' />
+          <image class='list_icon' src='../../images/my_10.png'></image>
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</text>
+          <input type="digit" name="tranSj" placeholder="请输入手机号码" maxlength='11' value='{{tranSj}}' />
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">临&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;近：</text>
+          <input type="text" name="tranLj" placeholder="2-16" maxlength='16' value='{{tranLj}}'/>
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">转&nbsp;&nbsp;让&nbsp;&nbsp;费：</text>
+          <input type="digit" name="tranZrf" placeholder="请填写转让费" value='{{tranZrf}}'/>
+        </view>
+
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</text>
+          <input type="text" name="tranBt" placeholder="5~20" maxlength='20' value='{{tranBt}}'/>
+        </view>
+        <view class="section">
+          <text class='sec-text' decode="{{true}}">联&nbsp;&nbsp;系&nbsp;&nbsp;人:</text>
+          <input type="text" name="tranLxr" placeholder="" value='{{tranLxr}}'/>
+        </view>
+        <view>
+          <text class="sections">内容描述:</text>
+          <textarea style="{{tet?'display:none':'display:blck'}}" placeholder="请输入内容描述" name="tranMs" auto-focus maxlength='500' value='{{tranMs}}' />
+        </view>
+      </view>
+      <view>
+        <button formType="submit">确认发布</button>
+      </view>
+    </view>
+  </form>
+
+  <view style="{{qys?'display:blck':'display:none'}}">
+    <view class='fuBox'>
+      <view class='fu-zi' wx:for="{{areas}}" wx:for-item="items1" wx:key="{{Id1}}" data-text=" {{items1.text}}" bindtap='zone'>
+        {{items1.text}}
+      </view>
+    </view>
+    <view class='fu-asked' bindtap='zzc'></view>
+  </view>
+
+  <view style="{{tys?'display:blck':'display:none'}}">
+    <view class='fu-type'>
+      <view class='ty-zi' wx:for="{{genre}}" wx:for-item="items2" wx:key="{{Id2}}" data-text=" {{items2}}" bindtap='tyge'>
+        {{items2}}
+      </view>
+    </view>
+    <view class='fu-asked' bindtap='zzc'></view>
+  </view>
+</view>

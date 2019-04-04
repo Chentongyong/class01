@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>服务</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/sy_carousel.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">服务</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="service">
+		    	<img src="images/2.png" alt=""/>
+		    	<div class="ser_box">
+		    		<h4>服务</h4>
+			    	<div class="box_er er1">
+			    		<i class="iconfont icon-fuwu"></i>
+			    		<span>服务介绍</span>
+			    		<a href="" class="mui-icon mui-icon-arrowright mui-pull-right"></a>
+			    	</div>
+			    	<div class="box_er er2">
+			    		<i class="iconfont icon-youshi"></i>
+			    		<span>服务优势</span>
+			    		<a href="" class="mui-icon mui-icon-arrowright mui-pull-right"></a>
+			    	</div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		mui('.ser_box').on("tap",'.er1',function(){
+			mui.openWindow({
+				url:'exa_serve.html',
+				id:'exa_serve.html',
+				style:{},
+				show:{
+					autoShow:true,
+					aniShow:"slide-in-right,",
+					duration:100
+				},
+				waiting:{
+					autoShow:true,
+					title:"正在加载...",
+					options:{
+						//width:
+						//height:
+					}
+				}			
+			})
+		})
+		mui('.ser_box').on("tap",'.er2',function(){
+			mui.openWindow({
+				url:'advantage1.html',
+				id:'advantage1.html',
+				style:{},
+				show:{
+					autoShow:true,
+					aniShow:"slide-in-right,",
+					duration:100
+				},
+				waiting:{
+					autoShow:true,
+					title:"正在加载...",
+					options:{
+					}
+				}			
+			})
+		})
+	</script>
+</html>

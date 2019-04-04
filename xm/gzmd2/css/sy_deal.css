@@ -1,0 +1,7 @@
+.mui-content ul li{height:80px;position:relative}
+.mui-table-view-chevron .mui-table-view-cell{padding-right:40px}
+.mui-table-view-cell>a:not(.mui-btn){position:relative;display:block;overflow:hidden;margin:-11px -15px;padding:inherit;white-space:nowrap;text-overflow:ellipsis;color:inherit}
+.mui-table-view .mui-media-object{line-height:60px;max-width:80px;height:60px;width:80px;display:inline-block;margin-right:-4px}
+img{box-sizing:border-box;border:1px solid #ccc}
+.mui-content ul li .mui-media-body h5{font-size:16px;color:#333;margin:5px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:16px}
+ul li a .b_box{padding:0 5px;position:absolute;left:15px;line-height:1.5em;background:#0b9ad6;color:#fff;font-size:12px;height:1.5em}

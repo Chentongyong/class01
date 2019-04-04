@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='balaBox'>
+    <view class='box-list'>
+      <view class='box-list-zi'>
+        <text>当前余额</text>
+      </view>
+      <view>
+        <text>￥{{balance}}</text>
+      </view>
+    </view>
+    <view class='box-list'>
+      <view class='box-list-zi'>
+        <text>充值金额</text>
+      </view>
+      <view>
+        <input placeholder='' value='' bindinput='inpClick'></input>
+      </view>
+    </view>
+    <view class='box-button'>
+      <button type='button' bindtap='pays'> <image src='../../images/z_03.png'></image> 微信支付</button>
+    </view>
+  </view>
+</view>

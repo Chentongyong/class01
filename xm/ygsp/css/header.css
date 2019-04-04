@@ -1,0 +1,65 @@
+.box {
+	padding: 10px 0;
+	font-size: 14px;
+}
+
+.box-zi {
+	display: flex;
+	justify-content: space-between;
+}
+
+.box-zi-left {
+	font-size: 16px;
+	color: #0b9ad6;
+}
+
+.box-zi-right {
+	color: #ff0000;
+}
+
+.box-zi a {
+	color: #000;
+}
+.border-bott .bottUp{
+	padding: 22px 0;
+}
+.bottUp .aStyle{
+	display: block;
+	width: 154px;
+	height: 38px;
+	line-height: 38px;
+	background-color: #0B9AD6;
+	text-align: center;
+	margin-top: 16px;
+	color: #fff;
+	font-size: 16px;
+}
+.bottUp .aStyle i{
+	font-size: 26px;
+}
+.bottUp .aStyle span{
+	position: relative;
+	top: -3px;
+	left: 5px;
+}
+.box-zi img {}
+
+.ulbox {
+	display: block;
+	height: 44px;
+}
+.ulbox a{
+	display: block;
+	float: left;
+	line-height: 44px;
+	width:146px;
+	text-align: center;
+}
+.ulbox a.li_baColor{
+	background-color: #0B9AD6;
+	color: #fff;
+}
+.ulbox a:hover{
+	background-color: #0B9AD6;
+	color: #fff;
+}

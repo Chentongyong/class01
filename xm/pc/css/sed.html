@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>原生js轮播图</title>
+    <style media="screen">
+      #box{
+        width: 750px;
+        height: 366px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+      }
+      ul{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+      ul li{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: red;
+        list-style-type: none;
+        display: inline-block;
+      }
+      #wss{
+        display: none;
+      }
+      .w {
+        width: 30px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background: #000;
+        opacity: .4;
+        position: absolute;
+        top: 133px;
+        color: #fff;
+      }
+      .w_l{
+        left: 0
+      }
+      .w_r{
+        right: 0
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" class="">
+      <img src="https://m.360buyimg.com/mobilecms/s750x366_jfs/t22120/111/1759473122/364089/c5ac1e24/5b35e20eN1d7dd6a9.jpg!cr_1125x549_0_72!q70.jpg.dpg" alt="">
+      <img src="https://img1.360buyimg.com/da/s750x366_jfs/t21829/92/1892928963/119255/551a812e/5b3b3645N3f90556a.jpg!cr_1125x549_0_72.dpg" alt="">
+      <img src="https://img1.360buyimg.com/da/s750x366_jfs/t21631/69/1739028349/173513/373923e3/5b334866Nda0c8abf.jpg!cr_1125x549_0_72.dpg" alt="">
+      <img src="https://m.360buyimg.com/mobilecms/s750x366_jfs/t21559/16/1837247160/196890/69f6ca5c/5b3b4844Nad2057d2.jpg!cr_1125x549_0_72!q70.jpg.dpg" alt="">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div id="wss">
+        <div class="w w_l">
+          左
+        </div>
+        <div class="w w_r">
+          右
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+    var imgObj = document.getElementsByTagName('img');
+    var liObj = document.getElementsByTagName('li');
+    var wObj = document.getElementById('wss');
+    var boxs = document.getElementById('box');
+    boxs.onmouseover = function(){
+      wObj.style.display = 'block';
+    }
+    boxs.onmouseout = function(){
+      wObj.style.display = 'none';
+    }
+    var aa = '';
+    for(var i = 0; i < liObj.length; i++){
+      liObj[i].index = i;
+      liObj[i].onmouseover = function(){
+        aa = this.index;
+        for(var j = 0; j<imgObj.length;j++){
+
+        }
+        console.log(this.index)
+      }
+    }
+</script>

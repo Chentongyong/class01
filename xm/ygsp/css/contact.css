@@ -1,0 +1,23 @@
+.boxs .aboRight{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+	width: 100%;
+}
+.boxs .aboRight .rightBox{
+	margin-bottom: 20px;
+}
+.boxs .aboRight .rightBox h5{
+	font-size: 18px;
+	border-bottom: 1px solid #eee;
+	padding: 26px 0 18px 0;
+	
+}
+.boxs .aboRight .rightBox img{
+	margin-top: 30px;
+	width: 1200px;
+	height: 428px;
+}
+.rightBox .r_box-zi{
+	padding-top: 10px ;
+}

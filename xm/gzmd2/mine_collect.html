@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的收藏</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_collect.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的收藏</h1>
+			<a id="a_di" class="mui-icon mui-pull-right">编辑</a>
+		</header>
+		<div class="mui-content" style="margin-bottom: 80px;">
+			<ul id="collect" class="wdsc">
+				<li>
+					<div class="col_left" style="margin-right: 10px;">
+						<i id="iBox ' + data[i].cid + '" class="colle"></i>
+					</div>
+					<a id=' + data[i].sid + ' title="' + data[i].sname + '">
+						<div class="col_right">
+							<h5>data[i].sname</h5>
+							<span>data[i].typead</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<!--<div class="nav_left div_color">全选</div>-->
+			<div id="remove" class="nav_right">删除</div>
+		</nav>
+	</body>
+
+</html>
+<script>
+	var collect = document.getElementById('collect');
+	var col_left = document.getElementsByClassName('col_left');
+	var iBox = document.getElementsByTagName('i');
+	var remove = document.getElementById('remove');
+	var liObj = document.getElementsByTagName('li');
+	var libox = document.getElementById('libox');
+	var aObj = collect.getElementsByTagName('a');
+	var a_di = document.getElementById('a_di');
+	
+	mui.plusReady(function(){
+		var cw = plus.webview.currentWebview();
+		tels = cw.tel;
+		uids = cw.uid;
+		member = cw.member;
+		mui.ajax({
+			url: 'http://wwwgezimd.com/Store/appclt!Collection.action?u.uid=' + uids,
+			type: 'post',
+			async: true,
+			dataType: 'json',
+			crossDomain: true, //强制使用5+跨域
+			timeout: '10000',
+			success: function(data) {
+				if(data != null) {
+					for(var i = 0; i < data.length; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						li.innerHTML += '<div class="col_left" style="margin-right: 10px;"><i id="iBox ' + data[i].cid + '" class="colle"></i></div><a id=' + data[i].sid + ' title="' + data[i].sname + '"><div class="col_right"><h5>' + data[i].sname +
+							'</h5>' + '<span>' + data[i].typead + '</span></div></a>';
+						collect.appendChild(li);
+					}
+				}
+			},
+			error: function(xhr, type, errorThrown) {
+				mui.toast("网络延迟")
+			}
+		});
+
+		//跳转详情页
+		mui('.wdsc').on('tap', 'a', function() {
+			var title = this.getAttribute('title');
+			var sid = this.getAttribute('id');
+			var detailPage = mui.preload({url: 'mine_details.html',id: 'mine_details.html'})
+			mui.fire(detailPage, 'newsId', {
+				uid: uids,
+				title: title,
+				sid: sid,
+				member: member
+			});
+			mui.openWindow({
+				url: 'mine_details.html',
+				id: 'mine_details.html'
+			})
+		})
+	})
+
+	//点击显示
+	mui('.mui-bar-nav').on('tap', '.mui-pull-right', function() {
+		for(var i = 0; i < col_left.length; i++) {
+			if(col_left[i].className == 'col_left ows') {
+				col_left[i].className = 'col_left';
+				this.innerText = '编辑'
+			} else {
+				col_left[i].className = 'col_left ows';
+				this.innerText = '完成'
+			}
+		}
+		mui('li').on('tap', '.col_left', function() {//点击选中
+			for(var a = 0; a < col_left.length; a++) {
+				col_left[a].index = a;
+			}
+			var k = this.index;
+			if(iBox[k].className == 'mui-icon mui-icon-checkmarkempty') {
+				iBox[k].className = ''
+				remove.className = 'nav_right'
+			} else {
+				iBox[k].className = 'mui-icon mui-icon-checkmarkempty';
+				remove.className = 'div_color';
+			}
+			//删除
+			web();
+		})
+
+//		//选中所有
+//		mui('.mui-bar-tab').on('tap', '.nav_left', function() {
+//			for(var j = 0; j < iBox.length; j++) {
+//				if(iBox[j].className == 'mui-icon mui-icon-checkmarkempty') {
+//					iBox[j].className = '';
+//					remove.className = 'nav_right'
+//				} else {
+//					iBox[j].className = 'mui-icon mui-icon-checkmarkempty';
+//					remove.className = 'div_color'
+//				}
+//				//删除
+//				web();
+//			}
+//		})
+
+		var web = function() {
+			var aa = [];
+			//删除
+			if(remove.className == 'div_color') {
+				remove.addEventListener('tap', function() {//点击删除按钮
+					
+					for(var k = 0; k < iBox.length; k++) {
+						if(iBox[k].className == 'mui-icon mui-icon-checkmarkempty') {
+							sids = aObj[k].getAttribute("id");
+							//删除数据
+								mui.ajax({
+									url: 'http://wwwgezimd.com/Store/storeactions!my_deleteshoucang.action?store.sid=' + sids + '&store.uid=' + uids,
+									type: 'post',
+									async: true,
+									dataType: 'json',
+									crossDomain: true, //强制使用5+跨域
+									timeout: '10000',
+									success: function(data) {
+										mui.toast("删除成功")
+									},
+									error: function(xhr, type, errorThrown) {
+										mui.toast("网络出错")
+									}
+								});
+							collect.removeChild(liObj[k]);
+							remove.className = '';
+							a_di.innerText = '编辑'
+						}
+					}
+				})
+			}
+		}
+	})
+</script>

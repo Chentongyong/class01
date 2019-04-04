@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺求租</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/sy_assign2.css" />
+		<script src="js/mui.min.js"></script>
+		<!--<script src="dist/js/jquery.min.js"></script>-->
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<!--头部导航-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">鸽子名店</h1>
+			<a class="mui-icon mui-icon-search mui-pull-right"></a>
+			<script>
+				//搜索
+				var detailPage = mui.preload({
+					url: 'sy_search.html',
+					id: 'sy_search.html'
+				})
+				mui('.mui-bar-nav').on('tap', '.mui-pull-right', function() {
+					var spid = document.getElementById('spid').innerText;
+					var title = this.getAttribute('title');
+					mui.fire(detailPage, 'newsId', {
+						spid: spid,
+						title: title,
+						tltit: tltit
+					});
+					mui.openWindow({
+						url: 'sy_search.html',
+						id: 'sy_search.html'
+					});
+				})
+			</script>
+		</header>
+		<!--头部导航end-->
+
+		<!--中部主体-->
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron" id="list">
+
+				</ul>
+			</div>
+		</div>
+		<!--中部主体end-->
+
+		<!--二级菜单-->
+		<div id="she1" class="she_tan">
+			<div class="buy">
+				<!--<div class="buy_left">
+						<p class="p_color">求租</p>
+						<p class="">求售</p>
+					</div>-->
+				<div class="buy_right">
+					<ul class="buy_zu">
+						<li class="li_color">全部分类</li>
+						<li>酒楼餐饮</li>
+						<li>美容美发</li>
+						<li>服饰鞋包</li>
+						<li>休闲娱乐</li>
+						<li>百货超市</li>
+						<li>生活服务</li>
+						<li>电子通讯</li>
+						<li>汽修美容</li>
+						<li>医药保健</li>
+						<li>家居建材</li>
+						<li>教育培训</li>
+						<li>空铺转让</li>
+						<li>旅馆宾馆</li>
+						<li>其他行业</li>
+					</ul>
+				</div>
+			</div>
+			<div class="sheet1"></div>
+		</div>
+
+		<!--区域-->
+		<div id="she2" class="she_tan">
+			<!--<div style="position: relative;padding: 5px 0;">-->
+			<ul id="city" class="ul_style">
+				<li class="li2 li_color">全城</li>
+			</ul>
+			<!--</div>-->
+			<div class="sheet1"></div>
+		</div>
+
+		<!--面积-->
+		<div id="she3" class="she_tan ">
+			<!--<div style="position: relative;padding: 5px 0;">-->
+			<ul class="ul_style">
+				<li class="li3 li_color">无限</li>
+				<li class="li3">20平方以下</li>
+				<li class="li3">20-50平方</li>
+				<li class="li3">50-100平方</li>
+				<li class="li3">100-200平方</li>
+				<li class="li3">200-500平方</li>
+				<li class="li3">500平方以上</li>
+			</ul>
+			<!--</div>-->
+			<div class="sheet1"></div>
+		</div>
+		<!--二级菜单end-->
+
+		<nav id="p_chus" class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item">
+				<span class="mui-tab-label">全部分类</span>
+				<span class="mui-icon mui-icon-arrowright mui-pull-right m_rt"></span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="mui-tab-label">全城</span>
+				<span class="mui-icon mui-icon-arrowright mui-pull-right m_rt"></span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="mui-tab-label">面积</span>
+				<span class="mui-icon mui-icon-arrowright mui-pull-right m_rt"></span>
+			</a>
+		</nav>
+		<span id="shi" style="display: none;"></span>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var aObj = document.getElementsByClassName('mui-tab-item'); //底部导航分类
+	var liObj1 = document.getElementById("she1").getElementsByTagName('li');
+	var span1 = document.getElementsByClassName('mui-tab-label'); //底部导航分类
+	var sheObj = document.getElementsByClassName('she_tan');
+	var sheet1 = document.getElementsByClassName('sheet1') //遮罩层
+	var jt = document.getElementsByClassName('m_rt'); //底部导航分类
+	var she2 = document.getElementById('she2'); //二级菜单全城
+	var she3 = document.getElementById('she3'); //二级菜单面积
+	var li2 = document.getElementsByClassName('li2'); //二级菜单全城（全城所有区域）
+	var li3 = document.getElementsByClassName('li3'); //二级菜单面积（面积大小）
+	var texts = document.getElementById('title'); //标题
+	var list = document.getElementById('list');
+	var aa = ''; //aa是分类
+	var bb = ''; //  bb是地区
+	var cc = ''; // cc是面积
+	var tels = '';
+	var tltit = '';
+	var uid = '';
+	var member = '';
+	var shis = document.getElementById('shi'); //当前城市s
+	var data = {};
+	var pager = {}; //分页
+	var totalPage = ''; //总页码
+	pullRefresh(pager); //启用上拉下拉
+
+	//接收传值
+	mui.plusReady(function() {
+		window.addEventListener('newsId', function(es) {
+			span1[0].innerText="全部分类";
+		    span1[1].innerText="全城";
+		    span1[2].innerText="面积";
+			shis.innerText = es.detail.city_text;
+			tltit = es.detail.tltit;
+			uid = es.detail.uid;
+			city_text = shis.innerText;
+			texts.innerText = tltit;
+			member = es.detail.member;
+			list.innerHTML = '';
+			pager['page'] = 1; //页码
+			var datas = {
+				'store.city': city_text
+			};
+			//根据市查找区
+			mui.ajax({
+				url: "http://wwwgezimd.com/Store/cityaction!main.action",
+				type: 'post',
+				data: datas,
+				async: true,
+				dataType: 'json',
+				crossDomain: true, //强制使用5+跨域
+				timeout: '10000',
+				success: function(data) {
+					var city = document.getElementById('city');
+					for(var i = 0; i < data.length; i++) {
+						var li = document.createElement('li'); //创建元素节点
+						li.className = 'li2';
+						li.innerHTML += data[i].text;
+						city.appendChild(li);
+					}
+				},
+				error: function(xhr, type, errorThrown) {
+					mui.toast("网络出错，请检查网络")
+				}
+			})
+		})
+		//通过商铺出租中的一条跳转详情
+		var detailPage1 = mui.preload({
+			url: 'mine_details2.html',
+			id: 'mine_details2.html'
+		})
+		mui('.mui-table-view').on('tap', 'a', function() {
+			var title = this.getAttribute('title');
+			var spid = this.getAttribute('id');
+			mui.fire(detailPage1, 'newsId', {
+				spid: spid,
+				uid: uid,
+				title: title,
+				member: member,
+				tltit: tltit
+			});
+			mui.openWindow({
+				url: 'mine_details2.html',
+				id: 'mine_details2.html'
+			});
+			event.stopPropagation(); //阻止li事件的点击
+		})
+		window.addEventListener('newsId', stack)
+	})
+
+	var count = 0;
+	for(var sum = 0; sum < aObj.length; sum++) {
+		aObj[sum].index = sum;
+	}
+	//显示
+	mui('.mui-bar-tab').on('tap', 'a', function() {
+		var s = this.index;
+		for(var i = 0; i < sheObj.length; i++) {
+			sheObj[i].className = 'she_tan';
+			jt[i].className = 'mui-icon mui-icon-arrowright mui-pull-right m_rt';
+		}
+		sheObj[s].className = 'she_tan she_dis';
+		jt[s].className = 'mui-icon mui-icon-arrowup mui-pull-right m_rt';
+
+		//  隐藏
+		sheet1[s].addEventListener('tap', function() {
+			sheObj[s].className = 'she_tan';
+			jt[s].className = 'mui-icon mui-icon-arrowright mui-pull-right m_rt'
+		})
+	})
+
+	//  类型
+	function atye() {
+		for(var u = 0; u < sheObj.length; u++) {
+			sheObj[u].className = 'she_tan';
+		}
+	}
+	mui('.buy_right').on('tap', 'li', function() {
+		list.innerHTML = '';
+		for(var k = 0; k < liObj1.length; k++) {
+			liObj1[k].className = ''
+		}
+		this.className = 'li_color';
+		span1[0].innerText = this.innerText;
+		aa = span1[0].innerText;
+		bb = span1[1].innerText;
+		cc = span1[2].innerText;
+		jt[0].className = 'mui-icon mui-icon-arrowright mui-pull-right m_rt';
+		atye();
+		pager['page'] = 1; //页码
+		seekStore(aa, bb, cc);
+	})
+
+	//  区域
+	mui('#she2').on('tap', 'li', function() {
+		list.innerHTML = '';
+		for(var j2 = 0; j2 < li2.length; j2++) {
+			li2[j2].className = 'li2';
+		}
+		this.className = 'li2 li_color';
+		span1[1].innerText = this.innerText;
+		aa = span1[0].innerText;
+		bb = span1[1].innerText;
+		cc = span1[2].innerText;
+		jt[1].className = 'mui-icon mui-icon-arrowright mui-pull-right m_rt';
+		atye();
+		pager['page'] = 1; //页码
+		seekStore(aa, bb, cc);
+	})
+
+	//面积
+	mui('#she3').on('tap', 'li', function() {
+		list.innerHTML = '';
+		for(var j3 = 0; j3 < li3.length; j3++) {
+			li3[j3].className = 'li3';
+		}
+		this.className = 'li3 li_color';
+		span1[2].innerText = this.innerText;
+		aa = span1[0].innerText;
+		bb = span1[1].innerText;
+		cc = span1[2].innerText;
+		jt[2].className = 'mui-icon mui-icon-arrowright mui-pull-right m_rt';
+		atye();
+		pager['page'] = 1; //页码
+		seekStore(aa, bb, cc);
+	})
+
+	function stack() {
+		var title = texts.innerText;
+		var shi = shis.innerText;
+		switch(title) {
+			case "店铺求租":
+				data = {
+					"shopPurchase.typeid": '2',
+					"shopPurchase.region": shi
+				};
+				break;
+			case "店铺选址":
+				data = {
+					"shopPurchase.typeid": '1',
+					"shopPurchase.region": shi
+				};
+				break;
+		}
+		postshop(pager, data);
+	}
+
+	function seekStore(aa, bb, cc) {
+		var shi = document.getElementById("shi").innerText;
+		if(bb!="全城"){
+			bb = bb.substr(0, bb.indexOf('区'));
+		}
+		if(aa == "全部分类" && bb == "全城" && cc != "面积") {
+			switch(cc) {
+				case "无限":
+					data = {
+						"shopPurchase.region": shi
+					};
+					break;
+				case "20平方以下":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 20
+					};
+					break;
+				case "20-50平方":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 20,
+						"shopPurchase.addreaa": 50
+					};
+					break;
+				case "50-100平方":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 50,
+						"shopPurchase.addreaa": 100
+					};
+					break;
+				case "100-200平方":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 100,
+						"shopPurchase.addreaa": 200
+					};
+					break;
+				case "200-500平方":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 200,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+				case "500平方以上":
+					data = {
+						"shopPurchase.region": shi,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+			}
+		}
+		if(aa == "全部分类" && bb != "全城" && cc != "面积") {
+			switch(cc) {
+				case "无限":
+					data = {
+						"shopPurchase.region": shi + bb
+					};
+					break;
+				case "20平方以下":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 20
+					};
+					break;
+				case "20-50平方":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 20,
+						"shopPurchase.addreaa": 50
+					};
+					break;
+				case "50-100平方":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 50,
+						"shopPurchase.addreaa": 100
+					};
+					break;
+				case "100-200平方":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 100,
+						"shopPurchase.addreaa": 200
+					};
+					break;
+				case "200-500平方":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 200,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+				case "500平方以上":
+					data = {
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+			}
+		}
+		if(aa != "全部分类" && bb != "全城" && cc != "面积") {
+			switch(cc) {
+				case "无限":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb
+					};
+					break;
+				case "20平方以下":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 20
+					};
+					break;
+				case "20-50平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 20,
+						"shopPurchase.addreaa": 50
+					};
+					break;
+				case "50-100平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 50,
+						"shopPurchase.addreaa": 100
+					};
+					break;
+				case "100-200平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 100,
+						"shopPurchase.addreaa": 200
+					};
+					break;
+				case "200-500平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.acreage": 200,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+				case "500平方以上":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi + bb,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+			}
+		}
+		if(aa != "全部分类" && bb == "全城" && cc != "面积") {
+			switch(cc) {
+				case "无限":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi
+					};
+					break;
+				case "20平方以下":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 20
+					};
+					break;
+				case "20-50平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 20,
+						"shopPurchase.addreaa": 50
+					};
+					break;
+				case "50-100平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 50,
+						"shopPurchase.addreaa": 100
+					};
+					break;
+				case "100-200平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 100,
+						"shopPurchase.addreaa": 200
+					};
+					break;
+				case "200-500平方":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.acreage": 200,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+				case "500平方以上":
+					data = {
+						"shopPurchase.type": aa,
+						"shopPurchase.region": shi,
+						"shopPurchase.addreaa": 500
+					};
+					break;
+			}
+		}
+		if(aa != "全部分类" && bb == "全城" && cc == "面积") {
+			data = {
+				"shopPurchase.type": aa,
+				"shopPurchase.region": shi
+			};
+		}
+		if(aa == "全部分类" && bb != "全城" && cc == "面积") {
+			data = {
+				"shopPurchase.region": shi + bb
+			};
+		}
+		if(aa == "全部分类" && bb == "全城" && cc == "面积") {
+			data = {
+				"shopPurchase.region": shi
+			};
+		}
+		if(aa != "全部分类" && bb != "全城" && cc == "面积") {
+			data = {
+				"shopPurchase.type": aa,
+				"shopPurchase.region": shi + bb
+			};
+		}
+		postshop(pager, data);
+	}
+	postshop(pager, data);
+
+	function pullRefresh() {
+		mui("#refreshContainer").pullRefresh({
+			up: {
+				height: 100,
+				contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+				contentnomore: '', //可选，请求完毕若没有更多数据时显示的提醒内容；
+				callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					window.setTimeout(function() {
+						postshop(pager, data);
+					}, 500);
+				}
+			},
+			down: {
+				height: 50, //可选,默认50.触发下拉刷新拖动距离,
+				auto: true, //可选,默认false.首次加载自动下拉刷新一次
+				contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+				contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+				contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+				callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					window.setTimeout(function() {
+						pager['size'] = 20; //条数
+						pager['page'] = 1; //页码
+						//刷新要先清空父节点里面的子节点
+						var f = document.getElementById("list");
+						var childs = f.childNodes;
+						for(var i = childs.length - 1; i >= 0; i--) {
+							f.removeChild(childs[i]);
+						}
+						postshop(pager, data);
+						mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+					}, 500);
+				}
+			}
+		})
+	}
+	//这个方法是负责向接口请求数据的，你可以选择你喜欢的方式，我这里是直接用的mui.ajax
+	function postshop(params, data) { //params = = pager
+		mui.ajax("http://wwwgezimd.com/Store/spapp!query.action?page=" + pager.page + "&rows=" + pager.size, {
+			data: data,
+			type: 'post',
+			dataType: 'json',
+			//				        headers:{'Content-Type':'application/json'},
+			success: function(data) {
+				mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+				//下面这坨都是在拼dom 你可以用jquery 或者是你所熟悉的angular,vue双向绑定
+				//					console.log(data[0].ext);//总条数
+				var returnData = data;
+				var element = document.getElementById("list");
+				var para;　　　
+				var node;
+				var table = document.body.querySelector('.mui-table-view'); //滑动刷新盒子
+				var cells = document.body.querySelectorAll('.mui-table-view-cell'); //滑动刷新盒子
+				if(data[0].ext == 0) {
+					//mui.toast('沒有更多数据。。。。。')
+				} else {
+					for(var i = 0; i < returnData.length; i++) {
+						   //时间格式转换
+						    da = new Date(returnData[i].startdate);
+							var year = da.getFullYear();
+							var month = da.getMonth() + 1;
+							var date = da.getDate();
+							var dates = [year, month, date].join('.');
+							var sjStyle = dates;
+							//平方
+							var bObjs = returnData[i].acreage;
+							if(bObjs == 0) {
+								bObjs = '暂无';
+							}
+							
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						li.innerHTML += '<a id=' + returnData[i].spid + ' title="' + returnData[i].title + '"><h5>' + returnData[i].title + '</h5><div class="ass_center"><span><b class="bObjs">' + bObjs +
+							'</b>' + '平方' + '</span><span>' + returnData[i].type + '</span><span>' + returnData[i].region + '</span></div><p>' + '大家好，我是。。。。' +
+							'<p><span class="li_fu">' + sjStyle + '</span></a>';
+						table.appendChild(li);					}
+				}
+
+				//这里很重要，这里获取页码 公式：总条数/每页显示条数
+				totalPage = data[0].ext % pager.size != 0 ?
+					parseInt(data[0].ext / pager.size) + 1 :
+					data[0].ext / pager.size;
+				if(totalPage == pager.page) { //总页码等于当前页码，停止上拉下拉
+					//					alert(totalPage == pager.page)
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+					//					mui("#refreshContainer").pullRefresh().setStopped(true);
+
+				} else {
+					pager.page++;
+					mui('#refreshContainer').pullRefresh().refresh(true);
+					//					mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
+				}
+			},
+			error: function(xhr, type, errorThrown) {
+				//异常处理；
+				console.log(type);
+			}
+		})
+	}
+
+</script>

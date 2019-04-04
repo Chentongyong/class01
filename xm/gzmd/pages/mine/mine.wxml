@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class='con-up'>
+    <view class='con-up-tx'>
+      <image src='{{picture}}'></image>
+    </view>
+    <view class='con-up-yhm'>
+      <text>{{name}}</text>
+    </view>
+    <view class='con-up-hy' bindtap='myHy'>
+      <text>VIP会员</text>
+    </view>
+  </view>
+
+  <view class='con-cen'>
+    <view class='con-cen-list' bindtap='myIssue'>
+      <view class='cen-list-img'>
+        <image src='../../images/my_07.png'></image>
+      </view>
+      <view class='cen-list-text'>
+        <text>我的发布</text>
+         <image src='../../images/my_10.png'></image> 
+      </view>
+    </view>
+    <view class='con-cen-list' bindtap='myYe'>
+      <view class='cen-list-img'>
+        <image src='../../images/my_14.png'></image>
+      </view>
+      <view class='cen-list-text'>
+        <text>余额充值</text>
+         <image src='../../images/my_10.png'></image> 
+      </view>
+    </view>
+    <view class='con-cen-list' bindtap='myHy'>
+      <view class='cen-list-img'>
+        <image src='../../images/my_17.png'></image>
+      </view>
+      <view class='cen-list-text'>
+        <text>会员中心</text>
+         <image src='../../images/my_10.png'></image> 
+      </view>
+    </view>
+  </view>
+</view>

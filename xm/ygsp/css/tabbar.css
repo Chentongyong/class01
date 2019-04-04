@@ -1,0 +1,13 @@
+.back-color{
+	background-color: #666;
+}
+.tabb{
+	display: flex;
+	justify-content: space-between;
+    padding: 30px 0;
+    color:#fff;
+    font-size: 18px;
+}
+.tabb a{
+	color: #FFF;
+}

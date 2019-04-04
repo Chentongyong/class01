@@ -1,0 +1,10 @@
+.mui-title{font-size:20px}
+.mui-bar-nav .mui-pull-right{font-size:16px;line-height:40px}
+.mui-bar-nav a{color:#fff}
+.mui-input-group{padding:10px;padding-bottom:100%}
+.mui-input-row{border:1px solid #B6B6B6;margin-bottom:10px;border-radius:5px}
+.mui-input-row label{width:25%;padding:10px}
+.mui-input-row label~input{width:75%}
+.mui-button-row a span{color:#666}
+#chkRem{position:absolute;left:0;top:10px}
+.mui-button-row button{width:100%;border:1px solid #0b9ad6;background:#0b9ad6;color:#fff}

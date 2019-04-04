@@ -1,0 +1,14 @@
+.mui-input-group{padding:10px;text-align:center}
+#gruop.gr_dis{display:none}
+.mui-input-row input{border:1px solid #C8C7CC;border-radius:5px;color:#000;text-align:left;font-size:14px}
+.mui-input-group button{margin-top:10px;width:100%;border:1px solid #0b9ad6;background:#0b9ad6;color:#fff;font-size:16px;font-weight:600}
+.mui-input-group .group_below{margin-top:10px;text-align:left;font-size:14px;color:#666}
+.mui-input-group .group_below a{color:#007AFF}
+#captcha{display:none}
+#captcha .cap_up{text-align:left}
+#captcha .cap_up span{margin-bottom:10px}
+#captcha .cap_center{font-size:16px}
+#captcha .cap_center input{width:90%;border:1px solid #ccc;border-radius:5px;margin-right:3%;text-align:center;font-size:14px}
+#captcha .cap_center button{display:inline-block;width:40%;border:1px solid #333;color:#333;height:40px;background:0 0;vertical-align:top;border-radius:5px;margin:0}
+#password{display:none}
+#password input{margin-bottom:10px;height:40px;border:1px solid #ccc;border-radius:5px}

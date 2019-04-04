@@ -1,0 +1,35 @@
+.picture{padding:15px 10px;text-align:center;background:#CCC;margin-bottom:10px}
+.picture .pic_nei{padding:20px 10px;width:100px;height:100px;border:2px dotted #665;margin:0 auto}
+.mui-input-group{padding:0 10px}
+.mui-input-row{padding:5px 0;position:initial;border-bottom:1px solid #ccc;box-sizing:border-box}
+.mui-input-row label{width:30%;line-height:1;padding:5px 10px;border-right:1px solid #ccc;font-size:15px;text-align: center;}
+.mui-input-row label~input{float:left;width:55%}
+.mui-input-row input{padding:5px 10px;height:30px;text-indent:1em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px}
+.mui-input-row span{display:block;width:15%;float:right;font-size:14px;color:#C7C7CC;text-align:left;line-height:30px;letter-spacing:.2em}
+.mui-input-row .span2{font-size:20px;position:relative;right:-12px}
+.mui-input-row select{text-indent:1em;height:30px}
+.mui-input-row select option{display:block;text-indent:2em;border-bottom:1px solid #ccc}
+#suspend{width:100%;display:none}
+#suspend.sus_dis{display:block}
+#suspend ul{width:94%;padding:20px 10px;position:absolute;background:#fff;z-index:9999;top:0}
+#suspend ul li{padding:10px;color:#666;border-bottom:1px solid #ccc}
+#shade{width:100%;height:100%;position:fixed;background:#929292;top:0;left:0;z-index:11;opacity:.5}
+#describe{width:100%;display:none}
+#describe.des_dis{display:block}
+#describe .des_nei{top:60px;width:90%;padding:20px 10px;position:absolute;background:#fff;z-index:9999;left:5%}
+#describe .des_nei textarea{height:250px;overflow:hidden;font-size:14px;padding:0}
+#describe .des_nei .nei_sm{height:30px}
+#describe .des_nei .nei_sm .mui-pull-left{font-size:12px}
+#i_color{color:red;font-style:normal}
+#describe .des_nei .nei_sm .mui-pull-right .mui-icon-trash{color:#666}
+#describe .des_nei button{width:100%;height:30px;background:#0b9ad6;border:1px solid #0b9ad6;color:#fff;margin-top:10px}
+#identity{width:50%;height:30px;text-indent:1em;overflow:hidden;margin:0 auto;padding:5px 0}
+#identity span{width:50%;border:1px solid #b22222;box-sizing:border-box;display:inline-block;float:left;color:#b22222;line-height:20px;text-align:center}
+#identity span.span_color{background:#b22222;color:#fff}
+.smsy{text-align:center;padding:15px 10px 20px 10px}
+#but{border:1px solid #0b9ad6;width:94%;color:#fff;letter-spacing:.5em;text-align:center;background:#0b9ad6;position:relative;left:3%;bottom:5px;font-size:20px}
+#diqv{width:100%;display: none;}
+#diqv.sus_dis{display:block}
+#diqv .diqv_zi{width:94%;padding:10px;position:absolute;background:#fff;z-index:9999;top:100px;height: 250px;overflow-x: hidden;overflow-y: auto;}
+#diqv .diqv_zi p{padding:10px;color: #000;border-top:1px solid #ccc;margin: 0;}
+#diqv_fu{width:100%;height:100%;position:fixed;background:#929292;top:0;left:0;z-index:11;opacity:.5}

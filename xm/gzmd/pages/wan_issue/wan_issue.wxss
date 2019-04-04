@@ -1,0 +1,109 @@
+/* pages/list/list.wxss */
+
+.listBox{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  padding-bottom: 200rpx; 
+}
+.box-list {
+  width: 94%;
+  padding: 0 3%;
+  background-color: #fff; 
+  font-size: 36rpx;
+  margin-bottom: 100rpx;
+}
+image{
+  width: 22rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+.list_icon{
+  color: #666;
+  position: absolute;
+  top: 0;
+  right: 0
+}
+.section .sec-text{
+  width: 30%
+}
+input {
+  width: 60%;
+  height: 82rpx;
+  line-height: 82rpx;
+  text-indent: 10rpx;
+}
+
+.section {
+  display: flex;
+  height: 82rpx;
+  line-height: 82rpx;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.sections {
+  height: 82rpx;
+  line-height: 82rpx;
+}
+
+textarea {
+  width: 100%;
+  height: 400rpx;
+  z-index: 10
+}
+button{
+  background-color: #0b9ad6;
+  color: #fff
+}
+
+.fuBox{
+  width: 94%;
+  height:400rpx;
+  text-align: center;
+  overflow-x: hidden;
+  padding-top: 100rpx;
+  overflow-y: auto;
+  position: fixed;
+  top: 50rpx;
+  color: #666;
+  left: 3%;
+  background-color: #fff;
+  z-index: 200
+}
+.fuBox .fu-zi{
+  width: 468rpx;
+  margin: 0 auto;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-top: 1px solid #ccc
+}
+.fu-asked{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(120, 120, 120, .4);
+  z-index: 100
+}
+
+.fu-type{
+  width: 94%;
+  height:800rpx;
+  text-align: center;
+  overflow-x: hidden;
+  padding-top: 50rpx;
+  overflow-y: auto;
+  position: fixed;
+  bottom: 100rpx;
+  color: #666;
+  left: 3%;
+  background-color: #fff;
+  z-index: 200
+}
+.fu-type .ty-zi{
+  height: 82rpx;
+  line-height: 82rpx;
+  border-top: 1px solid #ccc
+}

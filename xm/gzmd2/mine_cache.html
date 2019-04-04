@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_cache.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+	    	    <li class="mui-table-view-cell li1">
+	                <a class="mui-pull-left">
+	                	清空缓存
+	                </a>
+	                <a class="mui-pull-right">
+	                    <span id="li_sc">1000</span>
+	                    <span>M</span>
+	                    <i class=" mui-icon mui-icon-arrowright"></i>
+	                </a>
+	            </li>
+	            <script>
+	            	var li_sc = document.getElementById('li_sc');
+	            	mui('.mui-table-view').on('tap','.li1',function(){
+	            		li_sc.innerText = '0.00'
+	            	})
+	            </script>
+	            <li class="mui-table-view-cell li2">
+	            	<a class="mui-pull-left">
+	            		检查版本
+	                </a>
+	                <a class="mui-pull-right">
+	                    <span>当前版本：</span>
+	                    <span>V2.3.4</span>
+	                    <i class=" mui-icon mui-icon-arrowright"></i>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell li3">
+	                <a class="mui-navigate-right">
+	                                                                       退出
+	                </a>
+	            </li>
+	        </ul>
+	        <div id="she_tan">
+				<div class="tan_nei">
+					<p>确定退出当前登录？</p>
+					<div class="but_box">
+						<input type="button"  id="span1" value="取消"/>
+						<input type="button" id="span2" value="确认" />
+					</div>
+				</div>
+				<div id="sheet1"></div>
+	        </div>
+		</div>
+	</body>
+</html>
+<script>
+	var she_tan  = document.getElementById('she_tan');
+//  点击出现
+	mui('.mui-table-view').on('tap','.li3',function(){
+		she_tan.className = 'she_dis'
+	})
+//	点击出现end
+//	取消
+	mui('#she_tan').on('tap','#span1',function(){
+		she_tan.className = ''
+	})
+	mui('#she_tan').on('tap','#sheet1',function(){
+		she_tan.className = ''
+	})
+//	取消end
+	var tel='';
+	var pwd='';
+mui.plusReady(function(){
+
+	window.addEventListener('newsId',function(m){
+		tel=m.detail.tel;
+		pwd=m.detail.pwd;
+	})
+})
+//确定
+var detailPage = mui.preload({url:'mine_register.html',id:'mine_register.html'})
+mui('#she_tan').on('tap','#span2',function(){
+	she_tan.className = '';
+	mui.fire(detailPage,'newsId',{tel:tel,pwd:pwd});
+	mui.openWindow({url:'mine_register.html',id:'mine_register.html'});
+})
+</script>

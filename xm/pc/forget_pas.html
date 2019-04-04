@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>找回密码</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/forget_pas.css" />
+	</head>
+	<body>
+		<div class="wids">
+			<div class="boxs logo_tu">
+				<a target="_blank" href="index.html">
+					<img src="images/homes_11.png"/>
+				</a>
+			</div>
+		</div>
+		<div class="box">
+			<div class="boxBox">
+			    <h5>找回密码</h5>
+				<form id="zhuce">
+					<input class="inputs" type="text" id="tel" value="" placeholder="请输入手机号码"/>
+					<input class="inpt1s" type="text" id="code" value="" placeholder="请输入手机验证码"/>
+					<input class="inpt2s" type="button" value="获取手机验证码"/><br />
+					<button type="button" id="but3">下一步验证手机</button><br />
+					<div class="box_bot">
+						<a target="_blank" href="enroll.html">注册</a>
+						<a target="_blank" href="register.html" style="margin-left: 10px;">
+							登录
+						</a>
+					</div>
+				</form>
+			</div>
+			
+			<div class="boxBox2" style="display: none;">
+				<form id="zhuce">
+					<div class="boxUp">手机号码：<span id="iphoto"></span></div>
+					<input class="inputs" type="password" id="pwd1" value="" placeholder="设置新密码"/>
+					<input class="inpt1s" type="password" id="pwd2" value="" placeholder="确认新密码"/>
+					<button type="button" id="but2">确认</button><br />
+					<div class="box_bot">
+						<a target="_blank" href="enroll.html">注册</a>
+						<a target="_blank" href="register.html" style="margin-left: 10px;">
+							登录
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/pcjs.js"></script>

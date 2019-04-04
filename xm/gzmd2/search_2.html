@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鸽子名店</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/sy_assign2.css" />
+		<script src="js/mui.min.js"></script>
+		<script src="dist/js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<!--头部导航-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">鸽子名店</h1>
+			<a class="mui-icon mui-icon-search mui-pull-right"></a>
+			<script>
+				//搜索
+				var detailPage = mui.preload({
+					url: 'sy_search.html',
+					id: 'sy_search.html'
+				})
+				mui('.mui-bar-nav').on('tap', '.mui-pull-right', function() {
+					var spid = document.getElementById('spid').innerText;
+					var title = this.getAttribute('title');
+					mui.fire(detailPage, 'newsId', {
+						spid: spid,
+						title: title,
+						tltit: tltit
+					});
+					mui.openWindow({
+						url: 'sy_search.html',
+						id: 'sy_search.html'
+					});
+				})
+			</script>
+		</header>
+		<!--头部导航end-->
+
+		<!--中部主体-->
+		<div id="refreshContainer" class="mui-content  mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul id="list" class="mui-table-view mui-table-view-chevron">
+					<!--<li class="mui-table-view-cell mui-media">
+   						 <a>
+                 <h5>法国的</h5>
+                 <div class="ass_center">
+                   <span>
+                     <b>8000</b>
+                   </span>
+                   <span>百货超市</span>
+                   <span>广州市番禺区</span>
+                 </div>
+                 <p>大家好，我是。。。。<p>
+                   <span class="li_fu">07-15</span>
+                 </a>
+             </li>-->
+				</ul>
+			</div>
+		</div>
+		<!--中部主体end-->
+
+		<!--二级菜单-->
+		<!--区域-->
+		<div id="she2" class="she_tan">
+			<!--<div style="position: relative;padding: 5px 0;">-->
+			<ul id="city" class="ul_style">
+				<li class="li2 li_color">全城</li>
+			</ul>
+			<!--</div>-->
+			<div id="sheet" class="sheet1"></div>
+		</div>
+		<!--二级菜单end-->
+
+		<nav id="p_chus" class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item">
+				<span class="qy_text mui-tab-label">全城</span>
+			</a>
+		</nav>
+		<span id="shi" style="display: none;"></span>
+	</body>
+
+</html>
+<!--<script src="js/ljz.js"></script>-->
+<script>
+	var list = document.getElementById('list');//数据盒子
+	var she2 = document.getElementById('she2');//显示区域
+	var sheet = document.getElementById('sheet');//遮罩层
+	var title = document.getElementById('title')//标题
+	var qiyu = document.getElementsByClassName('qy_text');//区域
+	var table = document.body.querySelector('.mui-table-view'); //滑动刷新盒子
+	var city_text = '';
+	var uid = '';
+	var member = '';
+	var sea_inp = '';
+	var typeid = '';
+	var pager = {}; //分页
+	var totalPage; //总页码
+	pullRefresh(pager); //启用上拉下拉
+	mui.plusReady(function() { //接收传值
+		window.addEventListener('newsId', function(e) {
+			pager['size'] = 15; //条数
+			pager['page'] = 1; //页码
+			she2.style.display = 'none';
+		    qiyu[0].innerText = '全城';
+			list.innerHTML = '';
+			title.innerText = e.detail.tltit;
+			city_text = e.detail.city_text;
+			uid = e.detail.uid;
+			member = e.detail.member;
+			sea_inp = e.detail.sea_inp;
+			typeid = e.detail.typeid
+			var cityshi = {
+				"store.city": city_text
+			};
+			mui.ajax({ //根据市获取区域
+				url: "http://wwwgezimd.com/Store/cityaction!main.action",
+				type: 'post',
+				data: cityshi,
+				async: true,
+				dataType: 'json',
+				crossDomain: true, //强制使用5+跨域
+				timeout: '10000',
+				success: function(data) {
+					var city = document.getElementById('city');
+					for(var i = 0; i < data.length; i++) {
+						var li = document.createElement('li'); //创建元素节点
+						li.className = 'li2';
+						li.innerHTML += data[i].text;
+						city.appendChild(li);
+					}
+				},
+				error: function(xhr, type, errorThrown) {
+					mui.toast("请重新刷新")
+				}
+			})
+		});
+		window.addEventListener('newsId', stack);
+			//通过商铺出租中的一条跳转详情
+			var detailPage = mui.preload({
+				url: 'mine_details2.html',
+				id: 'mine_details2.html'
+			});
+			mui('.mui-table-view').on('tap', 'a', function() {
+				var title = this.getAttribute('title');
+				var spid = this.getAttribute('id');
+			mui.fire(detailPage, 'newsId', {
+				spid: spid,
+				uid: uid,
+				title: title,
+				member: member
+			});
+			mui.openWindow({
+				url: 'mine_details2.html',
+					id: 'mine_details2.html'
+			});
+		});
+	});
+	var data = '';
+
+	function stack() {
+		data = {
+			"shopPurchase.region": city_text,
+			"shopPurchase.title": sea_inp,
+			"shopPurchase.typeid": typeid
+		};
+		getData(pager, data);
+	}
+
+	function pullRefresh() {
+		mui("#refreshContainer").pullRefresh({
+			up: {
+				contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+				contentnomore: '', //可选，请求完毕若没有更多数据时显示的提醒内容；
+				callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					window.setTimeout(function() {
+						getData(pager, data);
+					}, 500);
+				}
+			},
+			down: {
+				height: 50, //可选,默认50.触发下拉刷新拖动距离,
+				auto: true, //可选,默认false.首次加载自动下拉刷新一次
+				contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+				contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+				contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+				callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					window.setTimeout(function() {
+						list.innerHTML = '';
+						pager['size'] = 15; //条数
+		                pager['page'] = 1; //页码  
+						//刷新要先清空父节点里面的子节点
+//						var f = document.getElementById("list");
+//						var childs = f.childNodes;
+//						for(var i = childs.length - 1; i >= 0; i--) {
+//							f.removeChild(childs[i]);
+//						}
+						getData(pager, data);
+						mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+					}, 500);
+				}
+			}
+		})
+	}
+	//这个方法是负责向接口请求数据的，你可以选择你喜欢的方式，我这里是直接用的mui.ajax
+	function getData(params, data) { //params = = pager
+		mui.ajax("http://wwwgezimd.com/Store/spapp!cityandtitle.action?page=" + pager.page + "&rows=" + pager.size, {
+			data: data,
+			dataType: 'json',
+			type: 'post',
+			success: function(data) {
+				mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+				var element = document.getElementById("list");
+				var para;　　　
+				var node;
+				var table = document.body.querySelector('.mui-table-view'); //滑动刷新盒子
+				var cells = document.body.querySelectorAll('.mui-table-view-cell'); //滑动刷新盒子
+				if(data[0].ext==0){
+					//mui.toast('暂时没有数据')
+				}else{
+					for(var i = 0; i < data.length; i++) {
+						var li = document.createElement('li'); //创建元素节点
+						li.className = 'mui-table-view-cell mui-media';
+						li.innerHTML = '<a id="' + data[i].spid + '"><h5>' + data[i].title + '</h5><div class="ass_center"><span><b>' + data[i].purchaseBudget + '元/月</b></span><span>' + data[i].type + '</span>' +
+							'<span>' + data[i].region + '</span></div><p>大家好，我是。。。。<p><span class="li_fu">' + data[i].startdate + '</span></a>';
+						table.appendChild(li);
+					}
+				}
+				
+				//这里很重要，这里获取页码 公式：总条数/每页显示条数
+				totalPage = data[0].ext % pager.size != 0 ?
+					parseInt(data[0].ext / pager.size) + 1 :
+					data[0].ext / pager.size;
+				if(totalPage == pager.page) { //总页码等于当前页码，停止上拉下拉
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+//                      mui("#refreshContainer").pullRefresh().setStopped(true);
+				} else {
+					pager.page++;
+					mui('#refreshContainer').pullRefresh().refresh(true);
+				}
+			},
+			error: function(xhr, type, errorThrown) {
+				//异常处理；
+				console.log(type);
+			}
+		})
+	}
+	
+	mui('.mui-bar-tab').on('tap','.mui-tab-item',function(){//点击显示区
+//		alert(1111)
+        she2.style.display = 'block'
+	})
+	
+	mui('#city').on('tap','li',function(){
+		list.innerHTML='';
+		pager['size'] = 15; //条数
+		pager['page'] = 1; //页码  
+		qiyu[0].innerText = this.innerText;
+		if(this.innerText == '全城'){
+			data = {"store.address": city_text,"store.sname":sea_inp,"store.typead":typead};
+		}else{
+			var sqsh = city_text+this.innerText.substr(0,this.innerText.indexOf('区'));
+			data = {"store.address": sqsh,"store.sname":sea_inp,"store.typead":typead};
+		}
+		she2.style.display = 'none';
+		getData(pager, data);
+	})
+	
+	sheet.addEventListener('tap',function(){
+		she2.style.display = 'none';
+	})
+</script>

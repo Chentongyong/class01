@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_enroll.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<form id="gruop" class="mui-input-group" action="" method="post">
+				<!--手机号码注册-->
+				<div class="mui-input-row">
+					<input onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" id="phoness" type="text" class="mui-input-clear" placeholder="请输入手机号码" maxLength="11"  >
+				</div>
+				<button type="button" id="but">注册</button>
+				<div class="group_below">
+					<span>点击上面"注册"按钮，即表示你同意</span>
+					<a>《华夏商铺用户协议》</a>
+				</div>
+				<!--手机号码注册end-->
+			</form>
+
+			<form id="captcha" class="mui-input-group" action="" method="post">
+				<!--获取验证码-->
+				<!--<div id="captcha">-->
+				<div class="cap_up">
+					<p>已发送验证码到：</p>
+					<span id="mobile"></span>
+				</div>
+				<div class="cap_center">
+					<input id="code" type="text" placeholder="请填写验证码" />
+					<!--<button id="but2" type="button">获取验证码</button>-->
+				</div>
+				<button type="button" id="but3">提交</button>
+				<!--</div>-->
+				<!--获取验证码end-->
+			</form>
+
+			<!--设置密码-->
+			<form id="password" class="mui-input-group" action="" method="post">
+				<input id="password1" type="password" placeholder="请输入密码">
+				<input id="password2" type="password" placeholder="确认密码">
+				<button type="button" id="but4">提交</button>
+			</form>
+		</div>
+	</body>
+	<script>
+		var phoness = document.getElementById('phoness');
+		var code = document.getElementById('code');
+		var group = document.getElementById('gruop');
+		var mobile = document.getElementById('mobile');
+		var captcha = document.getElementById('captcha');
+		var password = document.getElementById('password');
+		var password1 = document.getElementById('password1');
+		var password2 = document.getElementById('password2');
+		mui('#gruop').on('tap', '#but', function(e) {
+			var phs = phoness.value;//输入手机号码
+			if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phs)))  {
+				alert("不是完整的11位手机号或者正确的手机号前七位");
+				document.mobileform.mobile.focus();
+				return  false;
+			} else {
+				if(!phs == '' && phs.length==11) {
+					mui(this).button('loading');
+					setTimeout(function() {
+						mui(this).button('reset');
+						group.className = 'gr_dis';
+						captcha.style.display = 'block'
+						mobile.innerText = phoness.value;
+						var tel = phoness.value;
+						mui.ajax({
+							url: 'http://wwwgezimd.com/Store/us!Shortmess.action?user.tel='+tel,
+							type: 'post',
+							async: true,
+							dataType: 'json',
+							crossDomain: true, //强制使用5+跨域
+							timeout: '10000',
+							success: function(data) {
+								console.log("获取验证码")
+							},
+							error: function(xhr, type, errorThrown) {
+								mui.toast("网络延迟")
+							}
+						});
+					}.bind(this), 2000);
+				} else {
+					mui.toast('请填写手机号码')
+				}
+			}
+
+		});
+
+		mui('#captcha').on('tap', '#but3', function() {
+			var col = code.value;
+			if(col!=null || col!=''){
+				var tel = phoness.value;
+				mui.ajax({
+					url: 'http://wwwgezimd.com/Store/us!jiaoya.action?user.tel='+ tel +'&user.verCode='+ col,
+					type: 'post',
+					async: true,
+					dataType: 'json',
+					crossDomain: true, //强制使用5+跨域
+					timeout: '10000',
+					success: function(data) {
+						console.log("验证成功")
+						captcha.style.display = 'none';
+						password.style.display = 'block';
+					},
+					error: function(xhr, type, errorThrown) {
+						mui.toast("请填写验证码")
+					}
+				});
+			}else{
+				mui.toast("请填写验证码")
+			}
+		})
+
+		mui('#password').on('tap', '#but4', function() {
+			var tel = phoness.value;
+			pwd1 = password1.value;
+			pwd2 = password2.value;
+			if(pwd1.length<6){
+			   mui.toast('密码至少6位或者6位以上')
+			}else{
+				if(pwd1 = pwd2) {
+				mui.ajax({
+					url: 'http://wwwgezimd.com/Store/appuser!add.action?u.tel=' + tel + '&u.password=' + pwd2,
+					type: 'post',
+					async: true,
+					dataType: 'json',
+					crossDomain: true, //强制使用5+跨域
+					timeout: '10000',
+					success: function(data) {
+						var detailPage = mui.preload({
+							url: 'mine_register.html',
+							id: 'mine_register.html'
+						});
+						mui.fire(detailPage, 'newsId', {
+							tel: tel,
+							pwd: pwd2
+						});
+						mui.openWindow({
+							url: 'mine_register.html',
+							id: 'mine_register.html'
+						});
+					},
+					error: function(xhr, type, errorThrown) {
+						mui.toast("请填写验证码")
+					}
+				});
+			} else {
+				mui.toast("密码输入不一致，请重新输入");
+			}
+			}
+		});
+
+		//协议
+		mui('.group_below').on('tap', 'a', function() {//跳转协议
+			mui.openWindow({
+				url: "agreement.html",
+				id: "agreement.html",
+				style: {},
+				show: {
+					autoShow: true,
+					aniShow: "slide-in-right",
+					duration: 100
+				},
+				waiting: {
+					autoShow: true,
+				}
+			})
+
+		})
+	</script>
+
+</html>

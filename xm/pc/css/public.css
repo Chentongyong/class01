@@ -1,0 +1,105 @@
+*{margin: 0;padding: 0;}
+html,body{
+	font-family: "微软雅黑";
+	color: #666;
+}
+.wids{width: 100%;}
+.boxs{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+li{list-style-type: none;}
+a{color: #666;text-decoration: none;}
+.p0{padding: 0;}
+.p_r{padding-right: 0;}
+.p_l{padding-left: 0;}
+.col{color: #0b9ad6;}
+.back{background-color: #0b9ad6;}
+.back2{background-color: #E5E5E5;}
+h5{font-size: 16px;}
+.b_style{
+	font-size: 18px;
+	color: #0B9AD6;
+}
+.fu_right{float: right;}
+.fl_left{float: left;}
+.mar_bot{
+	margin-bottom: 20px;
+}
+
+#issue_succeed{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0;
+	z-index: 100;
+	background: rgba(102,102,102,.4);
+}
+#issue_succeed .iss_suced{
+	width: 400px;
+	height:284px;
+	margin: 250px auto;
+	background: #fff;
+	text-align: center;
+}
+#issue_succeed .iss_suced i{
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 50%;
+	vertical-align: top;
+	background: #0B9AD6;
+	position: relative;
+	top: 137px;
+}
+#issue_succeed .iss_suced i b{
+	padding: 0;
+	margin: 0;
+	font-size: 24px;
+	color: #fff;
+}
+#issue_succeed .iss_suced span{
+	position: relative;
+	top: 127px;
+	color: #000000;
+	font-size: 36px;
+}
+
+
+/*分页*/
+.fyBox{
+	display: inline-block;
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    color: #666;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    /*position: relative;
+    top: 6px;*/
+}
+.aaas{
+	width: 38px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #666;
+    box-sizing: border-box;
+    display: inline-block;
+    background: #eee;
+    vertical-align: top;
+    margin-right: 15px;
+    text-align: center;
+}
+.aaas:nth-child(6){
+	margin-right: 10px;
+}
+.aaas.ase{
+	background: #0B9AD6;
+	border: 1px solid #0B9AD6;
+	color: #fff;
+}

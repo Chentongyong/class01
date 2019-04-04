@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>快速发布</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/issue.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true, //启用右滑关闭功能
+				keyEventBind: {
+					backbutton: false, //Boolean(默认true)关闭back按键监听
+					menubutton: false //Boolean(默认true)关闭menu按键监听
+				}
+			})
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">快速发布</h1>
+		    <a class="mui-pull-right"><i class="mui-icon mui-icon-contact"></i><input id="inpBox" type="text" placeholder="登录"/></a>
+		    <script>
+		    	mui('.mui-bar-nav').on('tap','.mui-pull-right',function(){
+		    		mui.openWindow({
+					url:'mine_register.html',
+					id:'mine_register.html',
+					extras:{
+			    	},
+					style:{},
+				    show:{
+						autoShow:true,
+						aniShow:"slide-in-right,",
+						duration:100
+					},
+					waiting:{
+						autoShow:true,
+						itle:"正在加载...",
+						options:{
+						}
+					}
+			   })
+		    	})
+		    </script>
+		</header>
+		<div class="mui-content">
+		    <div class="issue">
+		    	<a id="shengyi"><span id="span1">生意转让 <i class="mui-icon mui-icon-arrowright mui-pull-right"></i></span></a>
+		    	<span id="span2">商铺求租<i class="mui-icon mui-icon-arrowright mui-pull-right"></i></span>
+		    	<span id="span3">商铺求购<i class="mui-icon mui-icon-arrowright mui-pull-right"></i></span>
+		    	<span id="span4">商铺出租<i class="mui-icon mui-icon-arrowright mui-pull-right"></i></span>
+		    	<span id="span5">商铺出售<i class="mui-icon mui-icon-arrowright mui-pull-right"></i></span>
+		    </div>
+		    <div id="phone" class="phone">
+		    	<i class="mui-icon mui-icon-phone"></i>
+		    	<div class="p_sm">
+			    	<p>拨打热线</p>
+			    	<span>客服马上帮你发</span>
+		    	</div>
+		    </div>
+		    <div id="she_tan">
+		    	<div class="tan_nei">
+		    		<p>
+		    			<i class="mui-icon mui-icon-phone"></i>
+		    		    <span>请选择拨打电话</span>
+		    		</p>		    		
+		    	    <a href="tel:15218246435">15218246435</a>
+		    	</div>
+		    	<div id="sheet1">
+		        </div>
+		    </div>
+		</div>
+		<!--底部导航-->
+		<nav class="mui-bar mui-bar-tab">
+		    <a id="shouye" class="mui-tab-item">
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a id="gongsi" class="mui-tab-item">
+		        <span class="mui-icon mui-icon-chatboxes"></span>
+		        <span class="mui-tab-label">公司介绍</span>
+		    </a>
+		    <a class="mui-tab-item" style="color: #0b9ad6;">
+		        <span class="mui-icon mui-icon-compose"></span>
+		        <span class="mui-tab-label">发布</span>
+		    </a>
+		    <a id="wode" class="mui-tab-item">
+		        <span class="iconfont icon-home"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		</nav>
+	    <!--底部导航end-->
+	</body>
+
+</html>
+<script src="js/index.js"></script>
+<script>
+	var inpBox = document.getElementById('inpBox');
+	//	拨打热线
+	var phone = document.getElementById('phone');
+	var xShi = document.getElementById('she_tan');
+	var sheet1 = document.getElementById('sheet1');
+	var uid='';
+	var tel='';
+	phone.addEventListener('tap',function(){
+		xShi.className = 'she_dis'
+//	}
+	})
+	sheet1.addEventListener('tap',function(){
+		xShi.className = '';
+	})
+	
+mui.plusReady(function(){
+	//接收mine.html传过来的值
+	var uids='';
+	var tels='';
+	var member='';
+	var city_text='';
+	window.addEventListener('newsId',function(i){
+		tels=i.detail.tel;
+		uids=i.detail.uid;
+		member=i.detail.member;
+		inpBox.value = i.detail.tel;
+		city_text = i.detail.city_text;
+	})
+	var detailPage = mui.preload({url:'index.html',id:'index.html'})
+	mui('#shouye').on('tap','span',function(e){
+		mui.fire(detailPage,'newsId',{tel:tels,uid:uids,member:member,city_text:city_text});
+		mui.openWindow({url:'index.html',id:'index.html'})
+	})
+	var detailPage1 = mui.preload({url:'examine.html',id:'examine.html'})
+	mui('#gongsi').on('tap','span',function(e){
+		mui.fire(detailPage1,'newsId',{tel:tels,uid:uids,member:member,city_text:city_text});
+		mui.openWindow({url:'examine.html',id:'examine.html'})
+	})
+	var detailPage2 = mui.preload({url:'mine.html',id:'mine.html'})
+	mui('#wode').on('tap','span',function(e){
+		mui.fire(detailPage2,'newsId',{tel:tels,uid:uids,member:member,city_text:city_text});
+		mui.openWindow({url:'mine.html',id:'mine.html'})
+	})
+	
+	// 生意转让
+	var detailPage4 = mui.preload({url:'issue1.html',id:'issue1.html'})
+    mui('.issue').on('tap','#span1',function(e){
+	    if(inpBox.value!=''){
+			mui.fire(detailPage4,'newsId',{uid:uids,member:member,tel:tels,city_text:city_text});
+			mui.openWindow({url:'issue1.html',id:'issue1.html'})
+	    }else{
+	       denglu();
+	    }
+	})
+    
+    //商铺求租
+    var detailPage5 = mui.preload({url:'issue2.html',id:'issue2.html'})
+	mui('.issue').on('tap','#span2',function(){
+		var qiuzu = this.innerText;
+		if(inpBox.value!=''){
+			mui.fire(detailPage5,'newsId',{uid:uids,qiuzu:qiuzu,city_text:city_text});
+			mui.openWindow({url:'issue2.html',id:'issue2.html'})
+		}else{
+		    denglu();
+		}
+				    		
+	})
+	
+	//商铺求购
+	var detailPage6 = mui.preload({url:'issue3.html',id:'issue3.html'})
+	mui('.issue').on('tap','#span3',function(){
+		var qiugou = this.innerText;
+		if(inpBox.value!=''){
+			mui.fire(detailPage6,'newsId',{uid:uids,qiugou:qiugou,city_text:city_text});
+			mui.openWindow({url:'issue3.html',id:'issue3.html'})
+		}else{
+			denglu();
+			}
+	})
+	
+	//商铺出租
+	var detailPage7 = mui.preload({url:'issue4.html',id:'issue4.html'})
+	mui('.issue').on('tap','#span4',function(){
+		if(inpBox.value!=''){
+			mui.fire(detailPage7,'newsId',{uid:uids,city_text:city_text});
+			mui.openWindow({url:'issue4.html',id:'issue4.html'})
+		}else{
+			denglu();
+			}
+	})
+	
+	//商铺出售
+	var detailPage8 = mui.preload({url:'issue5.html',id:'issue5.html'})
+	mui('.issue').on('tap','#span5',function(){
+		if(inpBox.value!=''){
+			mui.fire(detailPage8,'newsId',{uid:uids,city_text:city_text});
+			mui.openWindow({url:'issue5.html',id:'issue5.html'})
+		}else{
+			denglu();
+			}
+	})
+	
+	//跳转登录页面
+	var denglu = function(){
+		mui.openWindow({
+			url:'mine_register.html',
+			id:'mine_register.html',
+			extras: {
+				city_text: city_text,
+			},
+			style:{},
+			show:{
+			    autoShow:true,
+				aniShow:"slide-in-right,",
+				duration:100
+			},
+			waiting:{
+				autoShow:true,
+				title:"正在加载...",
+				options:{
+					}
+			}			
+		})
+	}
+})
+
+
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>vip充值</title>
+<link rel="stylesheet" href="css/iconfont.css" />
+<link rel="stylesheet" href="css/public.css" />
+<link rel="stylesheet" href="css/tab.css" />
+<link rel="stylesheet" href="css/vipcz.css" />
+</head>
+
+<body>
+	<!--顶部导航-->
+	<div id="header"></div>
+	<!--顶部导航end-->
+
+	<!--中部-->
+	<div class="wids">
+		<div class="tabBox">
+			<a href="index.html"><img src="images/homes_11.png" alt="" /></a>
+			<div class="search">
+				<input type="text" placeholder="请输入关键字" />
+				<button class="back" type="button">搜索</button>
+				<a href="issue.html" class="issue back">免费发布</a>
+			</div>
+		</div>
+		<div class="mokuai">
+			<div class="tab_xia">
+				<ul id="xiaSype">
+					<li><a href="index.html"> 首页 </a></li>
+					<li><a href="rent.html"> 商铺出租 </a></li>
+					<li><a href="transfer.html"> 商铺转让 </a></li>
+					<li><a href="soliciting.html"> 商铺求租 </a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="boxs">
+			<div class="specification">
+				<i class="spec_i"></i> <span>充值<b id="price"></b>元，享受名店<b
+					id="year"></b>专属会员权益
+				</span>
+			</div>
+			<div class="pattern">
+				<h5>请选择支付方式</h5>
+				<div class="way">
+					<i class="way_i i_back"></i> <span> <i class="sp_id1"></i>
+						支付宝支付
+					</span> <i class="way_i" style="margin-left: 26px;"></i> <span> <i
+						class="sp_id2"></i> 微信支付
+					</span>
+				</div>
+				<div class="wxBox">
+					<div class="wx_nie">
+						<div class="wx_nie_l">
+							<div class="nie_lz">
+								<img src="images/homes_15.png" alt="" />
+							</div>
+							<p>
+								请用微信<span>扫一扫</span>，轻松完成支付
+							</p>
+						</div>
+						<div class="wx_nie_r">
+							<img src="img/wxzf_03.png" alt="" />
+						</div>
+					</div>
+				</div>
+				<form name="alipayment" action="zfpay/alipay.trade.page.pay.jsp" method="post"
+					target="_blank">
+					<div style="display: none;">
+						<div id="body1" class="show" name="divcontent">
+							<dl class="content">
+								<dd>
+									<input id="WIDsubject" name="WIDsubject" value="支付宝支付"  />
+									<input id="WIDtotal_amount" name="WIDtotal_amount" />
+								</dd>
+								<dt>商品描述：</dt>
+								<dd>
+									<input id="WIDbody" name="WIDbody" />
+								</dd>
+								</dl>
+						</div>
+					</div>
+					<button type="submit" >立即支付</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--中部end-->
+
+	<!--底部-->
+	<div id="base" style="position: relative;"></div>
+	<!--底部end-->
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://malsup.github.io/jquery.form.js"></script>
+<script src="js/vip.js"></script>

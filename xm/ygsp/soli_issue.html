@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>求租发布</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/soli_issue.css" />
+		<script src="http://webapi.amap.com/maps?v=1.4.2&key=cd68d6c656adacc05bad2d1e6ba2c715"></script>
+		<style type="text/css">
+			right carousel-control
+		</style>
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div id="header"></div>
+		<!--顶部导航end-->
+		
+		<!--中部-->
+		<div class="widStyel">
+			<div class="widMin" style="padding-bottom: 86px;">
+				<div class="issUp">
+					<span>1选择类型（<a href="issue.html">重选</a>）</span>
+					<span class="sps_back">2找店信息</span>
+					<span>3发布成功</span>
+				</div>
+				<form id="uploading" action="" method="post">
+					<div class="upBox">
+						<b>*</b>
+						<label>标&nbsp;&nbsp;&nbsp;&nbsp;题:</label>
+						<input id="tits" type="text" placeholder="5-16个字"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>经营业态：</label>
+						<select id="jyyt" >
+						  <option value="餐饮美食" selected="selected">餐饮美食</option>
+						  <option value="美容美发">美容美发</option>
+						  <option value="服饰鞋包">服饰鞋包</option>
+						  <option value="百货超市">百货超市</option>
+						  <option value="商场专柜">商场专柜</option>
+						  <option value="旅馆公寓">旅馆公寓</option>
+						  <option value="休闲娱乐">休闲娱乐</option>
+						  <option value="医药保健">医药保健</option>
+						  <option value="生活服务">生活服务</option>
+						  <option value="汽车美容">汽车美容</option>
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>面&nbsp;&nbsp;&nbsp;&nbsp;积：</label>
+						<input id="mj" type="text" placeholder="请填写面积" onkeyup="value=value.replace(/[^\.\d]/g,'')"/>
+					</div>
+					
+					<div class="upBox">
+						<b>*</b>
+						<label>租&nbsp;&nbsp;&nbsp;&nbsp;金：</label>
+						<input id="zj" type="text" placeholder="请填写租金" onkeyup="value=value.replace(/[^\.\d]/g,'')"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>最短租期：</label>
+						<select id="zq">
+						  <option value="一年">一年</option>
+						  <option value="两年">两年</option>
+						  <option value="三年" selected="selected">三年</option>
+						  <option value="五年">五年</option>
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>区&nbsp;&nbsp;&nbsp;&nbsp;域：</label>
+						<select id="region1">
+						</select>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>地&nbsp;&nbsp;&nbsp;&nbsp;段：</label>
+						<input id="dd" class="inps" type="text" placeholder="2-16个字"/>
+					</div>
+					
+					<div class="upBox">
+						<b>*</b>
+						<label>商铺配套：</label>
+						<ul>
+							<li>
+								<i class=""></i>
+								<span>可明火</span>
+							</li>
+							<li>
+								<i></i>
+								<span>380V</span>
+							</li>
+							<li>
+								<i></i>
+								<span>煤气管道</span>
+							</li>
+							<li>
+								<i></i>
+								<span>排烟管道</span>
+							</li>
+							<li>
+								<i></i>
+								<span>停车位</span>
+							</li>
+							<li>
+								<i></i>
+								<span>证件齐全</span>
+							</li>
+						</ul>
+					
+					</div>
+					
+					<div class="upBox">
+						<b>*</b>
+						<label>详细描述：</label>
+						<textarea id="ms" placeholder="10-800字，如：地段描述、装修情况、交通情况、转让原因是"></textarea>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>联&nbsp;系&nbsp;人：</label>
+						<input id="lxr" type="text" placeholder="2-6个字"/>
+					</div>
+					<div class="upBox">
+						<b>*</b>
+						<label>手机电话</label>
+						<input id="tel" type="text" maxlength="11" placeholder="请手机号码" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+					</div>
+					<div>
+						<button type="button" id="but">立即发布</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--中部end-->
+
+	    <!--底部导航-->
+		<div id="tabbar" style="margin-top: 71px;"></div>
+		<!--底部导航end-->
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/soli_issue.js"></script>

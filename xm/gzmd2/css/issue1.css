@@ -1,0 +1,37 @@
+/*.pickimg{position: relative;}
+.pickimg b{position: absolute;top: 0px;left: 0px;font-size: 24px;background: #ccc;color: red;font-weight: 600;opacity: .6;}*/
+.picture{padding:10px;text-align:center;margin:0 auto;position:relative;border-bottom:1px solid #ccc}
+.picture .dynamic_images .dynamie_up{width:80px;height:80px;margin:0 auto;border:1px solid #ccc;line-height:80px;margin-bottom:5px}
+.picture .dynamic_images .dynamie_up span{display:block;font-size:68px}
+.picture .dynamic_images ul{text-align:left;padding:0;margin:0}
+.picture .dynamic_images ul li{width:23%;height:100px;display:inline-block}
+.picture .dynamic_images ul li img{width:100%;height:100px}
+.mui-input-row{padding:5px 0;height:40px}
+.mui-input-row label{line-height:1.1em;float:left;width:30%;padding:5px 10px;font-size:15px;border-right:1px solid #ccc;text-align:center}
+.mui-input-row label~input{float:left;width:55%;padding:5px 10px;height:26px;text-indent:1em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:15px}
+.mui-input-row .span1{font-size:14px;color:#666;padding:5px 10px;height:26px;position:relative;top:4px}
+.mui-input-row .span2{position:relative;right:-15px;top:1px;color:#ccc}
+#suspend{width:100%;display:none}
+#suspend.sus_dis{display:block}
+#suspend ul{width:94%;padding:20px 10px;position:absolute;background:#fff;z-index:9999;left:3%;top:0}
+#suspend ul li{padding:10px;color:#666;border-bottom:1px solid #ccc}
+#shade{width:100%;height:100%;position:fixed;background:#929292;top:0;left:0;z-index:11;opacity:.5}
+#describe{width:100%;display:none}
+#describe.des_dis{display:block}
+#describe .des_nei{bottom:60px;width:90%;padding:20px 10px;position:absolute;background:#fff;z-index:9999;left:5%}
+#describe .des_nei textarea{height:250px;overflow:hidden;font-size:14px;padding:0}
+#describe .des_nei .nei_sm{height:30px}
+#describe .des_nei .nei_sm .mui-pull-left{font-size:12px}
+#i_color{color:red;font-style:normal}
+#describe .des_nei .nei_sm .mui-pull-right .mui-icon-trash{color:#666}
+#describe .des_nei button{width:100%;height:30px;background:#0b9ad6;border:1px solid #0b9ad6;color:#fff;margin-top:10px}
+#identity{width:50%;height:30px;text-indent:1em;overflow:hidden;margin:0 auto;padding:5px 0}
+#identity span{width:50%;border:1px solid #b22222;box-sizing:border-box;display:inline-block;float:left;color:#b22222;line-height:20px;text-align:center}
+#identity span.span_color{background:#b22222;color:#fff}
+.smsy{padding:15px 10px 20px 10px;text-align:center;font-size:14px}
+#but{border:1px solid #0b9ad6;width:94%;height:40px;color:#fff;letter-spacing:.5em;text-align:center;background:#0b9ad6;position:relative;bottom:5px;left:3%;font-size:20px}
+#diqv{width:100%;display:none}
+#diqv.sus_dis{display:block}
+#diqv .diqv_zi{width:94%;padding:10px;position:absolute;background: #fff;z-index:9999;left:3%;top:100;height: 250px;overflow-x: hidden;overflow-y: auto;}
+#diqv .diqv_zi p{padding:10px;color:#666;border-top:1px solid #ccc;text-align: center;margin: 0;color: #000;}
+#diqv_fu{width:100%;height:100%;position:fixed;background:#929292;top:0;left:0;z-index:11;opacity:.5}

@@ -1,0 +1,156 @@
+.wanBox{
+	font-size: 14px;
+	display: flex;
+	color: #666;
+}
+.wanLeft{
+	width: 900px;
+}
+
+.wanLeft .leftUp{
+	padding-bottom: 20px;
+}
+.wanLeft .leftUp h4{
+	font-size: 18px;
+	color: #0B9AD6;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+.wanLeft .wanCenter{
+	padding: 37px 0;
+	display: flex;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.wanCenter .wanCen-zi{
+	width: 33.33%;
+	height: 60px;
+	text-align: center;
+	border-right: 1px solid #eee;
+}
+.wanCenter .wanCen-zi:nth-child(3){
+	border-right: 0;
+}
+.wanCenter .wanCen-zi span{
+	display: block;
+	line-height: 30px;
+}
+.wanCenter .wanCen-zi .zi-ding{
+	color: #ff0000;
+}
+.wanLxi{
+	margin:16px 0 42px 0
+}
+.wanLxi .wanLxi-zi{
+	line-height: 32px;
+}
+.wanLxi .ziBox{
+	display: flex;
+	text-align: center;
+}
+.wanLxi .ziBox1{
+	width: 200px;
+	line-height: 26px;
+	padding: 10px 0;
+	background-color: #0B9AD6;
+	border-radius: 5px;
+	color: #fff;
+}
+.wanLxi .ziBox1 .span1{
+	padding-right: 10px;
+	border-right: 1px solid #fff;
+	font-size: 16px;
+}
+.wanLxi .ziBox2{
+	width: 200px;
+	background-color: #efefef;
+	border-radius: 5px;
+	margin-left: 20px;
+	padding: 5px 0;
+	font-size: 12px;
+}
+.wanLxi .ziBox2 span{
+	display: block;
+}
+.wanPtao{
+	font-size: 14px;
+}
+.wanPtao h5{
+	padding-bottom: 10px;
+	font-size: 18px;
+	color: #000;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;
+}
+.wanPtao ul{
+	display: flex;
+	margin-bottom: 20px;
+}
+.wanPtao ul li{
+	width: 60px;
+	text-align: center;
+	margin: 0 10px;
+	color: #666;
+}
+.wanPtao ul li.li_color{
+	color: #0b9ad6;
+}
+.wanPtao ul li i{
+	font-size: 36px;
+	font-weight: 600;
+}
+.wanPtao ul li span{
+	display: block;
+	margin-top: 14px;
+}
+
+
+.wanRight{
+	width: 280px;
+	margin-left: 20px;
+}
+.wanRight h4{
+	font-size: 18px;
+	color: #000;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+}
+
+.wanRight a{
+	display: block;
+	width: 280px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+	padding-top: 10px;
+}
+.wanRight a:nth-child(5){
+	border-bottom:0
+}
+.wanRight .rightBox{
+	margin-top: 10px;
+}
+.wanRight a img{
+	width: 120px;
+	height: 120px;
+}
+.wanRight a .aBox{
+	width: 150px;
+	padding: 5px 0;
+	margin-left: 10px;
+}
+.aBox h5{
+	font-size: 14px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10px;
+} 
+.aBox .aBox-zi{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}

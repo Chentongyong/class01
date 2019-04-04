@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>鸽子名店</title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/sy_assign.css" />
+		<!--<script src="dist/js/jquery.min.js"></script>-->
+		<style type="text/css">
+			#list li h5 {
+				margin-bottom: 3px;
+			}
+
+			.mui-table-view .mui-media-object {
+				line-height: 60px;
+				max-width: 80px;
+				height: 60px;
+				width: 80px;
+			}
+			.hyhg{
+				position: absolute;
+				right: 50px;
+				color: red;
+				font-size: 24px;
+			    bottom: 10px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="h_tit" class="mui-title">店铺出租</h1>
+			<a class="mui-icon mui-icon-search mui-pull-right"></a>
+			<script>
+				mui('.mui-bar-nav').on('tap', '.mui-pull-right', function() {
+					mui.openWindow({
+						url: "sy_search.html",
+						id: "sy_search.html",
+						style: {},
+						show: {
+							autoShow: true,
+							aniShow: "slide-in-right",
+							duration: 100
+						},
+						waiting: {
+							autoShow: true,
+						}
+					})
+				})
+			</script>
+		</header>
+		下拉刷新容器
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron" id="list">
+
+				</ul>
+			</div>
+		</div>
+
+		<!--出租-->
+		<div id="she1" class="she_tan">
+			<ul>
+				<li class="li1 li_color">出租</li>
+				<li class="li1">转让</li>
+				<li class="li1">出售</li>
+			</ul>
+			<div class="sheet1"></div>
+		</div>
+
+		<!--区域-->
+		<div id="she2" class="she_tan">
+			<ul id="city">
+				<li class="li2 li_color">全城</li>
+			</ul>
+			<div class="sheet1"></div>
+		</div>
+
+		<!--面积-->
+		<div id="she3" class="she_tan ">
+			<ul>
+				<li class="li3 li_color">无限</li>
+				<li class="li3">20平方以下</li>
+				<li class="li3">20-50平方</li>
+				<li class="li3">50-100平方</li>
+				<li class="li3">100-200平方</li>
+				<li class="li3">200-500平方</li>
+				<li class="li3">500平方以上</li>
+			</ul>
+			<div class="sheet1"></div>
+		</div>
+
+		<!--底部导航-->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item">
+				<div>
+					<span class="mui-tab-label">出租</span>
+					<span class="mui-icon mui-icon-arrowright mui-pull-right m_jt"></span>
+				</div>
+			</a>
+			<a class="mui-tab-item">
+				<div>
+					<span class="mui-tab-label">全城</span>
+					<span class="mui-icon mui-icon-arrowright mui-pull-right m_jt"></span>
+				</div>
+			</a>
+			<a class="mui-tab-item">
+				<div style="border: 0;">
+					<span class="mui-tab-label">面积</span>
+					<span class="mui-icon mui-icon-arrowright mui-pull-right m_jt"></span>
+				</div>
+			</a>
+		</nav>
+		<!--底部导航end-->
+		<span id="shi" style="display: none;"></span>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		var aObj = document.getElementsByClassName('mui-tab-item');
+		var sheObj = document.getElementsByClassName('she_tan');
+		var xbdh = document.getElementsByClassName('mui-tab-label');
+		var sheet1 = document.getElementsByClassName('sheet1');
+		var li1 = document.getElementsByClassName('li1');
+		var li2 = document.getElementsByClassName('li2');
+		var li3 = document.getElementsByClassName('li3');
+		var texts = document.querySelector('.mui-title');
+		var jt = document.getElementsByClassName('m_jt');
+		var list = document.getElementById('list');
+		var aa = '';
+		var bb = '';
+		var cc = '';
+		var uid = '';
+		var tltit = '';
+		var member = '';
+		var sea_inp = '';
+		var shis = document.getElementById('shi'); //当前城市s
+		var title = document.getElementById('h_tit');
+		var data = {};
+		var pager = {}; //分页
+		var totalPage; //总页码
+
+		mui.plusReady(function() { //接收传值
+			window.addEventListener('newsId', function(es) {
+				xbdh[0].innerText = '出租';
+				xbdh[1].innerText = '全城';
+				xbdh[2].innerText = '面积';
+				shis.innerText = es.detail.city_text;
+				tltit = es.detail.tltit;
+				if(tltit=="商铺转让"){
+					xbdh[0].innerText = '转让';
+				}else if(tltit=="商铺出租"){
+					xbdh[0].innerText = '出租';
+				}else{
+					xbdh[0].innerText = '出售';
+				}
+				uid = es.detail.uid;
+				member = es.detail.member;
+				city_text = shis.innerText;
+				title.innerText = tltit;
+				sea_inp = es.detail.sea_inp;
+				list.innerHTML = '';
+				pager['page'] = 1; //页码
+				//根据市查找区
+				var city = document.getElementById('city');
+				city_text = shis.innerText;
+				city.innerHTML = '';
+				var cityshi = {"store.city": city_text};
+
+				mui.ajax({ //根据市获取区域
+					url: "http://wwwgezimd.com/Store/cityaction!main.action",
+					type: 'post',
+					data: cityshi,
+					async: true,
+					dataType: 'json',
+					crossDomain: true, //强制使用5+跨域
+					timeout: '10000',
+					success: function(data) {
+						var city = document.getElementById('city');
+						for(var i = 0; i < data.length; i++) {
+							var li = document.createElement('li'); //创建元素节点
+							li.className = 'li2';
+							li.innerHTML += data[i].text;
+							city.appendChild(li);
+						}
+					},
+					error: function(xhr, type, errorThrown) {
+						mui.toast("请重新刷新")
+					}
+				})
+			})
+			window.addEventListener('newsId', stack);
+			//通过商铺出租中的一条跳转详情
+			var detailPage = mui.preload({
+				url: 'mine_details.html',
+				id: 'mine_details.html'
+			});
+			mui('.mui-table-view').on('tap', 'a', function() {
+				var title = this.getAttribute('title');
+				var sid = this.getAttribute('id');
+				mui.fire(detailPage, 'newsId', {
+					sid: sid,
+					uid: uid,
+					title: title,
+					member: member
+				});
+				mui.openWindow({
+					url: 'mine_details.html',
+					id: 'mine_details.html'
+				});
+			});
+		})
+
+		//    、二级菜单，点击出现事件
+		for(var i = 0; i < aObj.length; i++) {
+			aObj[i].index = i;
+		}
+		mui('.mui-bar-tab').on('tap', 'a', function() { //          二级菜单(点击显示)
+			var s = this.index;
+			for(var i = 0; i < sheObj.length; i++) {
+				sheObj[i].className = 'she_tan';
+			}
+			sheObj[s].className = 'she_tan she_dis';
+			jt[s].className = 'mui-icon mui-icon-arrowup mui-pull-right m_jt';
+
+			sheet1[s].addEventListener('tap', function() {
+				sheObj[s].className = 'she_tan';
+				jt[s].className = 'mui-icon mui-icon-arrowright mui-pull-right m_jt'
+			})
+		})
+
+		function atye() {
+			for(var u = 0; u < xbdh.length; u++) {
+				sheObj[u].className = 'she_tan';
+			}
+		}
+		//出租
+		mui('#she1').on('tap', 'li', function() {
+			list.innerHTML = '';
+			var a = this.index;
+			for(var j = 0; j < li1.length; j++) {
+				li1[j].className = 'li1';
+			}
+			this.className = 'li1 li_color';
+			xbdh[0].innerText = this.innerText;
+			aa = xbdh[0].innerText;
+			bb = xbdh[1].innerText;
+			cc = xbdh[2].innerText;
+			jt[0].className = 'mui-icon mui-icon-arrowright mui-pull-right m_jt';
+			//					mui.toast(s)
+			if(this.innerText == '出售') {
+				texts.innerText = '商铺出售';
+			} else if(this.innerText == '出租') {
+				texts.innerText = '商铺出租';
+			}
+			atye();
+			pager['page'] = 1; //页码
+			getData(pager, data)
+		})
+
+		//区域
+		mui('#she2').on('tap', 'li', function() {
+			list.innerHTML = '';
+			for(var j = 0; j < li2.length; j++) {
+				li2[j].className = 'li2';
+			}
+			this.className = 'li2 li_color';
+			xbdh[1].innerText = this.innerText;
+			aa = xbdh[0].innerText;
+			bb = xbdh[1].innerText;
+			cc = xbdh[2].innerText;
+			jt[1].className = 'mui-icon mui-icon-arrowright mui-pull-right m_jt'
+			atye();
+			pager['page'] = 1; //页码
+			getData(pager, data);
+		})
+
+		//面积
+		mui('#she3').on('tap', 'li', function() {
+			list.innerHTML = '';
+			for(var j = 0; j < li3.length; j++) {
+				li3[j].className = 'li3';
+			}
+			this.className = 'li3 li_color';
+			xbdh[2].innerText = this.innerText;
+			aa = xbdh[0].innerText;
+			bb = xbdh[1].innerText;
+			cc = xbdh[2].innerText;
+			jt[2].className = 'mui-icon mui-icon-arrowright mui-pull-right m_jt';
+			atye();
+			pager['page'] = 1; //页码
+			getData(pager, data);
+		})
+		//		点击出现事件end
+
+		/*进页面直接运行的方法*/
+		function stack() {
+			getData(pager);
+		}
+
+		function pullRefresh() {
+			mui("#refreshContainer").pullRefresh({
+				up: {
+					contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+					contentnomore: '', //可选，请求完毕若没有更多数据时显示的提醒内容；
+					callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+						window.setTimeout(function() {
+							getData(pager);
+						}, 500);
+					}
+				},
+				down: {
+					height: 50, //可选,默认50.触发下拉刷新拖动距离,
+					auto: true, //可选,默认false.首次加载自动下拉刷新一次
+					contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+					contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+					contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+					callback: function() { //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+						window.setTimeout(function() {
+							pager['size'] = 20; //条数
+							pager['page'] = 1; //页码
+							//刷新要先清空父节点里面的子节点
+							var f = document.getElementById("list");
+							var childs = f.childNodes;
+							for(var i = childs.length - 1; i >= 0; i--) {
+								f.removeChild(childs[i]);
+							}
+							getData(pager);
+							mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+						}, 500);
+					}
+				}
+			})
+		}
+		//这个方法是负责向接口请求数据的，你可以选择你喜欢的方式，我这里是直接用的mui.ajax
+		function getData(params) {
+			//aa是出租出售   bb是地区   cc是面积
+			aa = xbdh[0].innerText;
+			bb = xbdh[1].innerText;
+			cc = xbdh[2].innerText;
+			var shi = document.getElementById('shi').innerText;
+			if(bb == "全城" && cc == "面积") {
+				data = {
+					"store.typead": aa,
+					"store.address": shi
+				};
+			}
+			if(bb != "全城" && cc == "面积") {
+				data = {
+					"store.typead": aa,
+					"store.address": shi + bb
+				};
+			}
+			if(bb == "全城" && cc != "面积") {
+				switch(cc) {
+					case "无限":
+						data = {
+							"store.typead": aa,
+							"store.address": shi
+						};
+						break;
+					case "20平方以下":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.square": 20
+						};
+						break;
+					case "20-50平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.square": 20,
+							"store.addreaa": 50
+						};
+						break;
+					case "50-100平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.square": 50,
+							"store.addreaa": 100
+						};
+						break;
+					case "100-200平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.square": 100,
+							"store.addreaa": 200
+						};
+						break;
+					case "200-500平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.square": 200,
+							"store.addreaa": 500
+						};
+						break;
+					case "500平方以上":
+						data = {
+							"store.typead": aa,
+							"store.address": shi,
+							"store.addreaa": 500
+						};
+						break;
+				}
+			}
+			if(bb != "全城" && cc != "面积") {
+				switch(cc) {
+					case "无限":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb
+						};
+						break;
+					case "20平方以下":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.square": 20
+						};
+						break;
+					case "20-50平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.square": 20,
+							"store.addreaa": 50
+						};
+						break;
+					case "50-100平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.square": 50,
+							"store.addreaa": 100
+						};
+						break;
+					case "100-200平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.square": 100,
+							"store.addreaa": 200
+						};
+						break;
+					case "200-500平方":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.square": 200,
+							"store.addreaa": 500
+						};
+						break;
+					case "500平方以上":
+						data = {
+							"store.typead": aa,
+							"store.address": shi + bb,
+							"store.addreaa": 500
+						};
+						break;
+				}
+			}
+			mui.ajax("http://wwwgezimd.com/Store/storeactions!Siteselection.action?page=" + pager.page + "&rows=" + pager.size, {
+				data: data,
+				dataType: 'json',
+				type: 'post',
+				//        headers:{'Content-Type':'application/json'},
+				success: function(data) {
+					console.log(data)
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+					//下面这坨都是在拼dom 你可以用jquery 或者是你所熟悉的angular,vue双向绑定
+					//					console.log(data[0].ext);//总条数
+					var returnData = data;
+					var element = document.getElementById("list");
+					var para;　　　
+					var node;
+					var table = document.body.querySelector('.mui-table-view'); //滑动刷新盒子
+					var cells = document.body.querySelectorAll('.mui-table-view-cell'); //滑动刷新盒子
+					if(data[0].ext==0){
+						//mui.toast('对不起，暂时没有数据。。。')
+					}else{
+						for(var i = 0; i < returnData.length; i++) {
+							//              para = document.createElement("li");
+							//              node = document.createTextNode(returnData[i].name)
+							//              para.appendChild(node);
+							//              element.appendChild(para);
+							var li = document.createElement('li');
+							li.className = 'mui-table-view-cell mui-media';
+							li.innerHTML += '<a id=' + returnData[i].sid + ' title="' + returnData[i].name + '" href="javascript:;"><img class="mui-media-object mui-pull-left" src="images/logo2.png" guoyu-src="' + returnData[i].img + '" /><div class="mui-media-body"><h5>' +
+								returnData[i].name + '</h5><div><span>' +
+								+returnData[i].square + '平方</span><span>' + returnData[i].address + '</span><span>' +
+								returnData[i].shoptype + '</span></div><p class="mui-ellipsis"><b>' +
+								returnData[i].transferfee + '</div><div class="hyhg iconfont icon-huiyuan"></div><em style="display:none">'+data[i].member+'</em></a>';
+								table.appendChild(li);
+							fu();
+						}
+					}
+					//这里很重要，这里获取页码 公式：总条数/每页显示条数
+					totalPage = data[0].ext % pager.size != 0 ?
+						parseInt(data[0].ext / pager.size) + 1 :
+						data[0].ext / pager.size;
+					if(totalPage == pager.page) { //总页码等于当前页码，停止上拉下拉
+						mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+//                      mui("#refreshContainer").pullRefresh().setStopped(true);
+					} else {
+						pager.page++;
+						mui('#refreshContainer').pullRefresh().refresh(true);
+					}
+					var hyhg = document.getElementsByClassName('hyhg');
+					var emObj = document.getElementsByTagName('em')
+					for(var p = 0 ; p < emObj.length; p++){
+						if(emObj[p].innerText!=3){
+							hyhg[p].style.display = "none";
+						}else{
+							hyhg[p].style.display = 'block';
+						}
+					}
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					console.log(type);
+				}
+			})
+		}
+		pullRefresh(pager); //启用上拉下拉
+	</script>
+
+</html>
+<script src="js/ljz.js"></script>

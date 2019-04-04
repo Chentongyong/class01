@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_enroll2.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">忘记密码</h1>
+		</header>
+		<div class="mui-content">
+			<form id="captcha" class="mui-input-group" action="" method="post">
+				<!--获取验证码-->
+				<div class="mui-input-row">
+					<input value="15133333164" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" id="phoness" type="text" class="mui-input-clear" placeholder="请输入手机号码" maxLength="11">
+				</div>
+				<div class="cap_center">
+					<input id="code" type="text" placeholder="请填写验证码" />
+					<input id="but2" type="button" value="获取验证码" onclick="time(this)">
+				</div>
+				<button class="yz" type="button">提交</button>
+				<!--获取验证码end-->
+			</form>
+
+			<!--设置密码-->
+			<form id="password" class="mui-input-group" action="" method="post">
+				<input id="pass1" type="password" placeholder="请输入密码">
+				<input id="pass2" type="password" placeholder="确认密码">
+				<button class="tj" type="button">提交</button>
+				<!--设置密码end-->
+			</form>
+		</div>
+	</body>
+
+</html>
+<script>
+	var title = document.getElementsByClassName('mui-title'); 
+	var but2 = document.getElementById('but2');//确认新密码
+	var pass1 = document.getElementById('pass1');//密码
+	var pass2 = document.getElementById('pass2');//重新输入密码
+	var poss = document.getElementById('phoness');//获取输入手机号码input
+	var code = document.getElementById('code');
+	var captcha = document.getElementById('captcha');
+	var password = document.getElementById('password');
+	var pos = '';//手机号码长度
+	
+	//验证码倒计时
+	  var wait=60;
+		function time(o) {
+		    if (wait == 0) {
+			   o.removeAttribute("disabled");   
+			   o.value="免费获取验证码";
+			   wait = 60;
+			} else { 
+			   o.setAttribute("disabled", true);
+			   o.value="重新发送(" + wait + ")";
+			   wait--;
+			   setTimeout(function() {
+			    time(o)
+			   },1000)
+			}
+			
+		}
+
+	mui('#captcha').on('tap', '.yz', function() { //手机获取验证码提交
+		pos = poss.value;
+		if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(pos)))  {//判断输入的是否为真确的手机号码
+			alert("不是完整的11位手机号或者不是正确的手机号");
+			document.mobileform.mobile.focus();
+			return  false;
+		} else {
+			if(pos != '' && pos.length == 11) {//
+				title[0].innerText = '重新设置密码'
+			} else {
+				alert('您输入的手机号码有误')
+			}
+		}
+		
+		var col = code.value;
+		if(col!=null || col!=''){
+			tel = poss.value;
+			mui.ajax({
+				url: 'http://wwwgezimd.com/Store/us!jiaoya.action?user.tel='+ tel +'&user.verCode='+ col,
+				type: 'post',
+				async: true,
+				dataType: 'json',
+				crossDomain: true, //强制使用5+跨域
+				timeout: '10000',
+				success: function(data) {
+					console.log("验证成功")
+					captcha.style.display = 'none';
+					password.style.display = 'block';
+				},
+				error: function(xhr, type, errorThrown) {
+					mui.toast("验证码不正确，请重新填写验证码")
+				}
+			});
+		}else{
+			mui.toast("请填写验证码")
+		}
+		
+	})
+	
+	but2.addEventListener("tap",function () {
+		mui.ajax({
+			url: 'http://wwwgezimd.com/Store/us!Shortmess.action?user.tel='+tel,
+			type: 'post',
+			async: true,
+			dataType: 'json',
+			crossDomain: true, //强制使用5+跨域
+			timeout: '10000',
+			success: function(data) {
+				console.log("获取验证码")
+			},
+			error: function(xhr, type, errorThrown) {
+				mui.toast("网络延迟")
+			}
+		});
+	})
+
+	mui('#password').on('tap', '.tj', function() {
+		var mima = pass1.value;
+		if(mima.length>6 && mima != null){
+			if(mima == pass2.value) {
+				var pwd = mima;
+				poss1 = poss.value;
+				data1 = {"u.tel": poss1,"u.password": pwd};
+				//title[0].innerText = '忘记密码';
+				mui.ajax({
+					url: 'http://wwwgezimd.com/Store/appuser!update_mima.action',
+					type: 'post',
+					data: data1,
+					async: true,
+					dataType: 'json',
+					crossDomain: true, //强制使用5+跨域
+					timeout: '10000',
+					success: function(data) {
+						var detailPage5 = mui.preload({
+							url: 'mine_register.html',
+							id: 'mine_register.html'
+						})
+						mui.fire(detailPage5, 'newsId', {
+							tel: poss1,
+							pwd: pwd
+						});
+						mui.openWindow({
+							url: 'mine_register.html',
+							id: 'mine_register.html'
+						});
+					},
+					error: function(xhr, type, errorThrown) {
+						mui.toast("网络延迟")
+					}
+				});
+			} else {
+				mui.toast('密码不同，重新输入')
+			}
+		}else{
+			mui.toast('您输入的密码不符合规范')
+		}
+		
+	})
+</script>

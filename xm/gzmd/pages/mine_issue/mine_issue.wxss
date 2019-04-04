@@ -1,0 +1,110 @@
+.con-tabbar {
+  width: 100%;
+  padding: 36rpx 0;
+  color: #000;
+  font-size: 36rpx;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+}
+.mess-zi{
+    border-bottom: 1px solid #ccc;
+}
+.message .mess-xx {
+  width: 94%;
+  padding: 20rpx 3%;
+  background-color: #fff;
+  display: flex;
+  color: #666;
+  /* justify-content: space-between */
+}
+
+.mess-xx .xx-sm {
+  width: 20%;
+  line-height: 86rpx;
+  font-size: 36rpx;
+  border-right: 1px solid #ccc;
+}
+
+.mess-xx .xx-nr {
+  width: 80%;
+  padding-right:20rpx; 
+  text-indent: 52rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+}
+.xx-nr-bt{
+  font-size: 36rpx;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.xx-nr .xx-nr-lx {
+  font-size: 26rpx;
+}
+.mess-xx image{
+  width:35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 21rpx
+}
+
+.amend{
+  display: flex; 
+  padding: 20rpx 0;
+  justify-content: space-around;
+}
+.amend .amend-lb{
+  width: 76rpx;
+}
+.amend image{
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  left: 8rpx;
+}
+
+.box-type {
+  position: absolute;
+  top: 82rpx;
+}
+
+.type-ej {
+  width: 94%;
+  height: 340rpx;
+  position: fixed;
+  bottom: 180rpx;
+  left: 3%;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.type-ej .ej-list {
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.type-zzc {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(120, 120, 120, 0.4);
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

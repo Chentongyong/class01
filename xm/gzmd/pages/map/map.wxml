@@ -1,0 +1,190 @@
+<view class='container'>
+  <view class='topBox'>
+    <view class='top-ss'>
+      <input type='text' placeholder='搜索城市' bindinput='inpClick'></input>
+    </view>
+    <view class='top-map'>
+      <text>当前城市： </text>
+      <text class='present'>{{dcCity}}</text>
+    </view>
+  </view>
+
+  <view class='map-list' style="{{ss?'display:none':'display:blck'}}">
+    <view class='map-list-zi'>
+      <text class='text'>A</text>
+      <view>
+        <text bindtap='mapClick' data-text='鞍山市'>鞍山市</text>
+        <text bindtap='mapClick' data-text='安庆市'>安庆市</text>
+        <text bindtap='mapClick' data-text='安阳市'>安阳市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>B</text>
+      <view>
+        <text bindtap='mapClick' data-text='北京市'>北京市</text>
+        <text bindtap='mapClick' data-text='保定市'>保定市</text>
+        <text bindtap='mapClick' data-text='北海市'>北海市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>C</text>
+      <view>
+        <text bindtap='mapClick' data-text='重庆市'>重庆市</text>
+        <text bindtap='mapClick' data-text='朝阳市'>朝阳市</text>
+        <text bindtap='mapClick' data-text='长春市'>长春市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>D</text>
+      <view>
+        <text bindtap='mapClick' data-text='大连市'>大连市</text>
+        <text bindtap='mapClick' data-text='大同市'>大同市</text>
+        <text bindtap='mapClick' data-text='东莞市'>东莞市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>E</text>
+      <view>
+        <text bindtap='mapClick' data-text='鄂州市'>鄂州市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>F</text>
+      <view>
+        <text bindtap='mapClick' data-text='抚顺市'>抚顺市</text>
+        <text bindtap='mapClick' data-text='福州市'>福州市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>G</text>
+      <view>
+        <text bindtap='mapClick' data-text='广州市'>广州市</text>
+        <text bindtap='mapClick' data-text='贵州市'>贵州市</text>
+        <text bindtap='mapClick' data-text='赣州市'>赣州市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>H</text>
+      <view>
+        <text bindtap='mapClick' data-text='杭州市'>杭州市</text>
+        <text bindtap='mapClick' data-text='合肥市'>合肥市</text>
+        <text bindtap='mapClick' data-text='惠州市'>惠州市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>J</text>
+      <view>
+        <text bindtap='mapClick' data-text='吉林市'>吉林市</text>
+        <text bindtap='mapClick' data-text='金华市'>金华市</text>
+        <text bindtap='mapClick' data-text='江门市'>江门市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>K</text>
+      <view>
+        <text bindtap='mapClick' data-text='昆明市'>昆明市</text>
+        <text bindtap='mapClick' data-text='开封市'>开封市</text>
+        <text bindtap='mapClick' data-text='克拉玛依市'>克拉玛依市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>L</text>
+      <view>
+        <text bindtap='mapClick' data-text='辽阳市'>辽阳市</text>
+        <text bindtap='mapClick' data-text='洛阳市'>洛阳市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>M</text>
+      <view>
+        <text bindtap='mapClick' data-text='茂名市'>茂名市</text>
+        <text bindtap='mapClick' data-text='梅州市'>梅州市</text>
+        <text bindtap='mapClick' data-text='绵阳市'>绵阳市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>N</text>
+      <view>
+        <text bindtap='mapClick' data-text='南京市'>南京市</text>
+        <text bindtap='mapClick' data-text='南昌市'>南昌市</text>
+        <text bindtap='mapClick' data-text='宁波市'>宁波市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>P</text>
+      <view>
+        <text bindtap='mapClick' data-text='莆田市'>莆田市</text>
+        <text bindtap='mapClick' data-text='萍乡市'>萍乡市</text>
+        <text bindtap='mapClick' data-text='濮阳市'>濮阳市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>Q</text>
+      <view>
+        <text bindtap='mapClick' data-text='泉州市'>泉州市</text>
+        <text bindtap='mapClick' data-text='青岛市'>青岛市</text>
+        <text bindtap='mapClick' data-text='清远市'>清远市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>R</text>
+      <view>
+        <text bindtap='mapClick' data-text='日照市'>日照市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>S</text>
+      <view>
+        <text bindtap='mapClick' data-text='上海市'>上海市</text>
+        <text bindtap='mapClick' data-text='沈阳市'>沈阳市</text>
+        <text bindtap='mapClick' data-text='深圳市'>深圳市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>T</text>
+      <view>
+        <text bindtap='mapClick' data-text='天津市'>天津市</text>
+        <text bindtap='mapClick' data-text='太原市'>太原市</text>
+        <text bindtap='mapClick' data-text='泰州市'>泰州市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>W</text>
+      <view>
+        <text bindtap='mapClick' data-text='温州市'>温州市</text>
+        <text bindtap='mapClick' data-text='武汉市'>武汉市</text>
+        <text bindtap='mapClick' data-text='无锡市'>无锡市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>X</text>
+      <view>
+        <text bindtap='mapClick' data-text='邢台市'>邢台市</text>
+        <text bindtap='mapClick' data-text='厦门市'>厦门市</text>
+        <text bindtap='mapClick' data-text='西安市'>西安市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>Y</text>
+      <view>
+        <text bindtap='mapClick' data-text='扬州市'>扬州市</text>
+        <text bindtap='mapClick' data-text='宜春市'>宜春市</text>
+        <text bindtap='mapClick' data-text='玉林市'>玉林市</text>
+      </view>
+    </view>
+    <view class='map-list-zi'>
+      <text class='text'>Z</text>
+      <view>
+        <text bindtap='mapClick' data-text='中山市'>中山市</text>
+        <text bindtap='mapClick' data-text='湛江市'>湛江市</text>
+        <text bindtap='mapClick' data-text='珠海市'>珠海市</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='ssBox' style="{{ss?'display:blck':'display:none'}}">
+    <view class='ss' wx:for="{{ssCity}}" wx:for-item="item" wx:key="{{Id3}}" bindtap='mapClick' data-text='{{item}}'>
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

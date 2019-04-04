@@ -1,0 +1,35 @@
+.mui-content{padding-bottom:100px;z-index:1}
+.mui-content .mui-slider a{display:block;height:170px}
+.mui-content .mui-slider a img{display:block;height:170px;width:100%}
+.mui-row{padding:20px 10px;background:#fff}
+.mui-row .mui-col-xs-4{margin:0 auto;text-align:center;overflow:hidden;width:50%}
+.mui-row a i{margin-top:10px;display:block;font-size:36px;color:#0b9ad6}
+.mui-row a span{display:block;font-size:16px;padding:10px 0;color: #333;}
+.statistics{margin-top:10px;background:#fff;padding:20px 10px;height: 100px;}
+.statistics p{font-size: 16px;color: #333;}
+.statistics a{ float: left;width:33.33%;text-align:center;overflow:hidden;border-right:1px solid #ccc;box-sizing:border-box}
+.statistics a:nth-child(3){border-right:0}
+.statistics a span{color:#333}
+.classify{padding:0 10px;background:#fff;margin-top:10px}
+.classify .video{padding:10px 0;position:relative;height:40px;font-size:18px;}
+.classify .video a{color: #000;}
+.classify .cla_ch{padding:15px 0;background:#fff;position:relative;font-size:14px}
+.classify .cla_ch a{display:inline-block;width:46%;float:left;border:1px solid #fff;box-sizing:border-box;margin-left:10px}
+.classify .cla_ch a img{display:block;width:100%;height:67%}
+.classify .cla_ch a p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:20px 0 10px 0}
+.classify .cla_ch a .cla_ch_shm{padding-bottom:10px}
+.classify .cla_ch a span{color:#0b9ad6}
+.goShop{margin-top:10px;background:#fff;position:relative}
+.goShop .shop_up{width:100%;height:50px;padding:10px;position:relative;line-height:30px;font-size:18px;color: #000;}
+.goShop .shop_up a{color: #000;}
+.goShop .shop_up a span{color: #0b9ad6;}
+.mui-table-view .mui-media-object{line-height:80px;max-width:100px;height:80px}
+#list li a span{font-size:14px;margin-right:5px;padding:3px 5px;background:#eee}
+h5{color:#000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px}
+#ulObjs li span{font-size:12px;color:#666;margin-right:5px;padding:3px 5px;background:#eee}
+.smjs{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.mui-media-body p{padding:5px 0}
+.mui-media-body p .span{color:red}
+.goShop .shop_bot{width:100%;position:absolute;bottom:-40px;text-align:center;color:#666;font-size:14px}
+.goShop .shop_bot i{display:inline-block;width:100px;height:2px;background:#ccc;vertical-align:top;margin-top:7px}
+img{background:#333}

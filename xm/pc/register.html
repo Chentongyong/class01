@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/register.css" />
+	</head>
+
+	<body>
+		<div class="wids">
+			<div class="boxs logo_tu">
+				<a href="index.html">
+					<img src="images/homes_11.png" />
+				</a>
+			</div>
+		</div>
+		<div class="box">
+			<div class="boxBox">
+				<div class="dlType">
+					<span class="s_color">账号登录</span>
+					<span>短信登录</span>
+				</div>
+
+				<!--密码登录-->
+				<form action="" id="denglu" method="post">
+					<div class="inpuBox">
+						<input type="text" id="my_userName" class="inputs" name="u.tel" maxlength="20" value="" placeholder="请输入账户名" />
+					</div>
+					<div class="inpuBox">
+						<input type="password" id="my_password" class="inputs" name="u.password" maxlength="16" value="" placeholder="请输入密码" />
+						<i class="iconfont icon-guanbi-yanjing"></i>
+					</div>
+					<input id="rmbUser" class="inp2" type="checkbox" checked="true" /><span>记住密码</span><br />
+					<button type="button" id="but1" onclick="saveUserInfo()">登录</button>
+					<div class="box_bot">
+						<a href="forget_pas.html" class="a_left">忘记密码?</a>
+						<a href="enroll.html" class="a_right">
+							已有账号?
+							<span>立即注册&nbsp;&nbsp;>></span>
+						</a>
+					</div>
+				</form>
+
+				<!--验证码登录-->
+				<form action="" id="dxdl" method="post" style="display: none;">
+					<input class="inputs" type="text" value="" placeholder="请输入手机号码" /><br />
+					<input class="inpt1s" type="" value="" placeholder="请输入手机验证码" />
+					<input class="inpt2s" type="text" value="" placeholder="获取手机验证码" onclick="sendemail()"/><br />
+					<button type="button" id="but2">登录</button><br />
+					<div class="box_bot">
+						<a href="forget_pas.html" class="a_left">忘记密码</a>
+						<a href="enroll.html" class="a_right">
+							已有账号？
+							<span>立即注册&nbsp;&nbsp;>></span>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/register.js"></script>
+<script src="js/pcjs.js"></script>

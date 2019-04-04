@@ -1,0 +1,11 @@
+.mui-input-group{padding:10px;text-align:center}
+.mui-input-row input{border:1px solid #C8C7CC;border-radius:5px;color:#000;text-align:left}
+.mui-input-group button{margin-top:10px;width:100%;border:1px solid #0b9ad6;background:#0b9ad6;color:#fff;font-size:16px;font-weight:600}
+.mui-input-group .group_below{margin-top:10px;text-align:left;font-size:14px;color:#666}
+.mui-input-group .group_below a{color:#007AFF}
+#captcha .mui-input-row{margin-bottom:10px}
+#captcha .cap_up span{margin-bottom:10px}
+#captcha .cap_center{font-size:16px}
+#captcha .cap_center input{width:49%;border:1px solid #ccc;border-radius:5px;font-size:14px;height:40px;box-sizing:border-box;text-align:center}
+#password{display:none}
+#password input{margin-bottom:10px;height:40px;border:1px solid #ccc;border-radius:5px}

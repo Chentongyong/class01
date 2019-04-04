@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/mine_details.css" />
+		<link rel="stylesheet" href="" />
+		<script src="js/mui.min.js"></script>
+		<style>
+			.mui-slider .mui-slider-group .mui-slider-item {
+			    font-size: 14px;
+			    position: relative;
+			    display: inline-block;
+			    width: 100%;
+			    height: 100%;
+			    vertical-align: top;
+			    white-space: normal;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img{
+				width: 100%;
+				height: 260px;
+			}
+		</style>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">详情</h1>
+		</header>
+		<div class="mui-content">
+			<!--弹窗显示分享end-->
+			<div id="details"></div>
+			<!--提示-->
+			<div class="hint">
+				<h5>温馨提醒</h5>
+				<div>
+					<span>如果您发现信息描述和实际不符合，或者联系电话虚假，或有虚假、违法信息，请立刻举报！</span>
+					<span class="spos_a">举报</span>
+				</div>
+			</div>
+			<!--提示end-->
+			<!--<div id="tsy" style="padding: 15px 0;text-align: center;color: red;">
+			 	充值会员，显示详细联系方式
+			 </div>-->
+		</div>
+		<nav id="geren" class="mui-bar mui-bar-tab">
+		</nav>
+	</body>
+</html>
+<script>
+	var scwx = document.getElementById('scwx');
+	var lunbotu = document.getElementById('lunbotu');//图片盒子
+//	var tsy = document.getElementById('tsy');//提示语
+	var uid = '';
+	var sid = '';
+	var spid = '';
+	var titleName = '';
+	var title = '';
+	var member = '';
+	mui.plusReady(function() {
+		window.addEventListener('newsId', function(t) {
+			titleName = t.detail.tltit;
+			uid = t.detail.uid;
+			sid = t.detail.sid;
+			spid = t.detail.spid;
+			title = t.detail.title;
+			member = t.detail.member;
+//			if(member=='3'){
+//				tsy.style.display = 'none'
+//			}else{
+//				tsy.style.display = 'block'
+//			}
+			mui.ajax({
+				url: 'http://wwwgezimd.com/Store/spapp!oneToXQ.action?shopPurchase.spid=' + spid + '&user.uid'+uid+'&store.memberId='+member,
+				type: 'post',
+				async: true,
+				dataType: 'json',
+				crossDomain: true, //强制使用5+跨域
+				timeout: '10000',
+				success: function(data) {
+					       da = new Date(data.startdate);
+						    var year = da.getFullYear();
+						    var month = da.getMonth()+1;
+						    var date = da.getDate();
+						    var dates = [year,month,date].join('.');
+						    var sjStyle = dates;
+					details.innerHTML = '<div class="det_up"><h4>' + data.title + '</h4><div class="up_xx"><span class="mui-pull-left">' +
+						'更新时间：<i id="i_data">' + sjStyle + '</i></span>' +
+						'</span></div></div><div class="det_center"><div>租&nbsp;&nbsp;&nbsp;&nbsp;金：&nbsp;&nbsp;<span class="s_color">面议</span></div>' +
+						'<div>面&nbsp;&nbsp;&nbsp;&nbsp;积：&nbsp;&nbsp;<span>' +
+						data.acreage + '平米</span></div><div>历史经营：&nbsp;&nbsp;<span>空铺</span></div>' +
+						'<div class="s_style">地&nbsp;&nbsp;&nbsp;&nbsp;址：&nbsp;&nbsp;<span>' + data.region + '</span></div></div><div class="det_xia"><h4>详细描述</h4><p>' +
+						data.describe + '</p></div></div>';
+
+					geren.innerHTML = '<a class="a_left"><span class="sp_color">' + data.contacts +
+						'<b></b></span><span>' + data.tel + '</span></a><span class="a_right">' +
+						'<a href="tel:' + data.tel + '" class="mui-icon mui-icon-phone sp_r"></a><a href="sms:' + data.tel + '" class="mui-icon mui-icon-chat"></a></span>';
+				},
+				error: function(xhr, type, errorThrown) {
+					mui.toast("网络出错")
+				}
+			});
+		})
+	})
+</script>

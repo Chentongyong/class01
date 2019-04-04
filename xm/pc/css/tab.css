@@ -1,0 +1,250 @@
+/*顶部导航css*/
+#box {
+	color: #666;
+	background-color: #E5E5E5;
+}
+
+.header {
+	width: 1200px;
+	height: 30px;
+	font-size: 12px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.header .floats {
+	width: 50%;
+	line-height: 30px;
+	position: absolute;
+	left: 0;
+}
+
+.floats b {
+	font-size: 18px;
+}
+
+.floats .cut {
+	color: #000;
+	font-weight: 600;
+}
+
+.header ul {
+	position: absolute;
+	right: 0;
+	padding: 5px 0;
+	line-height: 20px;
+}
+
+.header ul li {
+	float: left;
+	padding: 0 15px;
+	border-right: 1px solid #666;
+}
+
+.header ul li .a_sty {
+	margin-right: 10px;
+}
+
+.header ul li:nth-child(3) {
+	border-right: 0;
+}
+
+.tabBox {
+	width: 1200px;
+	padding: 20px 0 30px 0;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+}
+
+.tabBox img {
+	width: 180px;
+	margin-right: 50px;
+	height: 60px;
+	float: left;
+}
+
+.tabBox .search {
+	float: left;
+	line-height: 65px;
+	position: relative;
+}
+
+.tabBox .search input {
+	height: 30px;
+	width: 538px;
+	border: 1px solid #0B9AD6;
+	text-indent: 1em;
+	font-size: 12px;
+	outline: none;
+}
+
+.tabBox .search button {
+	height: 30px;
+	width: 72px;
+	font-size: 18px;
+	border: 1px solid #0B9AD6;
+	color: #fff;
+	position: relative;
+	left: -77px;
+	top: 3px;
+}
+
+.tabBox .search .issue {
+	display: inline-block;
+	width: 102px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	top: 3px;
+}
+
+.mokuai{
+	width: 100%;
+	height: 44px;
+	border-bottom: 1px solid #0B9AD6;
+	box-sizing: border-box;
+	position: relative;
+	margin-bottom: 20px;
+}
+.tab_xia {
+	width: 1200px;
+	margin: 0 auto;
+	height: 44px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.tab_xia ul li {
+	width: 146px;
+	float: left;
+}
+
+.tab_xia ul li a {
+	display: block;
+	padding: 10px 0;
+	height: 44px;
+	line-height: 24px;
+	font-size: 18px;
+}
+
+.tab_xia ul li a.a_back {
+	background: #0B9AD6;
+	color: #fff;
+}
+
+.tab_xia ul li a:hover {
+	background: #0B9AD6;
+	color: #fff;
+}
+
+
+/*底部*/
+.base{
+	width: 1200px;
+	height: 85px;
+	margin: 0 auto;
+	padding: 34px 0 42px 0;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.base ul{
+	position: relative;
+	margin-top: 24px;
+	height: 24px;
+}
+
+.base .base_left{
+	float: left;
+	width: 70%;
+}
+.base .base_right{
+	float: left;
+	width: 30%;
+	position: relative;
+	top: -20px;
+}
+.base .base_right div{
+	float: left;
+	text-align: center;
+}
+.base .base_right div:nth-child(1){
+	margin-right: 80px;
+}
+.base .base_right div p{
+	font-size: 12px;
+}
+.base ul li{
+	float: left;
+	padding: 0 10px;
+	border-right:1px solid #666;
+}
+.base ul li:nth-child(8){
+	border-right:0;
+}
+.base ul li:nth-child(1){
+	padding-left: 0;
+}
+.base .ba_span{
+	font-size: 12px;
+	position: relative;
+    top: -8px;
+}
+
+.img_box{text-align: center;position: relative;top: 20px;padding-bottom: 50px;}
+.img_box img{width: 108px;height: 40px;margin: 0 10px;}
+/*底部end*/
+
+/*退出登录*/
+#denglu{
+	display: none;
+}
+.zzc{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background: rgba(120,120,120,0.4);
+}
+#denglu .denBox{
+	position: fixed;
+	top: 0;
+	left: 40%;
+	text-align: center;
+	padding: 70px 50px 130px 50px;
+	width: 300px;
+	margin: 17% auto 0 auto;
+	height: 50px;
+	background: #fff;
+	color: #0B9AD6;
+	background: url(../images/registerT_03.png) 0px 0px no-repeat;
+	background-size: 108%;
+	z-index: 20;
+}
+#denglu .denBox h4{
+	font-size: 18px;
+	margin-bottom: 23px;
+}
+#denglu .denBox a{
+	display: inline-block;
+	width: 60px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 12px;
+    background: #999;
+    color: #fff;
+}
+#denglu .denBox a.aStyle{
+	background: #0B9AD6;
+	border: 1px solid #0B9AD6;
+	margin-right: 30px;
+}

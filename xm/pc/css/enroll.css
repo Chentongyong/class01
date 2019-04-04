@@ -1,0 +1,96 @@
+.logo_tu{
+	padding: 10px 0;
+	background: #fff;
+}
+.box{
+	width: 100%;
+	height: 650px;
+	background-image: url(../images/register.jpg);
+	position: relative;
+}
+.boxBox{
+	width:510px;
+	height: 416px;
+	margin:0 auto;
+	background: #fff;
+	position: relative;
+	top: 120px;
+	padding: 10px 50px 50px 50px;
+	overflow: hidden;
+ }
+.dlType{
+	padding: 20px 0;
+	text-align: center;
+}
+.box .dlType span{
+	padding: 0 10px;
+	font-size: 18px;
+}
+.dlType span.s_color{
+	color: #0B9AD6;
+}
+.dlType span:nth-child(2){
+	border-left: 3px solid #0B9AD6;
+	box-sizing: border-box;
+}
+.box .inputs{
+	width: 100%;
+	height:52px;
+	padding: 10px 0;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	text-indent: 1em;
+}
+.box .inp2{
+	width: 16px;
+	height: 16px;
+	border: 0;
+}
+h5{
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+	padding: 15px 0;
+}
+button{
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	color: #fff;
+	background: #0B9AD6;
+	border: 1px solid #0B9AD6;
+	font-size: 18px;
+	margin-top: 15px;
+}
+.box .box_bot{
+	width: 510px;
+	position: absolute;
+	bottom: 50px;
+	font-size: 12px;
+}
+
+.box .box_bot .a_right{
+	float: right;
+}
+.box .box_bot .a_right span{
+	color: #0B9AD6;
+}
+.box .inpt1s{
+	width: 202px;
+	height: 52px;
+	padding: 10px 0;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	text-indent: 1em;
+	margin-bottom: 15px;
+}
+.box .inpt2s{
+	height: 34px;
+	padding: 5px 20px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	text-align: center;
+	margin-left: 52px;
+	color: #666;
+}

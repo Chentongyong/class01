@@ -1,0 +1,11 @@
+.mui-bar .mui-title{left:0;padding:7px 10px;line-height:30px;text-align:left}
+.mui-bar .mui-title i{position:absolute;left:20px;top:10px}
+.mui-bar .mui-title input{width:100%;height:30px;margin:0;padding-left:30px;border-radius:25px;background:#0b9ad6;border:1px solid #fff;text-indent:.2em;font-size:14px;color:#fff}
+.mui-bar .mui-title input::-webkit-input-placeholder{color:#fff}
+.mui-bar .mui-title input::-moz-placeholder{color:#fff}
+.mui-bar .mui-title input::-moz-placeholder{color:#fff}
+.mui-bar .mui-title input::-ms-input-placeholder{color:#fff}
+.mui-bar-nav a{font-size:16px;line-height:44px}
+#search_up ul li{position:relative;overflow:hidden;padding:11px 15px;border-bottom:1px solid #ccc;color:#666}
+#search_up button{width:100%;border:1px solid red;background:red;color:#fff;margin-top:20px}
+#search_below{display:none}

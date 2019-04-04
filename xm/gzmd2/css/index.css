@@ -1,0 +1,16 @@
+.mui-bar-nav{background:#0b9ad6}
+.mui-bar .mui-title{right:50px;left:100px;display:inline-block;overflow:hidden;width:auto;margin:4px 0 0 0;text-overflow:ellipsis}
+.mui-title{height:36px;line-height:36px;border:1px solid #CCC;border-radius:25px;background:#fff;color:#333;opacity:.9;font-size:14px}
+.mui-row a{text-align:center}
+.boxs a{color:#666}
+.mui-bar-nav a{color:#fff}
+#city_text{width:60px;font-size:16px;height:30px;overflow:hidden;line-height:44px;color:#fff;float:left;text-align:center}
+#sheet1{width:100%;height:100%;background:#000;opacity:.3;position:fixed;top:0;left:0;z-index:33}
+#she_tan{width:100%;margin:0 auto;display:none}
+#she_tan.she_dis{display:block}
+#she_tan .tan_nei{width:90%;background:#fff;margin:0 auto;padding:20px 0;position:absolute;top:200px;left:5%;z-index:999;border-radius:10px}
+#she_tan .tan_nei p{padding-bottom:10px;font-size:16px;font-weight:600;color:#0b9ad6;text-indent:10px;border-bottom:1px solid #ccc;margin:0}
+#she_tan .tan_nei a{display:block;font-size:16px;text-indent:30px;padding:10px 0;color:#666;border-top:1px solid #ccc}
+.mui-bar-tab .iconfont{display:block;position:relative;top:3px;width:24px;height:24px;font-size:24px;padding-top:0;margin:0 auto}
+.mui-tab-label{font-size:14px}
+.mui-bar-tab .mui-tab-item.mui-active{color:#666}
