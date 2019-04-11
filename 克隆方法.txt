@@ -31,7 +31,7 @@ https://www.cnblogs.com/NotEnough/p/9435966.html；
     第九步： git branch -d brh //删除子分支
 
 
-    第十步：  git push origin --delete brh //删除远程子分支
+    第十步：  git push origin --delete brh //删除远程子分支（git push origin :feature（分支名称））
 }
 
 
