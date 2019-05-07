@@ -1,1 +1,12 @@
-
+v-html: 插入html（<div id="app"><div v-html="message"></div></div>）
+v-bind: 动态添加值绑定（v-bing:class='{'class1': use}'）<========> 也可以写成:click='{'class1': use}'
+v-if 指令将根据表达式的值（true/false）来判断是否插入元素  （<p v-if="true">现在你看到我了</p>）
+v-on:click="" 单击点击事件（<a v-on:click='onClick'></a>）<========> 也可以写成@click='onClick'
+v-model 数据双向绑定,一般用于input。(<p>{{ message }}</p><input v-model="message">)
+v-for='' 循环数组 {//第二个值为键名、第三个值为索引
+  （<li v-for="site in sites">{{ site.name }}</li>）<========>
+  (<li v-for="(value, key) in object">{{ key }} : {{ value }}</li>)<=====> 
+  (<li v-for="(value, key, index) in object">{{ index }}. {{ key }} : {{ value }}</li>)<=======>
+  (<li v-for="n in 10">{{ n }}</li>)
+}
+v-for 迭代对象 （<li v-for="value in object">{{ value }}</li>）
