@@ -1,3 +1,12 @@
+计算总页码：
+/*
+*totalPage:总页码
+*data[0].ext：总条数
+*pager.size：每页条数
+*/
+ totalPage = data[0].ext % pager.size != 0 ? parseInt(data[0].ext / pager.size) + 1 : data[0].ext / pager.size
+
+
 v-html: 插入html（<div id="app"><div v-html="message"></div></div>）
 v-bind: 动态添加值绑定（v-bing:class='{'class1': use}'）<========> 也可以写成:click='{'class1': use}'
 v-if 指令将根据表达式的值（true/false）来判断是否插入元素  （<p v-if="true">现在你看到我了</p>）
