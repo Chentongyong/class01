@@ -5,6 +5,7 @@
     }
   }
 
+小程序解析富文本，改变img默认样式
 <title>JavaScript正则表达式给html字符串的img标签增加style样式</title>
 </head>
 <body>
