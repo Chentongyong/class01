@@ -19,3 +19,775 @@ v-for='' 循环数组 {//第二个值为键名、第三个值为索引
   (<li v-for="n in 10">{{ n }}</li>)
 }
 v-for 迭代对象 （<li v-for="value in object">{{ value }}</li>）
+
+计算属性：
+1、计算属性关键词: computed：
+例子：{
+
+<div id="app">
+  <p>原始字符串: {{ message }}</p>
+  <p>计算后反转字符串: {{ reversedMessage }}</p>
+</div>
+ 
+<script>
+var vm = new Vue({
+  el: '#app',
+  data: {
+    message: 'Runoob!'
+  },
+  computed: {
+    // 计算属性的 getter
+    reversedMessage: function () {
+      // `this` 指向 vm 实例
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+</script>
+}
+computed跟methods的区别：我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性。 
+
+computed setter
+
+computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter ： {
+computed: {
+    site: {
+      // getter
+      get: function () {
+        return this.name + ' ' + this.url
+      },
+      // setter
+      set: function (newValue) {
+        var names = newValue.split(' ')
+        this.name = names[0]
+        this.url = names[names.length - 1]
+      }
+    }
+  }
+  // 调用 setter， vm.name 和 vm.url 也会被对应更新
+vm.site = '菜鸟教程 http://www.runoob.com';
+document.write('name: ' + vm.name);
+document.write('<br>');
+document.write('url: ' + vm.url);
+从实例运行结果看在运行 vm.site = '菜鸟教程 http://www.runoob.com'; 时，setter 会被调用， vm.name 和 vm.url 也会被对应更新。
+}
+
+监听属性 watch，我们可以通过 watch 来响应数据的变化。
+1、<div id = "app">
+ <p style = "font-size:25px;">计数器: {{ counter }}</p>
+ <button @click = "counter++" style = "font-size:25px;">点我</button>
+</div>
+<script type = "text/javascript">
+ var vm = new Vue({
+    el: '#app',
+    data: {
+       counter: 1
+    }
+ });
+ vm.$watch('counter', function(nval, oval) {
+    alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+ });
+</script>
+
+2、<div id = "computed_props">
+    千米 : <input type = "text" v-model = "kilometers">
+    米 : <input type = "text" v-model = "meters">
+</div>
+data: {
+        kilometers : 0,
+        meters:0
+    },
+  watch : {
+        kilometers:function(val) {
+            this.kilometers = val;
+            this.meters = this.kilometers * 1000
+        },
+        meters : function (val) {
+            this.kilometers = val/ 1000;
+            this.meters = val;
+        }
+    }
+    
+ 3、通过vue监听事件实现一个简单的购物车
+ <div id="app">
+    <table>
+    <tr>
+        <th>序号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>购买数量</th>
+        <th>操作</th>
+    </tr>
+    <tr v-for="iphone in Ip_Json">
+        <td>{{ iphone.id }}</td>
+        <td>{{ iphone.name }}</td>
+        <td>{{ iphone.price }}</td>
+        <td>
+        <button v-bind:disabled="iphone.count === 0" v-on:click="iphone.count-=1">-</button>
+        {{ iphone.count }}
+        <button v-on:click="iphone.count+=1">+</button>
+        </td>
+        <td>
+        <button v-on:click="iphone.count=0">移除</button>
+        </td>
+    </tr>
+    </table>
+    总价：${{totalPrice()}}
+</div>
+
+Vue.js 样式绑定：v-bind
+Vue.js v-bind 在处理 class 和 style 时， 专门增强了它。表达式的结果类型除了字符串之外，还可以是对象或数组。
+
+事件修饰符：
+Vue.js 为 v-on 提供了事件修饰符来处理 DOM 事件细节，如：event.preventDefault() 或 event.stopPropagation()。
+
+Vue.js通过由点(.)表示的指令后缀来调用修饰符。
+
+    .stop
+    .prevent
+    .capture
+    .self
+    .once
+
+<!-- 阻止单击事件冒泡 -->
+<a v-on:click.stop="doThis"></a>
+<!-- 提交事件不再重载页面 -->
+<form v-on:submit.prevent="onSubmit"></form>
+<!-- 修饰符可以串联  -->
+<a v-on:click.stop.prevent="doThat"></a>
+<!-- 只有修饰符 -->
+<form v-on:submit.prevent></form>
+<!-- 添加事件侦听器时使用事件捕获模式 -->
+<div v-on:click.capture="doThis">...</div>
+<!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+<div v-on:click.self="doThat">...</div>
+
+<!-- click 事件只能点击一次，2.1.4版本新增 -->
+<a v-on:click.once="doThis"></a>
+
+按键修饰符
+Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：
+<!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+<input v-on:keyup.13="submit">
+
+记住所有的 keyCode 比较困难，所以 Vue 为最常用的按键提供了别名：
+<!-- 同上 -->
+<input v-on:keyup.enter="submit">
+<!-- 缩写语法 -->
+<input @keyup.enter="submit">
+
+全部的按键别名：
+    .enter
+    .tab
+    .delete (捕获 "删除" 和 "退格" 键)
+    .esc
+    .space
+    .up
+    .down
+    .left
+    .right
+    .ctrl
+    .alt
+    .shift
+    .meta
+
+实例
+<p><!-- Alt + C -->
+<input @keyup.alt.67="clear">
+<!-- Ctrl + Click -->
+<div @click.ctrl="doSomething">Do something</div>
+
+<div id="app">
+  <p>单个复选框：</p>
+  <input type="checkbox" id="checkbox" v-model="checked">
+  <label for="checkbox">{{ checked }}</label>
+	
+  <p>多个复选框：</p>
+  <input type="checkbox" id="runoob" value="Runoob" v-model="checkedNames">
+  <label for="runoob">Runoob</label>
+  <input type="checkbox" id="google" value="Google" v-model="checkedNames">
+  <label for="google">Google</label>
+  <input type="checkbox" id="taobao" value="Taobao" v-model="checkedNames">
+  <label for="taobao">taobao</label>
+  <br>
+  <span>选择的值为: {{ checkedNames }}</span>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+	checked : false,
+    checkedNames: []
+  }
+})
+</script>
+
+单选按钮
+以下实例中演示了单选按钮的双向数据绑定：
+单选按钮
+<div id="app">
+  <input type="radio" id="runoob" value="Runoob" v-model="picked">
+  <label for="runoob">Runoob</label>
+  <br>
+  <input type="radio" id="google" value="Google" v-model="picked">
+  <label for="google">Google</label>
+  <br>
+  <span>选中值为: {{ picked }}</span>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    picked : 'Runoob'
+  }
+})
+</script>
+
+select 列表
+以下实例中演示了下拉列表的双向数据绑定：
+select
+<div id="app">
+  <select v-model="selected" name="fruit">
+    <option value="">选择一个网站</option>
+    <option value="www.runoob.com">Runoob</option>
+    <option value="www.google.com">Google</option>
+  </select>
+  <div id="output">
+      选择的网站是: {{selected}}
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    selected: '' 
+  }
+})
+</script>
+
+修饰符
+1、.lazy
+在默认情况下， v-model 在 input 事件中同步输入框的值与数据，但你可以添加一个修饰符 lazy ，从而转变为在 change 事件中同步：
+<!-- 在 "change" 而不是 "input" 事件中更新 -->
+<input v-model.lazy="msg" >
+
+2、 .number
+如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 number 给 v-model 来处理输入值：
+<input v-model.number="age" type="number">
+这通常很有用，因为在 type="number" 时 HTML 中输入的值也总是会返回字符串类型。
+
+3、.trim
+如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：
+<input v-model.trim="msg">
+
+父子组件传值
+1、Prop
+prop 是父组件用来传递数据的一个自定义属性。
+父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"，
+注意: prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。
+
+Prop 验证
+组件可以为 props 指定验证要求。
+prop 是一个对象而不是字符串数组时，它包含验证要求：（String、Number、Boolean、Function、 Object、Array）
+
+2、自定义事件
+父组件是使用 props 传递数据给子组件，但如果子组件要把数据传递回去，就需要使用自定义事件！
+我们可以使用 v-on 绑定自定义事件, 每个 Vue 实例都实现了事件接口(Events interface)，即：
+使用 $on(eventName) 监听事件
+使用 $emit(eventName) 触发事件
+另外，父组件可以在使用子组件的地方直接用 v-on 来监听子组件触发的事件。
+以下实例中子组件已经和它外部完全解耦了。它所做的只是触发一个父组件关心的内部事件。
+
+
+Vue.js 自定义指令
+除了默认设置的核心指令( v-model 和 v-show ), Vue 也允许注册自定义指令。
+下面我们注册一个全局指令 v-focus, 该指令的功能是在页面加载时，元素获得焦点：
+<div id="app">
+	<p>页面载入时，input 元素自动获取焦点：</p>
+	<input v-focus>
+</div>
+
+<script>
+// 注册一个全局自定义指令 v-focus
+Vue.directive('focus', {
+  // 当绑定元素插入到 DOM 中。
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+// 创建根实例
+new Vue({
+  el: '#app'
+})
+</script>
+
+
+钩子函数参数
+钩子函数的参数有：
+    el: 指令所绑定的元素，可以用来直接操作 DOM 。
+    binding: 一个对象，包含以下属性：
+        name: 指令名，不包括 v- 前缀。
+        value: 指令的绑定值， 例如： v-my-directive="1 + 1", value 的值是 2。
+        oldValue: 指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。
+        expression: 绑定值的表达式或变量名。 例如 v-my-directive="1 + 1" ， expression 的值是 "1 + 1"。
+        arg: 传给指令的参数。例如 v-my-directive:foo， arg 的值是 "foo"。
+        modifiers: 一个包含修饰符的对象。 例如： v-my-directive.foo.bar, 修饰符对象 modifiers 的值是 { foo: true, bar: true }。
+    vnode: Vue 编译生成的虚拟节点。
+    oldVnode: 上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。
+
+
+实例
+<div id="app"  v-runoob:hello.a.b="message"></div>
+<script>
+Vue.directive('runoob', {
+  bind: function (el, binding, vnode) {
+    var s = JSON.stringify
+    el.innerHTML =
+      'name: '       + s(binding.name) + '<br>' +
+      'value: '      + s(binding.value) + '<br>' +
+      'expression: ' + s(binding.expression) + '<br>' +
+      'argument: '   + s(binding.arg) + '<br>' +
+      'modifiers: '  + s(binding.modifiers) + '<br>' +
+      'vnode keys: ' + Object.keys(vnode).join(', ')
+  }
+})
+new Vue({
+  el: '#app',
+  data: {
+    message: '菜鸟教程!'
+  }
+})
+</script>
+
+
+Vue.js 路由
+Vue.js + vue-router 可以很简单的实现单页应用。
+<router-link> 是一个组件，该组件用于设置一个导航链接，切换不同 HTML 内容。 to 属性为目标地址， 即要显示的内容。
+以下实例中我们将 vue-router 加进来，然后配置组件和路由映射，再告诉 vue-router 在哪里渲染它们。代码如下所示：
+<div>
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+</div>
+
+<router-link> 相关属性
+1、to: 表示目标路由的链接。 当被点击后，内部会立刻把 to 的值传到 router.push()，所以这个值可以是一个字符串或者是描述目标位置的对象。（实例：<router-link :to="/abc" replace></router-link>）
+
+2、replace：设置 replace 属性的话，当点击时，会调用 router.replace() 而不是 router.push()，导航后不会留下 history 记录。（实例：<router-link :to="{ path: '/abc'}" replace></router-link>）
+
+3、append：设置 append 属性后，则在当前 (相对) 路径前添加基路径。例如，我们从 /a 导航到一个相对路径 b，如果没有配置 append，则路径为 /b，如果配了，则为 /a/b。（实例：<router-link :to="{ path: 'relative/path'}" append></router-link>）
+
+4、tag：有时候想要 <router-link> 渲染成某种标签，例如 <li>。 于是我们使用 tag prop 类指定何种标签，同样它还是会监听点击，触发导航。（实例：<router-link to="/foo" tag="li">foo</router-link><!-- 渲染结果 --><li>foo</li>）
+
+5、active-class：设置 链接激活时使用的 CSS 类名。可以通过以下代码来替代。{
+实例：
+<style>
+   ._active{
+      background-color : red;
+   }
+</style>
+<p>
+   <router-link v-bind:to = "{ path: '/route1'}" active-class = "_active">Router Link 1</router-link>
+   <router-link v-bind:to = "{ path: '/route2'}" tag = "span">Router Link 2</router-link>
+</p>
+注意这里 class 使用 active_class="_active"
+}
+
+6、exact-active-class：配置当链接被精确匹配的时候应该激活的 class。可以通过以下代码来替代。{
+实例：
+<p>
+   <router-link v-bind:to = "{ path: '/route1'}" exact-active-class = "_active">Router Link 1</router-link>
+   <router-link v-bind:to = "{ path: '/route2'}" tag = "span">Router Link 2</router-link>
+</p>
+}
+
+7、 event：声明可以用来触发导航的事件。可以是一个字符串或是一个包含字符串的数组。{
+实例：
+<router-link v-bind:to = "{ path: '/route1'}" event = "mouseover">Router Link 1</router-link>
+以上代码设置了 event 为 mouseover ，及在鼠标移动到 Router Link 1 上时导航的 HTML 内容会发生改变。
+}
+
+
+Vue.js 过渡 & 动画 
+1：过渡
+Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。
+Vue 提供了内置的过渡封装组件，该组件用于包裹要实现过渡效果的组件。
+语法格式:
+<transition name = "nameoftransition">
+   <div></div>
+</transition>
+{
+实例：
+<style>
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active, 2.1.8 版本以下 */ {
+    opacity: 0
+}
+</style>
+</head>
+<body>
+<div id = "databinding">
+<button v-on:click = "show = !show">点我</button>
+<transition name = "fade">
+    <p v-show = "show" v-bind:style = "styleobj">动画实例</p>
+</transition>
+</div>
+<script type = "text/javascript">
+var vm = new Vue({
+el: '#databinding',
+    data: {
+        show:true,
+        styleobj :{
+            fontSize:'30px',
+            color:'red'
+        }
+    },
+    methods : {
+    }
+});
+</script>
+
+实例中通过点击 "点我" 按钮将变量 show 的值从 true 变为 false。如果为 true 显示子元素 p 标签的内容。
+下面这段代码展示了 transition 标签包裹了 p 标签：
+<transition name = "fade">
+    <p v-show = "show" v-bind:style = "styleobj">动画实例</p>
+</transition>
+
+过渡其实就是一个淡入淡出的效果。Vue在元素显示与隐藏的过渡中，提供了 6 个 class 来切换：
+    v-enter：定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。
+    v-enter-active：定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。
+    v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 v-enter 被移除)，在过渡/动画完成之后移除。
+    v-leave: 定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除。
+    v-leave-active：定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。
+    v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 v-leave 被删除)，在过渡/动画完成之后移除。
+    
+    
+ 对于这些在过渡中切换的类名来说，如果你使用一个没有名字的 <transition>，则 v- 是这些类名的默认前缀。如果你使用了 <transition name="my-transition">，那么 v-enter 会替换为 my-transition-enter。v-enter-active 和 v-leave-active 可以控制进入/离开过渡的不同的缓和曲线，在下面章节会有个示例说明。
+
+CSS 过渡
+通常我们都使用 CSS 过渡来实现效果。
+如下实例：
+   <style>
+   /* 可以设置不同的进入和离开动画 */
+   /* 设置持续时间和动画函数 */
+   .slide-fade-enter-active {
+     transition: all .3s ease;
+   }
+   .slide-fade-leave-active {
+     transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+   }
+   .slide-fade-enter, .slide-fade-leave-to
+   /* .slide-fade-leave-active 用于 2.1.8 以下版本 */ {
+     transform: translateX(10px);
+     opacity: 0;
+   }
+   </style>
+   </head>
+   <body>
+   <div id = "databinding">
+   <button v-on:click = "show = !show">点我</button>
+   <transition name="slide-fade">
+       <p v-if="show">菜鸟教程</p>
+   </transition>
+   </div>
+   <script type = "text/javascript">
+   new Vue({
+       el: '#databinding',
+       data: {
+           show: true
+       }
+   })
+   </script>
+}
+
+CSS 动画
+CSS 动画用法类似 CSS 过渡，但是在动画中 v-enter 类名在节点插入 DOM 后不会立即删除，而是在 animationend 事件触发时删除。 {
+   实例：
+   <style>
+   .bounce-enter-active {
+     animation: bounce-in .5s;
+   }
+   .bounce-leave-active {
+     animation: bounce-in .5s reverse;
+   }
+   @keyframes bounce-in {
+     0% {
+       transform: scale(0);
+     }
+     50% {
+       transform: scale(1.5);
+     }
+     100% {
+       transform: scale(1);
+     }
+   }
+   </style>
+   </head>
+   <body>
+   <div id = "databinding">
+   <button v-on:click = "show = !show">点我</button>
+   <transition name="bounce">
+       <p v-if="show">菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+   </transition>
+   </div>
+   <script type = "text/javascript">
+   new Vue({
+       el: '#databinding',
+       data: {
+           show: true
+       }
+   })
+   </script>
+}
+
+自定义过渡的类名
+我们可以通过以下特性来自定义过渡类名：
+    enter-class
+    enter-active-class
+    enter-to-class (2.1.8+)
+    leave-class
+    leave-active-class
+    leave-to-class (2.1.8+)
+自定义过渡的类名优先级高于普通的类名，这样就能很好的与第三方（如：animate.css）的动画库结合使用。{
+实例：
+   <div id = "databinding">
+   <button v-on:click = "show = !show">点我</button>
+   <transition
+       name="custom-classes-transition"
+       enter-active-class="animated tada"
+       leave-active-class="animated bounceOutRight"
+   >
+       <p v-if="show">菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+   </transition>
+   </div>
+   <script type = "text/javascript">
+   new Vue({
+       el: '#databinding',
+       data: {
+           show: true
+       }
+   })
+   </script>
+}
+
+同时使用过渡和动画
+
+Vue 为了知道过渡的完成，必须设置相应的事件监听器。它可以是 transitionend 或 animationend ，这取决于给元素应用的 CSS 规则。如果你使用其中任何一种，Vue 能自动识别类型并设置监听。
+但是，在一些场景中，你需要给同一个元素同时设置两种过渡动效，比如 animation 很快的被触发并完成了，而 transition 效果还没结束。在这种情况中，你就需要使用 type 特性并设置 animation 或 transition 来明确声明你需要 Vue 监听的类型。
+显性的过渡持续时间
+在很多情况下，Vue 可以自动得出过渡效果的完成时机。默认情况下，Vue 会等待其在过渡效果的根元素的第一个 transitionend 或 animationend 事件。然而也可以不这样设定——比如，我们可以拥有一个精心编排的一系列过渡效果，其中一些嵌套的内部元素相比于过渡效果的根元素有延迟的或更长的过渡效果。
+在这种情况下你可以用 <transition> 组件上的 duration 属性定制一个显性的过渡持续时间 (以毫秒计)：
+<transition :duration="1000">...</transition>
+
+你也可以定制进入和移出的持续时间：
+<transition :duration="{ enter: 500, leave: 800 }">...</transition>
+
+
+JavaScript 钩子
+可以在属性中声明 JavaScript 钩子:
+HTML 代码：
+<transition
+  v-on:before-enter="beforeEnter"
+  v-on:enter="enter"
+  v-on:after-enter="afterEnter"
+  v-on:enter-cancelled="enterCancelled"
+ 
+  v-on:before-leave="beforeLeave"
+  v-on:leave="leave"
+  v-on:after-leave="afterLeave"
+  v-on:leave-cancelled="leaveCancelled"
+>
+  <!-- ... -->
+</transition>
+
+
+初始渲染的过渡
+可以通过 appear 特性设置节点在初始渲染的过渡
+<transition appear>
+  <!-- ... -->
+</transition>
+{
+1、这里默认和进入/离开过渡一样，同样也可以自定义 CSS 类名。
+<transition
+  appear
+  appear-class="custom-appear-class"
+  appear-to-class="custom-appear-to-class" (2.1.8+)
+  appear-active-class="custom-appear-active-class"
+>
+  <!-- ... -->
+</transition>
+
+2、自定义 JavaScript 钩子：
+
+<transition
+  appear
+  v-on:before-appear="customBeforeAppearHook"
+  v-on:appear="customAppearHook"
+  v-on:after-appear="customAfterAppearHook"
+  v-on:appear-cancelled="customAppearCancelledHook"
+>
+  <!-- ... -->
+</transition>
+
+    {
+    自定义 JavaScript 钩子：
+
+    <transition
+      appear
+      v-on:before-appear="customBeforeAppearHook"
+      v-on:appear="customAppearHook"
+      v-on:after-appear="customAfterAppearHook"
+      v-on:appear-cancelled="customAppearCancelledHook"
+    >
+      <!-- ... -->
+    </transition>
+
+    多个元素的过渡
+
+    我们可以设置多个元素的过渡，一般列表与描述：
+
+    需要注意的是当有相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以让 Vue 区分它们，否则 Vue 为了效率只会替换相同标签内部的内容。
+
+    <transition>
+      <table v-if="items.length > 0">
+        <!-- ... -->
+      </table>
+      <p v-else>抱歉，没有找到您查找的内容。</p>
+    </transition>
+
+    如下实例：
+
+    <transition>
+      <button v-if="isEditing" key="save">
+        Save
+      </button>
+      <button v-else key="edit">
+        Edit
+      </button>
+    </transition>
+
+    在一些场景中，也可以通过给同一个元素的 key 特性设置不同的状态来代替 v-if 和 v-else，上面的例子可以重写为：
+
+    <transition>
+      <button v-bind:key="isEditing">
+        {{ isEditing ? 'Save' : 'Edit' }}
+      </button>
+    </transition>
+
+    使用多个 v-if 的多个元素的过渡可以重写为绑定了动态属性的单个元素过渡。例如：
+
+    <transition>
+      <button v-if="docState === 'saved'" key="saved">
+        Edit
+      </button>
+      <button v-if="docState === 'edited'" key="edited">
+        Save
+      </button>
+      <button v-if="docState === 'editing'" key="editing">
+        Cancel
+      </button>
+    </transition>
+
+    可以重写为：
+
+    <transition>
+      <button v-bind:key="docState">
+        {{ buttonMessage }}
+      </button>
+    </transition>
+
+    // ...
+    computed: {
+      buttonMessage: function () {
+        switch (this.docState) {
+          case 'saved': return 'Edit'
+          case 'edited': return 'Save'
+          case 'editing': return 'Cancel'
+        }
+      }
+    }
+}
+}
+
+
+
+Vue.js Ajax(vue-resource) 
+
+1、实例：
+<div id="box">
+	<input type="button" @click="get()" value="点我异步获取数据(Get)">
+</div>
+<script type = "text/javascript">
+window.onload = function(){
+var vm = new Vue({
+    el:'#box',
+    data:{
+        msg:'Hello World!',
+    },
+    methods:{
+        get:function(){
+            //发送get请求
+            this.$http.get('/try/ajax/ajax_info.txt').then(function(res){
+                document.write(res.body);    
+            },function(){
+                console.log('请求失败处理');
+            });
+        }
+    }
+});
+}
+</script>
+如果需要传递数据，可以使用 this.$http.get('get.php',{params : jsonData}) 格式，第二个参数 jsonData 就是传到后端的数据。
+
+2、实例：
+post 发送数据到后端，需要第三个参数 {emulateJSON:true}。
+emulateJSON 的作用： 如果Web服务器无法处理编码为 application/json 的请求，你可以启用 emulateJSON 选项。
+<div id="box">
+	<input type="button" @click="post()" value="点我异步获取数据(Post)">
+</div>
+<script type = "text/javascript">
+window.onload = function(){
+	var vm = new Vue({
+	    el:'#box',
+	    data:{
+	        msg:'Hello World!',
+	    },
+	    methods:{
+	        post:function(){
+	            //发送 post 请求
+	            this.$http.post('/try/ajax/demo_test_post.php',{name:"菜鸟教程",url:"http://www.runoob.com"},{emulateJSON:true}).then(function(res){
+                    document.write(res.body);    
+                },function(res){
+                    console.log(res.status);
+                });
+	        }
+	    }
+	});
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
