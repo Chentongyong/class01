@@ -5,6 +5,18 @@
 *pager.size：每页条数
 */
  totalPage = data[0].ext % pager.size != 0 ? parseInt(data[0].ext / pager.size) + 1 : data[0].ext / pager.size
+ 
+获取object的键值和键名
+var arr = {10:'100万',50:'50万',101:'100万以上'}; 
+var sum = []
+for(var key in arr){
+  console.log(key); 
+  console.log(arr[key]);
+  // var arrt = {};
+  // arrt['sid'] = key;
+  // arrt['name'] = arr[key];
+}
+ 
 
 
 v-html: 插入html（<div id="app"><div v-html="message"></div></div>）
