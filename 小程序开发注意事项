@@ -4,3 +4,30 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"//填写说明
     }
   }
+
+<title>JavaScript正则表达式给html字符串的img标签增加style样式</title>
+</head>
+<body>
+<div id="demo" style="width:667px;margin:auto;border:2px solid green;"></div>
+<script>
+	function imgTagAddStyle(htmlstr){
+		//正则匹配所有img标签
+		//var regex0 = new RegExp("(i?)(\<img)([^\>]+\>)","gmi");
+		//正则匹配不含style="" 或 style='' 的img标签
+		var regex1 = new RegExp("(i?)(\<img)(?!(.*?style=['\"](.*)['\"])[^\>]+\>)","gmi");
+		//给不含style="" 或 style='' 的img标签加上style=""
+		htmlstr = htmlstr.replace(regex1, "$2 style=\"\"$3");
+		console.log("增加style=\"\"后的html字符串："+htmlstr);
+		//正则匹配含有style的img标签
+		var regex2 = new RegExp("(i?)(\<img.*?style=['\"])([^\>]+\>)","gmi");
+		//在img标签的style里面增加css样式(这里增加的样式：display:block;max-width:100%;height:auto;border:5px solid red;)
+		htmlstr = htmlstr.replace(regex2, "$2display:block;max-width:100%;height:auto;border:5px solid red;$3");
+		console.log("在img标签的style里面增加样式后的html字符串："+htmlstr);
+		return htmlstr;
+	}
+	var str0 = "<div style=\"background-color:green;width:500px;\"><p>are you ok?</p><img style=\"border:1px solid #ff0000;\" src=\"https://iph.href.lu/100x100\" alt=\"\" />hello<span>the<IMG src='https://iph.href.lu/100x100'></span><span style=\"font-size:20pt;\">我是大神</span></div>";
+	console.log("原始html字符串："+str0);
+	var s = imgTagAddStyle(str0);
+	document.getElementById("demo").innerHTML=s;
+	
+</script>
