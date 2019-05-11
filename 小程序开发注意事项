@@ -32,3 +32,6 @@
 	document.getElementById("demo").innerHTML=s;
 	
 </script>
+
+wx.switchTab:跳转页面不能直接在后面带参数，（原因：因为它跳转页面时会关闭其他不是tabBar页面，导致传值失败）
+
