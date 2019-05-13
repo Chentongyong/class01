@@ -4,6 +4,23 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"//填写说明
     }
   }
+  
+小程序富文本
+<view style='width:100%'>
+    <rich-text nodes="{{myrich}}"></rich-text>
+</view>
+<script>
+ var regex1 = new RegExp("(i?)(\<img)(?!(.*?style=['\"](.*)['\"])[^\>]+\>)", "gmi");
+ res.data.data.detail = res.data.data.detail.replace(regex1, "$2 style=\"\"$3");
+ var regex2 = new RegExp("(i?)(\<img.*?style=['\"])([^\>]+\>)", "gmi");
+ res.data.data.addTime = res.data.data.addTime.replace(/([^\s]+)\s.*/, "$1")
+ that.setData({
+    datas:res.data.data,
+    myrich: res.data.data.detail.replace(regex2, "$2display:block;width:100%;height:auto;$3")
+ })
+</script>
+
+
 
 小程序解析富文本，改变img默认样式
 <title>JavaScript正则表达式给html字符串的img标签增加style样式</title>
@@ -32,6 +49,7 @@
 	document.getElementById("demo").innerHTML=s;
 	
 </script>
+
 
 wx.switchTab:跳转页面不能直接在后面带参数，（原因：因为它跳转页面时会关闭其他不是tabBar页面，导致传值失败）
 
