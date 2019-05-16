@@ -16,6 +16,17 @@ for(var key in arr){
   // arrt['sid'] = key;
   // arrt['name'] = arr[key];
 
+
+给router-view外加keep-alive标签
+// 好处 DOM会缓存在内容中
+// 切换导航时不会重复获取数据
+<keep-alive>
+  <router-view></router-view>
+</keep-alive>
+
+v-for 和 v-if
+当它们处于同一节点，v-for的优先级比v-if更高。
+
  
 
 
