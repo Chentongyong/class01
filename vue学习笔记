@@ -1,3 +1,57 @@
+条形进度图
+<template>
+  <div class="gwc">
+    <div>{{jdWidtah}}</div>
+    <div class="jdtBox">
+      <span class="jdZi" :style="{ width: jdWidtah + '%' }"></span>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      jdWidtah: 0
+    };
+  },
+  mounted() {
+    this.fng();
+  },
+  methods: {
+    fng: function() {
+      let that = this;
+      let clearInt = setInterval(function() {
+        if(that.jdWidtah<100){
+          console.log(1111)
+          that.jdWidtah++;
+        }else{
+          clearInterval(clearInt);
+          console.log(2222)
+        }
+      }, 50);
+    }
+  }
+};
+</script>
+<style lang='less' scoped>
+.jdtBox {
+  width: 300px;
+  height: 15px;
+  border-radius: 25px;
+  background: #fff;
+  position: relative;
+  top: 20px;
+  left: 25%;
+  overflow: hidden;
+  span {
+    display: block;
+    height: 100%;
+    border-radius: 25px;
+    background: red;
+  }
+}
+</style>
+
 计算总页码：
 /*
 *totalPage:总页码
@@ -15,6 +69,13 @@ for(var key in arr){
   // var arrt = {};
   // arrt['sid'] = key;
   // arrt['name'] = arr[key];
+
+mint ui 坑
+swipe修改默认样式
+1、直接在页面上修改时，不能在<style></style>上使用scoped，否则无效，
+2、定义全局样式，在main.js引入，全局覆盖
+
+
 
 
 给router-view外加keep-alive标签
