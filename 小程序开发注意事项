@@ -54,3 +54,31 @@ wx:for  (wx:for-item   wx:for-index:一般用于用于二级循环，用来绑�
 
 wx.switchTab:跳转页面不能直接在后面带参数，（原因：因为它跳转页面时会关闭其他不是tabBar页面，导致传值失败）
 
+倒计时、时间戳转换方法：
+let myDate = new Date();
+function fun(myDate){
+	let year = myDate.getFullYear();
+	let month = myDate.getMonth() + 1;
+	let day = myDate.getDate();
+	let time = myDate.getHours();
+	let minute = myDate.getMinutes();
+	let second = myDate.getSeconds();
+	let sum = year+ '-' +month+ '-' +day+ ' ' +time+ ':' +minute+ ':' +second
+	return sum
+}
+
+function getTimeLeft(datetimeTo) {//datetimeTo是时间戳2019-7-6 12:52:12
+  // 计算目标与现在时间差（毫秒）
+  let time1 = new Date(datetimeTo).getTime();
+  let time2 = new Date().getTime();
+  let mss = time1 - time2;
+
+  // 将时间差（毫秒）格式为：天时分秒
+  let days = parseInt(mss / (1000 * 60 * 60 * 24));
+  let hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = parseInt((mss % (1000 * 60)) / 1000);
+
+  return hours + "时" + minutes + "分" + seconds + "秒"
+}
+
