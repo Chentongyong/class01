@@ -1,0 +1,12 @@
+<div id='app>
+  <div>1111111111</div>
+  <div>2222222222</div>
+  <div>3333333333</div>
+</div>
+
+var idBox = document.getElementById('app').innerHTML;
+var regex0 = new RegExp("(i?)(\<div)([^\>]+\>)", "gmi");//匹配dom id='app'中的所有div
+idBox = idBox.replace(regex0, "$2 style=\"\"$3");//给div添加style
+var regex2 = new RegExp("(i?)(\<div.*?style=['\"])([^\>]+\>)","gmi");//匹配DOM app中所有添加了style的div
+idBox = idBox.replace(regex2, "$2color:red;$3");//修改字体颜色
+document.getElementById("app").innerHTML = idBox;//替换文本
