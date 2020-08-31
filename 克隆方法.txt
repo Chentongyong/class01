@@ -63,3 +63,24 @@ git merge origin/<分支名称> : 将分支名称与主分支合并。
 从本地向线上提交项目：git add . => git commit -m "提交说明" => git push
 
 将子分支合并到主分支：git checkout master => git merge origin/<分支名称> => git push
+
+
+场景：甲和乙在修改A分支代码。
+
+甲修改了一部分，在本地，未提交
+
+乙修改了一部分代码，提交到了远程
+
+甲如何更新到乙修改的代码，同时本地修改保留？
+
+ 
+
+1、执行git stash 暂存这些变更
+
+2、git pull origin 拉取远程代码
+
+3、git stash pop 重新应用储藏的变更
+
+4、再次提交自己的代码到远程 git commit -a -m "jhaha"
+
+git push origin master
