@@ -5,6 +5,8 @@
     }
   }
   
+2、获取扫码参数decodeURIComponent(options.scene)
+  
 小程序富文本
 <view style='width:100%'>
     <rich-text nodes="{{myrich}}"></rich-text>
