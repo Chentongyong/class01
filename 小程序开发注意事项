@@ -6,6 +6,29 @@
   }
   
 2、获取扫码参数decodeURIComponent(options.scene)
+
+3。嵌套循环wx:for：
+	<view>
+		<view wx:for="{{goods}}" wx:key="index" wx:for-index="idx" wx:for-item="itemName">
+	  	{{idx}}: {{itemName.name}}
+			<!-- <text>{{item.name}}</text> -->
+			<view wx:for="{{itemName.lsit}}" wx:key="index"	style="margin-left:40rpx" 
+			 wx:for-index="idx2" wx:for-item="itemName2"
+			>
+				<text>{{itemName2.goods_name}}</text>
+				<view 
+				wx:for="{{itemName2.age_sum}}" 
+				wx:key="index"
+				data-oneIndex="{{idx}}"
+				data-towIndex="{{idx2}}"
+				data-index="{{index}}"
+				style="margin-left:40rpx" 
+				class="back1 {{item.status?'back2':''}}" 
+				bindtap="indexFun"
+				>{{item.item_num}}</view>
+			</view>
+		</view>
+	</view>
   
 小程序富文本
 <view style='width:100%'>
