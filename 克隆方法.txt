@@ -84,3 +84,15 @@ git merge origin/<分支名称> : 将分支名称与主分支合并。
 4、再次提交自己的代码到远程 git commit -a -m "jhaha"
 
 git push origin master
+
+
+
+
+小程序正则匹配：pwd为input输入值
+1：pwd.replace(/[^a-zA-Z]/g,'')//只能输入英文
+2.pwd.replace(/[^a-za-z0-9u4e00-u9fa5@.]/g,''只能输入中文、英文、数字、@符号和.符号
+3.pwd.replace(/[d]/g,'')只能输入字母和汉字
+4.pwd.replace(/[^\w\/]/ig,'')只能输入英文字母和数字,不能输入中文
+5.pwd.replace(/[^\w\.\/]/ig,'')只能输入英文字母和数字,不能输入中文
+
+
