@@ -96,3 +96,43 @@ git push origin master
 5.pwd.replace(/[^\w\.\/]/ig,'')只能输入英文字母和数字,不能输入中文
 
 
+
+
+npm/yarn常用指令
+yarn:
+yarn global list --depth=0   //查看yarn全局安装过的包
+yarn global add <package>    //全局安装
+yarn                         //安装所有依赖
+yarn add <package>@<version> //安装指定版本
+yarn add <package>           //安装最新版本
+yarn remove <package>        //删除包，会更新package.json和yarn.lock
+yarn upgrade                 //更新包
+
+
+npm:
+npm list -g --depth 0        //查看npm全局安装过的包
+npm install <package> -g     //全局安装
+npm install                  //安装项目全局依赖
+npm install <package>@<version> //安装指定版本
+npm i <package>@latest       //安装最新版本
+npm uninstall -g <package>   //删除全局包
+npm uninstall <package>      //删除node_modules目录下的包
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
