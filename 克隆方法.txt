@@ -107,7 +107,8 @@ yarn add <package>@<version> //安装指定版本
 yarn add <package>           //安装最新版本
 yarn remove <package>        //删除包，会更新package.json和yarn.lock
 yarn upgrade                 //更新包
-
+yarn global bin              // 查看yarn安装路径
+yarn cache clean             // 删除缓存
 
 npm:
 npm list -g --depth 0        //查看npm全局安装过的包
