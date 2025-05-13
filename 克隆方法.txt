@@ -100,9 +100,11 @@ git push origin master
 
 npm/yarn常用指令
 yarn:
-yarn config set global-folder <path>      //自定义存储位置
-yarn global bin              //获取yarn全局bin位置
-yarn global dir              //获取yarn全局安装位置
+yarn global bin                            //获取yarn全局bin位置
+yarn global dir                            //获取yarn全局安装位置
+yarn config set global-folder <path>       //修改全局包存储位置
+yarn config set cache-folder <path>        //修改缓存位置
+yarn cache clean             // 删除缓存
 yarn global list --depth=0   //查看yarn全局安装过的包
 yarn global add <package>    //全局安装
 yarn                         //安装所有依赖
@@ -110,11 +112,14 @@ yarn add <package>@<version> //安装指定版本
 yarn add <package>           //安装最新版本
 yarn remove <package>        //删除包，会更新package.json和yarn.lock
 yarn upgrade                 //更新包
-yarn global bin              // 查看yarn安装路径
-yarn cache clean             // 删除缓存
+yarn cache clean --all       //‌ 清除Yarn缓存
+# 获取Yarn全局包存储路径并删除
+yarn global dir
+rmdir /s /q "C:\Users\%USERNAME%\AppData\Local\Yarn"
 
 npm:
 npm config set prefix        // 手动配置了全局模块的安装位置
+npm config set cache         // 设置缓存路径
 npm prefix -g                // 查看npm包全局安装位置
 npm list -g --depth 0        //查看npm全局安装过的包
 npm install <package> -g     //全局安装
