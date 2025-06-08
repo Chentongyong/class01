@@ -1,0 +1,7 @@
+一、showBack?: boolean和showBack: boolean区别?
+  可选参数/属性: 调用时===> showBack?: 可串可不传; showBack: 必须传
+
+
+二、Type、Interface、
+type: 定义复杂类型并复用 =====> 例子：type User = { name: string; age: number }; let user: User = { name: "Bob", age: 30 }
+Interface：主要用于对象类型的结构化定义 ===> 例子： interface Point { x: number; y: number }; let po: Point = { x: 10, y: 20 };
